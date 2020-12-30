@@ -1,0 +1,41 @@
+---
+title: "Camtrap Review"
+author: "Nargol Ghazian"
+date: "30/12/2020"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+#import data 
+data<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Cllimate/Camtrap Review/camtrap_review.csv")
+library (tidyr)
+library (dplyr)
+library(ggplot2)
+
+ggplot(data, aes((type.of.system), animal.richness, fill=type.of.system)) + geom_boxplot()
+
+a<- ggplot(data, aes(type.of.system))
+a+geom_bar()+coord_flip()
+
+
+library(ggpubr)
+ggline(data, x ="camtrap.days", y = "animal.richness")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+ggline(data, x ="number.records", y = "animal.richness")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+
+
+ggplot (data, aes(as.factor(camtrap.days), animal.richness)) + geom_smooth() 
+
+b<- ggplot(data, aes(sample.design))
+b+geom_bar()+coord_flip()
+
+c<-b<- ggplot(data, aes(year))
+c+geom_bar()+coord_flip()
+
+```
+
