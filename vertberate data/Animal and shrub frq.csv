@@ -1,0 +1,44 @@
+region,tool,abbreviation,genus,species,sub.spp,common.name,functional.group,reproduction,conservation.status,rarity,shrub_frequency
+San Joaquin,cam trap,,ammospermophilus,nelsoni,,Nelson's antelope squirrel,,,threatened ,,70
+Carrizo,cam trap,,andrena,nigrips,,Big-Headed Andrena,,,not listed,,100
+Carrizo,cam trap,,aspidoscelis,uniparens,,whiptail lizard,,,not listed,,100
+Carrizo,cam trap,,bureo,jamaicensis,,Red-Tailed hawk,,,least concern,,50
+Carrizo,cam trap,,calathus,ruficollis,,Ground Beetle,,,not listed,,70
+Carrizo,cam trap,,calypte,anna,,Anna's Hummingbird,,,least concern,,50
+Carrizo,cam trap,,chaetodipus,californicus,,california pocket mouse,,,least concern,,50
+Carrizo,cam trap,,chondestes,grammacus,,Lark Sparrow,,,least concern,,70
+Carrizo,cam trap,,corvus,corax,,common raven,,,least concern,,0
+Carrizo,transect,,crotalus ,oreganus,,western rattlesnake,,,least concern,,100
+Carrizo,field survey,,dasymutilla,aureola,,Velvet ant,,,not listed,,0
+Carrizo,field survey,,dicolonus,simplex,,Robber fly,,,not listed,,30
+Carrizo,cam trap,,dipodomys,californicus,,california kangroo rat,,,least concern,,50
+Carrizo,cam trap,,dipodomys,ingens,,giant kangaroo rat,,,threatened ,,60
+Carrizo,transect,,geococcyx,californianus,,Roadrunner,,,least concern,,100
+Carrizo,field survey,,hippodania,convergens,,Ladybug,,,not listed,,50
+Carrizo,field survey,,icaricia,acmon,,Acmon Blue Butterfly,,,not listed,,75
+San Joaquin,cam trap,,lepus,californicus,,black-tailed jack rabbit,,,least concern,,70
+Carrizo,cam trap,,lynx,rufus,,Bobcat,,,least concern,,100
+Carrizo,cam trap,,oedaleonotus,enigma,,Valley Grasshopper,,,not listed,,85
+Carrizo,cam trap,,ostopermophilus,beecheyi,,California ground squirrel,,,least concern,,55
+Carrizo,cam trap,,pepsis,formos,,Spider Wasp,,,not listed,,65
+Carrizo,cam trap,,perognathus,inornatus,,San Joaquin Pocket Mouse,,,least concern,,10
+Carrizo,cam trap,,phrynosoma,cornutum,frontale,california horned lizard,,,not listed,,
+San Joaquin,transect,,pituophis,catenifer,,Pacific Gopher Snake,,,not listed,,0
+Carrizo,cam trap,,puma,conclor,,mountain lion,,,least concern,,0
+Carrizo,cam trap,,rhionaeschna,multicolor,,Blueeyed Darner,,,not listed,,85
+Carrizo,cam trap,,sceloporus,occidentalis,,western Fence Lizard,,,least concern,,
+San Joaquin,cam trap,,sylvilagus,audobonii,,desert cottontail,,,least concern,,60
+Carrizo,cam trap,,toxostoma,redivivum,,california thrasher,,,least concern,,0
+Carrizo,cam trap,,uta,stansburiana,,Side-blotched lizard,,,not listed,,65
+San Joaquin,cam trap,,vulpes,macrotis,,kit fox,,,least concern,,20
+Mojave,cam trap,,canis,latrans,,coyote,,,least concern,,50
+Mojave,field survey,,macrotus,californicus,,california leaf-nosed bat,,,least concern,,0
+Mojave,cam trap,,dipodomys,deserti,,desert kangaroo rat,,,least concern,,50
+Mojave,cam trap,,dipodomys,merriami,,Merriam's Kangaroo rat,,,least concern,,50
+Mojave,cam trap,,chaetodipus,fallax,,San Diego pocket mouse,,,least concern,,50
+Mojave,cam trap,,chaetodipus,formosus,,long-tailed pocket mouse,,,least concern,,50
+Mojave,cam trap,,ammospermophilus,leucurus,,white-tailed antelope squirrel,,,least concern,,50
+Mojave,cam trap,,spermophilus ,tereticaudus,,round-tailed ground squirrel,,,least concern,,50
+Mojave,field survey,,calypte,costae,,Costa's hummingbird,,,least concern,,0
+San Joaquin,cam trap,,gambelia,sila,,blunt-nosed leopard lizard,,,endangered,,55
+San Joaquin,cam trap,,dipodomys,nitratoides ,,Fresno kangaroo rat,,,vulnerable,,50
