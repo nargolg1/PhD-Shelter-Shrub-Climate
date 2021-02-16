@@ -1,0 +1,29 @@
+---
+title: "sample shelter test"
+author: "Nargol Ghazian"
+date: "04/02/2021"
+output:
+  word_document: default
+  pdf_document: default
+  html_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+
+```{r}
+data <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Eco shelter project/sample data.csv")
+```
+
+```{r}
+
+install.packages("PairedData")
+library (PairedData)
+
+
+t.test(temp ~ group, data = data, paired= TRUE)
+```
+
