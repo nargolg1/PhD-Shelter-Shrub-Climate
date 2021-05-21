@@ -1,0 +1,79 @@
+---
+title: "Preliminary Eco-shelter stats"
+author: "Nargol Ghazian"
+date: "19/04/2021"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#import data
+HOBO <- read.csv ("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Eco shelter project/loggers-HOBO.csv")#temp and intensity from hobo loggers
+
+OMEGA <- read.csv ("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Eco shelter project/logger data- OMEGA.csv")#temp and humidity from omega loggers
+
+head (na.omit(HOBO))
+head (na.omit(OMEGA))
+
+
+library(tidyr)
+library (ggplot2)
+```
+
+
+```{r}
+#DATA VIZ
+#some boxplots for the microclimatic parameters
+ggplot(OMEGA, aes((fabric), temp.omega, fill=fabric)) + geom_boxplot() + xlab("Fabric") + ylab ("Temperature (°C)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+ggplot(OMEGA, aes((fabric), humidity, fill=fabric)) + geom_boxplot() + xlab("Fabric") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+ggplot(HOBO, aes((fabric), temp.hobo, fill=fabric)) + geom_boxplot() + xlab("Fabric") + ylab ("Temperature (°C)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+ggplot(HOBO, aes((fabric), intensity, fill=fabric)) + geom_boxplot() + xlab("Fabric") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+ggplot(OMEGA, aes((fabric), percent.germination.phaclia, fill=fabric)) + geom_boxplot() + xlab("Fabric") + ylab ("Germination (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+
+#some geom smooth line graphs for the different microclimatic variables
+library (ggpubr)
+ggline(OMEGA, x = "day", y = "temp.omega", color = "fabric",
+ add = "mean_sd", shape = "fabric", xlab = "Day", ylab = "Temperature (°C)", legend.title= "Fabric", legend="right")
+
+ggline(HOBO, x = "day", y = "temp.hobo", color = "fabric",
+ add = "mean_sd", shape = "fabric", xlab = "Day", ylab = "Temperature (°C)", legend.title= "Fabric", legend="right")
+
+
+ggline(OMEGA, x = "day", y = "humidity", color = "fabric",
+ add = "mean_sd", shape = "fabric", xlab = "Day", ylab = "Humidity (%)", legend.title= "Fabric", legend="right")
+
+ggline(HOBO, x = "day", y = "intensity", color = "fabric",
+ add = "mean_sd", xlab = "Day", ylab = "Radiation (lum/ft²)", legend.title= "Fabric", legend="right")
+
+ggplot(OMEGA, aes(temp.omega, fill = fabric)) +
+         geom_histogram(binwidth = 5) +
+  scale_fill_brewer(palette = "Set1")+   labs(fill = "", x = "Temperature (°C)", y = "Frequency")+theme_classic()+ theme(axis.text=element_text(size=12))+labs(fill = "Fabric")
+
+ggplot(HOBO, aes(temp.hobo, fill = fabric)) +
+         geom_histogram(binwidth = 5) +
+  scale_fill_brewer(palette = "Set1")+   labs(fill = "", x = "Temperature (°C)", y = "Frequency")+theme_classic()+ theme(axis.text=element_text(size=12))+labs(fill = "Fabric")
+
+ggplot(OMEGA, aes(humidity, fill = fabric)) +
+         geom_histogram(binwidth = 5) +
+  scale_fill_brewer(palette = "Set1")+   labs(fill = "", x = "Humidity (%)", y = "Frequency")+theme_classic()+ theme(axis.text=element_text(size=12))+labs(fill = "Fabric")
+
+```
+

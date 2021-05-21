@@ -1,0 +1,300 @@
+---
+title: "Desert Bird Habitat Use"
+author: "Malory Owen, Christopher J. Lortie, and Nargol Gahzian"
+date: "19/04/2021"
+output:
+  html_document:
+    df_print: paged
+  pdf_document: default
+  word_document: default
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+#Foundation plants and avian community associations
+#A set of survey data to examine key desert plant species associations with avian community structure and composition.
+
+#Hypothesis:
+#There are associations between birds and foundation plant species such as shrubs and cacti, and these relationships change with phenology.
+
+#Predictions:
+#1. Abundance and diversity of birds is greater near foundation plant species.
+#2. Spring and summer seasons change the associations between the foundation plants and avian community.
+#3. Behaviour and functional diversity of the avian species also differ when in association with foundation plant species relative to open microsites.
+```
+
+
+```{r}
+library(tidyverse)
+library(lubridate)
+library(vegan)
+data <- read_csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Owen et al/line_transects_viz.csv")
+tidy_data <- data %>%
+  rename(rep = bird.id, survey = walk, long = lon, migratory_class = migratory.class, guild = trophic.guild, behavior_simple = broad.behavior, microhabitat = three.mesohabitat) %>%
+  mutate(date = mdy(date)) %>%
+  mutate(day = mday(date)) 
+#take a peek at tidy data then select key vectors
+tidy_data <- tidy_data %>%
+  select(rep, date, season, day, survey, microhabitat, family, species, migratory_class, guild, behavior_simple, month.day.hour) %>%
+  mutate(microhabitat = case_when(microhabitat == "other" ~ "open", TRUE ~ as.character(microhabitat)))
+write_csv(tidy_data, "C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Owen et al/tidy_data.csv")
+#weather data
+weather <- read_csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Owen et al/weather.csv") %>% 
+  select(month.day.hour, Air.Temperature.Mean.Deg.F)
+#join mean air temperature for the hour to tidy data
+tidy_data <- left_join(tidy_data, weather, by = 'month.day.hour') %>% 
+  rename(temp = Air.Temperature.Mean.Deg.F)
+#tidydata without BTSP
+tidy_data_noBTSP <- tidy_data %>%
+  select(rep, date, season, day, survey, microhabitat, family, species, migratory_class, guild, behavior_simple, temp) %>%
+  mutate(microhabitat = case_when(microhabitat == "other" ~ "open", TRUE ~ as.character(microhabitat))) %>% 
+  filter(species != "Black.throated Sparrow")
+#taxanomic model datasets
+  
+data_species <- tidy_data %>%
+  group_by(season, survey, microhabitat, species, temp) %>%
+  summarise(counts = n()) 
+data_richness <- data_species %>%
+  group_by(season, survey, microhabitat, temp) %>%
+  summarise(richness = n())
+data_behavior <- tidy_data %>%
+  group_by(season, survey, microhabitat, behavior_simple, temp) %>%
+  summarise(totals = n())
+div <- tidy_data %>% 
+  dplyr::select(season, survey, microhabitat, species)#pull season, walk, microhabitat, and species
+div_long <-  as.data.frame(table(div)) #get freq of each species in long table with walks as rep
+div_wide <- div_long %>% spread(species, Freq) #get species into wide format
+div_wide$survey <- as.numeric(div_wide$survey) #make walks numeric
+div_wide <- filter(div_wide, (season == "spring" & survey < 27) | (season == "summer" & survey > 26))
+data_div <- as.data.frame(diversity(div_wide[,4:45])) %>% 
+  rename(Shannon = "diversity(div_wide[, 4:45])")
+data_wide <- div_wide %>% dplyr::select(season, survey, microhabitat)
+data_div <- bind_cols(data_wide, data_div) 
+weather_survey <- tidy_data %>% dplyr::select(survey, temp)
+weather_survey <- aggregate(temp~survey, weather_survey, FUN=mean)
+  
+data_div <- left_join(data_div, weather_survey, by = "survey")
+#trophic guild model dataset
+data_trophic <- tidy_data %>% 
+  group_by(season, survey, microhabitat, guild, temp) %>% 
+  summarise(counts = n()) %>% 
+  filter(guild != 'Unknown') %>% 
+  filter(guild != "unknown")
+#migratory class model dataset
+data_migratory <- tidy_data %>% 
+  group_by(season, survey, microhabitat, migratory_class, temp) %>% 
+  summarise(counts = n()) %>% 
+  filter(migratory_class != "unknown")
+#Black-throated Sparrow only
+data_sparrow <- tidy_data %>%
+  group_by(season, survey, microhabitat, species, behavior_simple, temp) %>%
+  summarise(counts = n()) %>% 
+  filter(species == "Black.throated Sparrow")
+#Black-throated Sparrow excluded
+data_species_noBTSP <- tidy_data_noBTSP %>%
+  group_by(season, survey, microhabitat, species, temp) %>%
+  summarise(counts = n()) 
+data_richness_noBTSP <- data_species_noBTSP %>%
+  group_by(season, survey, microhabitat, temp) %>%
+  summarise(richness = n())
+data_behavior_noBTSP <- tidy_data_noBTSP %>%
+  group_by(season, survey, microhabitat, behavior_simple, temp) %>%
+  summarise(totals = n())
+div_long_noBTSP <-  as.data.frame(table(div)) %>% 
+  filter(species != "Black.throated Sparrow") #get freq of each species in long table with walks as rep
+div_wide_noBTSP <- div_long_noBTSP %>% spread(species, Freq) #get species into wide format
+div_wide_noBTSP$survey <- as.numeric(div_wide_noBTSP$survey) #make walks numeric
+div_wide_noBTSP <- filter(div_wide_noBTSP, (season == "spring" & survey < 27) | (season == "summer" & survey > 26))
+
+```
+
+
+#Viz
+```{r}
+library(ggpubr)
+box1 <- ggplot(data_species, aes(season, counts, color = microhabitat)) +
+  geom_boxplot(aes(fill = microhabitat)) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_color_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y = "Species Abundance", x= " ", title = "A") +
+  theme_classic(base_size = 15) +
+  theme(legend.position = "none") +
+  theme(axis.text=element_text(size=15)) +
+  stat_summary(fun=mean, colour="#E77272", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+box2 <- ggplot(data_richness, aes(season, richness, color = microhabitat)) +
+  geom_boxplot(aes(fill = microhabitat)) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_color_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y="Species Richness", x=" ", title = "B") +
+  theme_classic(base_size = 15) +
+  theme(legend.title = element_blank()) +
+  theme(axis.text = element_text(size=15)) +
+  theme(legend.position = "none") +
+  stat_summary(fun=mean, colour="#E77272", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+box3 <- ggplot (data_div, aes(season, Shannon, color = microhabitat)) +
+  geom_boxplot(aes(fill=microhabitat)) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_color_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y="Shannon Weaver Index", x=" ", title = "C") +
+  theme_classic(base_size = 15) +
+  theme(legend.title = element_blank()) +
+  theme(legend.position = "none") +
+  theme(axis.text = element_text(size=15)) +
+  stat_summary(fun=mean, colour="#E77272", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+box4 <- ggplot(data_behavior, aes(behavior_simple, totals, color = microhabitat)) +
+  geom_boxplot(aes(fill=microhabitat)) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_colour_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  facet_wrap(~season, ncol = 2) +
+  labs(y = "Species Frequency", x = " ") +
+  theme_classic(base_size = 15) +
+  theme(legend.position = "bottom") +
+  theme(axis.text.x = element_text(angle = 90)) +
+  theme(axis.text = element_text(size=15)) +
+  stat_summary(fun=mean, colour="#E77272", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+box4
+box5 <- ggplot(data_trophic, aes(season, counts, color = microhabitat)) +
+  geom_boxplot(aes(fill=microhabitat)) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_colour_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y = "Trophic Guild Abundance", x= " ", title = "D") +
+  theme_classic(base_size = 15) +
+  theme(legend.position = "none") +
+  theme(axis.text = element_text(size=15)) +
+  stat_summary(fun=mean, colour="#E77272", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+box6 <- ggplot(data_migratory, aes(season, counts, color = microhabitat)) +
+  geom_boxplot(aes(fill=microhabitat)) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_colour_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y="Migratory Class Abundance", x="Season", title = "E") +
+  theme_classic(base_size = 15) +
+  theme(legend.title = element_blank()) +
+  theme(axis.text = element_text(size=15)) +
+  stat_summary(fun=mean, colour="#E77272", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+ggarrange(box1, box2, box3, box5, box6, ncol=3, nrow=2)
+sparrow <- ggplot(data_sparrow, aes(season, counts, color = microhabitat)) +
+  geom_boxplot(lwd=1.5) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_colour_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y="BTSP Abundance", x= "Season") +
+  facet_wrap(~behavior_simple, ncol=2) +
+  theme_classic(base_size = 15) +
+  theme(legend.title = element_blank()) +
+  theme(axis.text = element_text(size=15)) +
+  stat_summary(fun=mean, colour="black", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+nosparrow <- ggplot(data_species_noBTSP, aes(season, counts, color = microhabitat)) +
+  geom_boxplot(lwd=1.5) +
+  scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  scale_colour_manual(values=c("#6E6E6E", "#6E6E6E", "#6E6E6E")) +
+  labs(y="BTSP exclusion Species Abundance", x= "Season") +
+  theme_classic(base_size = 15) +
+  theme(legend.title = element_blank()) +
+  theme(axis.text = element_text(size=15)) +
+  stat_summary(fun=mean, colour="black", aes(group=microhabitat), geom="point", shape=18, size=3, position=position_dodge(.75))
+nosparrow
+sparrow
+ggarrange(box1, box2, box3, box5, box6, ncol=3, row = 2)
+#species stacked barchart
+ggplot(data_species, aes(fill=microhabitat, y=counts, x=species)) + 
+  geom_bar(position="fill", stat="identity") +
+    scale_fill_manual(values=c("#D5E5A8", "#A8E5D6", "#B8A8E5")) +
+  facet_wrap(~season) +
+  theme_classic() +
+  coord_flip() +
+  labs(y="Percent Abundance", x="Species") +
+  theme(legend.title = element_blank())
+  
+```
+
+
+
+#Models
+
+##Microhabitat, behavior, and season
+```{r}
+library(emmeans)
+library(AER)
+library(stats)
+options(max.print = 99999999)
+m1a <- glm(counts~microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_species)
+anova(m1a, test = "Chisq")
+aov(m1a)
+summary(m1a) #not overdispersed when quasipoisson
+anova(m1a)
+c1a <- emmeans(m1a, pairwise~microhabitat*season)
+m1b <- glm(counts~species*microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_species)
+
+anova(m1b, test = "Chisq")
+c1b <- emmeans(m1b, pairwise~species*microhabitat*season)
+c1b
+m1c <- glm(counts~microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_species_noBTSP)
+anova(m1c, test = "Chisq")
+summary(m1c) #not overdispersed when quasipoisson
+c1c <- emmeans(m1c, pairwise~microhabitat*season)
+c1c
+m2 <- glm(richness~microhabitat*season + (1 |survey) + (1|temp), family = gaussian, data = data_richness)
+anova(m2, test = "Chisq")
+summary(m2) #not overdispered as gaussian
+aov(m2)
+c2 <- emmeans(m2, pairwise~microhabitat*season)
+c2
+m2b <- glm(richness~microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_richness_noBTSP)
+anova(m2b, test = "Chisq")
+summary(m2b) #not overdispered as quasipoisson
+c2b <- emmeans(m2b, pairwise~microhabitat*season)
+c2b
+m3 <- glm(totals~microhabitat*behavior_simple + (1|survey) + (temp), family = quasipoisson, data = data_behavior)
+anova(m3, test = "Chisq")
+summary(m3) #not overdispersed as quasipoisson
+c3 <- emmeans(m3, pairwise~microhabitat*behavior_simple)
+c3
+m3b <- glm(totals~microhabitat*season*behavior_simple + (1|survey) + (1|temp), family = quasipoisson, data = data_behavior)
+summary(m3b) #not overdispersed as quasipoisson
+anova(m3b, test = "Chisq")
+c3b <- emmeans(m3b, pairwise~microhabitat*season*behavior_simple)
+c3b
+#Trophic Guilds as diversity metrics
+m4 <- glm(counts~microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_trophic)
+summary(m4) #not overdispersed as quasipoisson
+#overdispersed as poisson
+anova(m4, test = "Chisq")
+c4 <- emmeans(m4, pairwise~microhabitat*season)
+c4
+m4b <- glm(counts~guild*microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_trophic)
+summary(m4b) #not overdispersed as quasipoisson
+anova(m4b, test = "Chisq")
+c4b <- emmeans(m4b, pairwise~guild*microhabitat*season)
+c4b
+#Migratory classes at diversity metrics
+m5 <- glm(counts~microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_migratory)
+summary(m5) #not overdispersed as quasipoisson
+anova(m5, test = "Chisq")
+c5 <- emmeans(m5, pairwise~microhabitat*season)
+c5
+m5b <- glm(counts~migratory_class*microhabitat*season + (1 |survey) + (1|temp), family = quasipoisson, data = data_migratory)
+anova(m5b, test = "Chisq")
+c5b <- emmeans(m5b, pairwise~migratory_class*microhabitat*season)
+c5b
+#Black-throated Sparrows only
+m6 <- glm(counts~microhabitat*season*behavior_simple + (1|survey) + (1|temp), family = quasipoisson, data = data_sparrow)
+summary(m6) #not overdispersed as quasipoisson
+anova(m6, test = "Chisq")
+c6 <- emmeans(m6, pairwise~microhabitat*season*behavior_simple)
+c6
+#Diversity
+m7a <- glm(Shannon~microhabitat*season + (1|survey) + (1|temp), family = quasipoisson, data = data_div)
+anova(m7a, test = "Chisq")
+summary(m7a) #not overdispered as quasipoisson
+c7a <- emmeans(m7a, pairwise~microhabitat*season)
+c7a
+m7b <- glm(Shannon~microhabitat*season + (1|survey) + (1|temp), family = quasipoisson, data = data_div_noBTSP)
+anova(m7b, test = "Chisq")
+summary(m7b) #not overdispered as quasipoisson
+c7b <- emmeans(m7b, pairwise~microhabitat*season)
+c7b
+
+```
+
