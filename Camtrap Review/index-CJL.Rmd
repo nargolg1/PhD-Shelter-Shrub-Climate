@@ -1,0 +1,193 @@
+---
+title: "Camtrap Meta"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
+```
+
+## Camtrap synthesis 
+1. Does sampling effort predict animal abundances or diversity for a system?  
+2. Is there a sweet spot or threshold in sampling?
+
+That is it. Grab a few key vectors and see what pops!  
+
+### Data 
+[Measures for Event Counts](https://www.rdocumentation.org/packages/metafor/versions/2.4-0/topics/escalc)  
+Various measures can be used to characterize individual groups when the dependent variable assessed is an event count. Here, one needs to specify xi and ti, denoting the number of events that occurred and the total person-times at risk, respectively. The options for the measure argument are then:
+
+"IR" for the raw incidence rate.
+
+"IRLN" for the log transformed incidence rate.
+
+"IRS" for the square root transformed incidence rate.
+
+"IRFT" for the Freeman-Tukey transformed incidence rate (Freeman & Tukey, 1950).
+
+Studies with zero events can be problematic, especially for the log transformed incidence rate. Adding a small constant to the number of events is a common solution to this problem. When to="only0" (the default), the value of add (the default is 1/2; but see ‘Note’) is added to xi only in the studies that have zero events. When to="all", the value of add is added to xi in all studies. When to="if0all", the value of add is added to xi in all studies, but only when there is at least one study with zero events. Setting to="none" or add=0 has the same effect: No adjustment to the observed number of events is made. Depending on the outcome measure and the data, this may lead to division by zero inside of the function (when this occurs, the resulting value is recoded to NA).  
+
+Also see Cochrane handbook [ch 6.7](https://training.cochrane.org/handbook/current/chapter-06#_Ref523230081)  
+
+```{r}
+library(tidyverse)
+data <- read_csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Camtrap Review/review.csv") %>% 
+  filter(days < 50000 & captures < 80000) %>% 
+  rename(n_cams = 'number cams') %>% 
+  mutate(n_cams = as.numeric(n_cams)) %>% 
+  filter(bait == "no" & ecosystem != "aquatic")#clean up and filter data
+data
+
+library(metafor)
+#captures
+data_e1 <- escalc(measure = "IR", xi = captures, ti = days, ni = n_cams,  data = data) %>% 
+  filter(yi != "NA")
+
+#xi=variable of interest that's count data
+#ni=vector to specify the sample/group sizes
+#ti= vector to specify the total person-times
+#n.captures/n.cams/n.days
+
+
+#richness
+data_e2 <- escalc(measure = "IR", xi = richness, ti = n_cams, data = data) %>% 
+  filter(yi != "NA")
+
+
+data_1 <- data_e1 %>% 
+  rename(capture_rate = yi, var_caprate = vi)
+
+data_2 <- data_e3 %>% 
+  rename(richness_rate = yi, var_richnessrate = vi) %>% 
+  select(ID, richness_rate, var_richnessrate)
+
+data_all <- left_join(data_1, data_2, by = "ID")
+write.csv(data_all, "C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Camtrap Review/Final Data with Effect Sizes.csv", row.names = FALSE)
+#write.csv save complete dataset 
+
+data_final <- data_all %>% drop_na(richness_rate, var_richnessrate)
+
+summary_data <- data_final %>% 
+  group_by(ecosystem) %>% 
+  summarise(n_cams = mean(n_cams), capture_rate = mean(capture_rate), richness_rate = mean(richness_rate, na.rm = TRUE), var_caprate= sd(var_caprate), var_richnessrate = sd(var_richnessrate)) %>% 
+  filter(ecosystem != "mixed")#filtered out mixed forest
+
+```
+
+### Meta models
+Do a meta weighting captures by number of cameras over days. And richness by number of cams.
+
+```{r}
+
+library(broom)
+library(tidymodels)
+
+
+#x = captures
+#y = number of cams
+#y = days
+mod1.1 <- rma(yi = yi, sei = vi, method = "ML", test = "knha", control=list(stepadj=0.5), data = data_e1)
+summary(mod1.1)
+m1.1 <- tidy(mod1.1)
+m1.1
+
+mod1.2 <- rma(yi = yi, sei = vi, method = "ML", mods = ~ecosystem -1, test = "knha", control=list(stepadj=0.5), data = data_e1)
+summary(mod1.2)
+m1.2 <- tidy(mod1.2)
+m1.2
+plot(mod1.2)
+
+mod1.3 <- rma(yi = yi, sei = vi, method = "ML", mods = ~days, test = "knha", control=list(stepadj=0.5), data = data_e1)
+summary(mod1.3)
+m1.3 <- tidy(mod1.3)
+m1.3
+plot(mod1.3)
+#useless because days is now part of the effect size calculations.
+
+#x = richness
+#y = number of cams
+#y = days
+mod2.1 <- rma(yi = yi, sei = vi, method = "ML", test = "knha", control=list(stepadj=0.5), data = data_e3)
+summary(mod2.1)
+m2.1 <- tidy(mod2.1)
+m2.1
+
+
+mod2.2 <- rma(yi = yi, sei = vi, method = "ML", mods = ~ecosystem -1, test = "knha", control=list(stepadj=0.5), data = data_e3)
+summary(mod2.2)
+m2.2 <- tidy(mod2.2)
+m2.2
+plot(mod2.2)
+
+mod2.3 <- rma(yi = yi, sei = vi, method = "ML", mods = ~days, test = "knha", control=list(stepadj=0.5), data = data_e3)
+summary(mod2.3)
+m2.3 <- tidy(mod2.3)
+m2.3
+
+
+```
+
+
+## Viz  
+Need to weight points but sampling effort - n_cams/number of days only for capture rate.
+
+```{r}
+#forest plot
+
+ggplot(summary_data, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
+  geom_point(size =2) +
+  geom_errorbar(aes(ymin = richness_rate - var_richnessrate, ymax = richness_rate + var_richnessrate), size= 0.7, width=0.1, position = position_dodge(width = 0.5)) +
+  coord_flip() +
+  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
+  labs(x = "Ecosystem", y = "Vertebrate Species Richness Rate") + theme_classic()+ theme(legend.position = "none")
+
+ggplot(summary_data, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
+  geom_point(size =2) +
+  geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
+  coord_flip() +
+  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
+  labs(x = "Ecosystem", y = "Abundance Capture Rate") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
+
+
+ggplot(summary_data, aes(n_cams, capture_rate)) +
+  geom_point() +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", size = 2, se = FALSE) 
+
+ggplot(summary_data, aes(n_cams, richness_rate)) +
+  geom_point() +
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", size = 2, se = FALSE)
+
+
+#distribution of n_cam rates
+ggplot(data_e1, aes(ecosystem, yi)) +
+  geom_boxplot() +
+  labs(x = "Ecoystem", y = "Incidence Rate for Animal Captures") + 
+  stat_summary(fun.y=mean, geom="point", shape=18, size = 5, color="black", fill="red") + theme_classic()
+
+ggplot(data_e3, aes(ecosystem, yi)) +
+  geom_boxplot() +
+  labs(x = "Ecosystem", y = "Incidence Rate for Diversity in Animals Detected") + 
+  stat_summary(fun.y=mean, geom="point", shape=18, size = 5, color="black", fill="red") + theme_classic()
+
+
+#cams as sampling effort
+ggplot(data_e1, aes(days, yi)) +
+  geom_point(aes(color = ecosystem)) + 
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", se = FALSE) +
+  labs(x = "Total Days Sampled per Study", y = "Abundance capture rates")+ theme_classic()+ labs(colour = "Ecosystem")
+
+ggplot(data_e3, aes(days, yi, weight = vi)) +
+  geom_point(aes(color = ecosystem)) + 
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", size = 2, se = FALSE) +
+  labs(x = "Total Days Sampled per Study", y = "Vertebrate Species Richness Rate")+ theme_classic()+ labs(colour = "Ecosystem")
+
+
+```
+
+
+### Previous interpretations   
+1. Net effect of increasing n_cam is positive.    
+2. Ecosystem matters - all significantly positive except coniferous.   
+3. Increasing n_cams returns the highest rate of captures and of diversity in animals detected in deserts and grasslands.   
+4. Increasing the number of days does not increase the capacity of the number of cams to detect more animals (either in captures or diversity).  
+
