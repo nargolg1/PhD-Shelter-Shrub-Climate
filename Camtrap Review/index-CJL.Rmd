@@ -11,7 +11,6 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 1. Does sampling effort predict animal abundances or diversity for a system?  
 2. Is there a sweet spot or threshold in sampling?
 
-That is it. Grab a few key vectors and see what pops!  
 
 ### Data 
 [Measures for Event Counts](https://www.rdocumentation.org/packages/metafor/versions/2.4-0/topics/escalc)  
@@ -40,21 +39,30 @@ data <- read_csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Camt
 data
 
 library(metafor)
-#captures
+#abundance of animals
 data_e1 <- escalc(measure = "IR", xi = captures, ti = days, ni = n_cams,  data = data) %>% 
   filter(yi != "NA")
 
 #xi=variable of interest that's count data
 #ni=vector to specify the sample/group sizes
 #ti= vector to specify the total person-times
-#n.captures/n.cams/n.days
+#n.animals/n.cams/n.days
 
 
-#richness
-data_e2 <- escalc(measure = "IR", xi = richness, ti = n_cams, data = data) %>% 
+#animal richness
+data_e2 <- escalc(measure = "IR", xi = richness, ti = days, ni= n_cams, data = data) %>% 
+  filter(yi != "NA")
+#number of species/n.cams/n.days
+
+
+#animal captures without days in the effect size for regression
+data_e3 <- escalc(measure = "IR", xi = captures, ti = n_cams,  data = data) %>% 
   filter(yi != "NA")
 
+#richness wihtout days in the effect size for regression
+data_e4 <- escalc (measure = "IR", xi = richness, ti = n_cams, data = data)
 
+#join all the data that has days in the effect size index to be used for the forest plots as sampling effort
 data_1 <- data_e1 %>% 
   rename(capture_rate = yi, var_caprate = vi)
 
@@ -66,40 +74,53 @@ data_all <- left_join(data_1, data_2, by = "ID")
 write.csv(data_all, "C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Camtrap Review/Final Data with Effect Sizes.csv", row.names = FALSE)
 #write.csv save complete dataset 
 
-data_final <- data_all %>% drop_na(richness_rate, var_richnessrate)
 
-summary_data <- data_final %>% 
+summary_data <- data_all %>% 
   group_by(ecosystem) %>% 
-  summarise(n_cams = mean(n_cams), capture_rate = mean(capture_rate), richness_rate = mean(richness_rate, na.rm = TRUE), var_caprate= sd(var_caprate), var_richnessrate = sd(var_richnessrate)) %>% 
-  filter(ecosystem != "mixed")#filtered out mixed forest
+  summarise(n_cams = mean(n_cams), capture_rate = mean(capture_rate), richness_rate = mean(richness_rate, na.rm = TRUE), var_caprate= sd(var_caprate, na.rm=TRUE), var_richnessrate = sd(var_richnessrate, na.rm = TRUE))#filtered out mixed forest
 
 ```
 
 ### Publication Viz
 
 ```{r}
-library (ggplot2)
-ggplot(data_e2, aes(days, yi, weight = vi)) +
+
+#FIGURE 1 A AND B
+
+ggplot(data_e3, aes(days, yi)) +
+  geom_point(aes(color = ecosystem)) + 
+  stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", se = FALSE) +
+  labs(x = "Number of Days", y = "Number of Animals/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
+
+ggplot(data_e4, aes(days, yi, weight = vi)) +
   geom_point(aes(color = ecosystem)) + 
   stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", size = 2, se = FALSE) +
-  labs(x = "Total Days Sampled per Study", y = "Vertebrate Species Richness Rate")+ theme_classic()+ labs(colour = "Ecosystem")
+  labs(x = "Number of Days", y = "Number of Species/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
+
+
+#FIGURE 2 A AND B
 
 ggplot(summary_data, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
   geom_errorbar(aes(ymin = richness_rate - var_richnessrate, ymax = richness_rate + var_richnessrate), size= 0.7, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = "Ecosystem", y = "Vertebrate Species Richness Rate") + theme_classic()+ theme(legend.position = "none")
+  labs(x = "Ecosystem", y = "Number of Species/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
 
 ggplot(summary_data, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
   geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = "Ecosystem", y = "Abundance Capture Rate") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
-
+  labs(x = "Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
 
 ```
+
+
+
+
+
+
 
 
 ### Meta models
@@ -110,70 +131,68 @@ Do a meta weighting captures by number of cameras over days. And richness by num
 library(broom)
 library(tidymodels)
 
+#models for the forest plots
 
 #x = captures
 #y = number of cams
 #y = days
-mod1.1 <- rma(yi = yi, sei = vi, method = "ML", test = "knha", control=list(stepadj=0.5), data = data_e1)
+
+mod1.1 <- rma(yi = yi, sei = vi, method = "ML", mods = ~ecosystem -1, test = "knha", control=list(stepadj=0.5), data = data_e1)
 summary(mod1.1)
 m1.1 <- tidy(mod1.1)
 m1.1
+plot(mod1.1)
 
-mod1.2 <- rma(yi = yi, sei = vi, method = "ML", mods = ~ecosystem -1, test = "knha", control=list(stepadj=0.5), data = data_e1)
+
+#x = richness
+#y = number of cams
+#y = days
+mod1.2 <- rma(yi = yi, sei = vi, method = "ML", mods = ~ecosystem -1, test = "knha", control=list(stepadj=0.5), data = data_e2)#using ecosystem as a moderator
 summary(mod1.2)
 m1.2 <- tidy(mod1.2)
 m1.2
 plot(mod1.2)
 
-mod1.3 <- rma(yi = yi, sei = vi, method = "ML", mods = ~days, test = "knha", control=list(stepadj=0.5), data = data_e1)#useless because days is now part of the effect size calculations.
-summary(mod1.3)
-m1.3 <- tidy(mod1.3)
-m1.3
-plot(mod1.3)
 
+#regression models with days as a moderator
 
-#x = richness
-#y = number of cams
-mod2.1 <- rma(yi = yi, sei = vi, method = "ML", test = "knha", control=list(stepadj=0.5), data = data_e2)
+#abundance
+mod2.1 <- rma(yi = yi, sei = vi, method = "ML", mods = ~days, test = "knha", control=list(stepadj=0.5), data = data_e3)
 summary(mod2.1)
 m2.1 <- tidy(mod2.1)
 m2.1
+plot(mod2.1)
 
-
-mod2.2 <- rma(yi = yi, sei = vi, method = "ML", mods = ~ecosystem -1, test = "knha", control=list(stepadj=0.5), data = data_e2)#using ecosystem as a moderator
+#richness
+mod2.2 <- rma(yi = yi, sei = vi, method = "ML", mods = ~days, test = "knha", control=list(stepadj=0.5), data = data_e4)
 summary(mod2.2)
 m2.2 <- tidy(mod2.2)
 m2.2
-plot(mod2.2)
-
-mod2.3 <- rma(yi = yi, sei = vi, method = "ML", mods = ~days, test = "knha", control=list(stepadj=0.5), data = data_e2)
-summary(mod2.3)
-m2.3 <- tidy(mod2.3)
-m2.3
+plot (mod2.2)
 
 
 ```
 
 
 ## Viz  
-Need to weight points but sampling effort - n_cams/number of days only for capture rate. Richness remains diversity/n_cams. 
+Need to weight points but sampling effort - n_cams/number of days for capture rate and richness. Then you can have an index that only has richness/n_cams or abundance/n_camps and regress that against days. 
 
 ```{r}
-#forest plot
+#forest plots for indeces with days as a measure of sampling effort
 
 ggplot(summary_data, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
   geom_errorbar(aes(ymin = richness_rate - var_richnessrate, ymax = richness_rate + var_richnessrate), size= 0.7, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = "Ecosystem", y = "Vertebrate Species Richness Rate") + theme_classic()+ theme(legend.position = "none")
+  labs(x = "Ecosystem", y = "Number of Species/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
 
 ggplot(summary_data, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
   geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = "Ecosystem", y = "Abundance Capture Rate") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
+  labs(x = "Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
 
 
 ggplot(summary_data, aes(n_cams, capture_rate)) +
@@ -188,25 +207,25 @@ ggplot(summary_data, aes(n_cams, richness_rate)) +
 #distribution of n_cam rates
 ggplot(data_e1, aes(ecosystem, yi)) +
   geom_boxplot() +
-  labs(x = "Ecoystem", y = "Incidence Rate for Animal Captures") + 
+  labs(x = "Ecoystem", y = "Number of Animals/Number of Cameras/Day") + 
   stat_summary(fun.y=mean, geom="point", shape=18, size = 5, color="black", fill="red") + theme_classic()
 
 ggplot(data_e2, aes(ecosystem, yi)) +
   geom_boxplot() +
-  labs(x = "Ecosystem", y = "Incidence Rate for Diversity in Animals Detected") + 
+  labs(x = "Ecosystem", y = "Number of Species/Number of Cameras/Day") + 
   stat_summary(fun.y=mean, geom="point", shape=18, size = 5, color="black", fill="red") + theme_classic()
 
 
 #cams as sampling effort
-ggplot(data_e1, aes(days, yi)) +
+ggplot(data_e3, aes(days, yi)) +
   geom_point(aes(color = ecosystem)) + 
   stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", se = FALSE) +
-  labs(x = "Total Days Sampled per Study", y = "Abundance capture rates")+ theme_classic()+ labs(colour = "Ecosystem")#doesn't really make sense over days because days is already a denominator in this model.
+  labs(x = "Number of Days", y = "Number of Animals/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
 
-ggplot(data_e2, aes(days, yi, weight = vi)) +
+ggplot(data_e4, aes(days, yi, weight = vi)) +
   geom_point(aes(color = ecosystem)) + 
   stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", size = 2, se = FALSE) +
-  labs(x = "Total Days Sampled per Study", y = "Vertebrate Species Richness Rate")+ theme_classic()+ labs(colour = "Ecosystem")
+  labs(x = "Number of Days", y = "Number of Species/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
 
 
 ```
