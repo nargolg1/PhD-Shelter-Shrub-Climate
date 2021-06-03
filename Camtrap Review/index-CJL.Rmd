@@ -34,8 +34,7 @@ library(tidyverse)
 data <- read_csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Camtrap Review/review.csv") %>% 
   filter(days < 50000 & captures < 80000) %>% 
   rename(n_cams = 'number cams') %>% 
-  mutate(n_cams = as.numeric(n_cams)) %>% 
-  filter(bait == "no" & ecosystem != "aquatic")#clean up and filter data
+  mutate(n_cams = as.numeric(n_cams)) #clean up
 data
 
 library(metafor)
@@ -79,6 +78,8 @@ summary_data <- data_all %>%
   group_by(ecosystem) %>% 
   summarise(n_cams = mean(n_cams), capture_rate = mean(capture_rate), richness_rate = mean(richness_rate, na.rm = TRUE), var_caprate= sd(var_caprate, na.rm=TRUE), var_richnessrate = sd(var_richnessrate, na.rm = TRUE))#filtered out mixed forest
 
+data_model <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Camtrap Review/model estimates.csv")
+
 ```
 
 ### Publication Viz
@@ -86,11 +87,10 @@ summary_data <- data_all %>%
 ```{r}
 
 #FIGURE 1 A AND B
-
 ggplot(data_e3, aes(days, yi)) +
   geom_point(aes(color = ecosystem)) + 
   stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", se = FALSE) +
-  labs(x = "Number of Days", y = "Number of Animals/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
+  labs(x = "Number of Days", y = "Number of Animals/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem") 
 
 ggplot(data_e4, aes(days, yi, weight = vi)) +
   geom_point(aes(color = ecosystem)) + 
@@ -99,20 +99,19 @@ ggplot(data_e4, aes(days, yi, weight = vi)) +
 
 
 #FIGURE 2 A AND B
-
-ggplot(summary_data, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
+ggplot(data_model, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
   geom_errorbar(aes(ymin = richness_rate - var_richnessrate, ymax = richness_rate + var_richnessrate), size= 0.7, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
   labs(x = "Ecosystem", y = "Number of Species/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
 
-ggplot(summary_data, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
+ggplot(data_model, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
   geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = "Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
+  labs(x = "Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
 
 ```
 
@@ -194,6 +193,23 @@ ggplot(summary_data, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
   geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
   labs(x = "Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")#variance is too small to see
 
+#let's try forst plot with model estimates instead
+
+ggplot(data_model, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
+  geom_point(size =2) +
+  geom_errorbar(aes(ymin = richness_rate - var_richnessrate, ymax = richness_rate + var_richnessrate), size= 0.7, width=0.1, position = position_dodge(width = 0.5)) +
+  coord_flip() +
+  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
+  labs(x = "Ecosystem", y = "Number of Species/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
+
+ggplot(data_model, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
+  geom_point(size =2) +
+  geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
+  coord_flip() +
+  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
+  labs(x = "Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
+
+
 
 ggplot(summary_data, aes(n_cams, capture_rate)) +
   geom_point() +
@@ -228,13 +244,16 @@ ggplot(data_e4, aes(days, yi, weight = vi)) +
   labs(x = "Number of Days", y = "Number of Species/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
 
 
+ggplot(data, aes(ecosystem)) + geom_bar()#rough frequency per study plot
+
+table (data$ecosystem)
 ```
 
 
 ### Interpretations 
 1. Net effect of increasing n_cam is positive.    
 2. Ecosystem matters - all significantly positive except coniferous.
-3. Increasing n_cams returns the highest rate of captures and of diversity in animals detected in grasslands.   
+3. Increasing n_cams returns the highest rate of captures and of diversity in animals detected in grassland and mixed ecosystem.  
 4. Increasing the number of days does not increase the capacity of the number of cams to detect more animals diversity.
 5. Increasing the number of cameras only significanly increase capture rate in grassland. 
 
