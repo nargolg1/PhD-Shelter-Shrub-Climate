@@ -87,27 +87,17 @@ data_model <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate
 ```{r}
 
 #FIGURE 1 A AND B regression over days weighted by days
-ggplot(data_e3, aes(days, yi)) +
-  geom_point(aes(color = ecosystem)) + 
-  stat_smooth(method = "lm", mapping = aes(weight = days), size = 1, color = "black", se = FALSE) +
-  labs(x = "Number of Days", y = "Number of Animals/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem") 
+p1 <-ggplot(data_e3, aes(days, yi, weight = vi)) +
+  geom_point(aes(color = ecosystem)) +
+  labs(x = "Number of Days", y = "Abundance per Camera")+ theme_classic()+ labs(colour = "Ecosystem")+ xlim(0, 30000) + ylim (0, 1000) + theme(legend.position = "none") +  ggtitle('A')
 
-ggplot(data_e4, aes(days, yi, weight = vi)) +
-  geom_point(aes(color = ecosystem)) + 
-  stat_smooth(method = "lm", formula = y ~ x, mapping= aes (weight = days), size = 1, color = "black", size = 2, se = FALSE) +
-  labs(x = "Number of Days", y = "Number of Species/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
+p2 <-ggplot(data_e4, aes(days, yi, weight = vi)) +
+  geom_point(aes(color = ecosystem)) +
+  labs(x = "Number of Days", y = "Richness per Camera")+ theme_classic()+ labs(colour = "Ecosystem")+ xlim (0, 30000) + ylim (0,3)+ ggtitle('B')
 
+library(patchwork)
+p1 + p2
 
-#let's try n_animals per n_cameras weighted by days
-ggplot(data, aes(captures, n_cams)) +
-  geom_point(aes(color = ecosystem)) + 
-  stat_smooth(method = "lm", mapping = aes(weight = days), size = 1, color = "black", se = FALSE) +
-  labs(x = "Animal Abundance", y = "Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem") 
-
-ggplot(data, aes(richness, n_cams)) +
-  geom_point(aes(color = ecosystem)) + 
-  stat_smooth(method = "lm", mapping = aes(weight = days), size = 1, color = "black", se = FALSE) +
-  labs(x = "Species Richness", y = "Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem") 
 
 
 #FIGURE 2 A AND B
@@ -115,26 +105,21 @@ data_model1_reorder <- transform(data_model, ecosystem = reorder(ecosystem, capt
 
 data_model2_reorder <- transform(data_model, ecosystem = reorder(ecosystem, richness_rate))
 
-ggplot(data_model2_reorder, aes(ecosystem, as.factor (richness_rate), color = factor(ecosystem))) +
-  geom_point(size =3, order = order) +
-  geom_errorbar(aes(ymin = richness_rate - var_richnessrate, ymax = richness_rate + var_richnessrate), size= 1, width=0.1, position = position_dodge(width = 0.5)) +
+p3 <-ggplot(data_model2_reorder, aes(ecosystem, richness_rate, color = factor(ecosystem))) +
+  geom_point(size =2, order = order) +
+  geom_errorbar(aes(ymin = ifelse(richness_rate - var_richnessrate <0,0, richness_rate-var_richnessrate), ymax = richness_rate + var_richnessrate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
-  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = "Detection Rate by Ecosystem", y = "Number of Species/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")  
+  geom_hline(yintercept = 0, colour="grey", linetype = "longdash", size = 2) + 
+  labs(x = "Ecosystem", y = "Net Richness Detection Rate") + theme_classic()+ theme(legend.position = "none")+ ggtitle('B')
 
-ggplot(data_model1_reorder, aes(ecosystem, as.factor(capture_rate), color = factor(ecosystem))) +
-  geom_point(size =3) +
-  geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
+p4 <-ggplot(data_model1_reorder, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
+  geom_point(size =2) +
+  geom_errorbar(aes(ymin = ifelse(capture_rate - var_caprate <0,0, capture_rate-var_caprate), ymax= capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
-  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = " Detection Rate by Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
+  geom_hline(yintercept = 0, colour="grey", linetype = "longdash", size = 2) + 
+  labs(x = "Ecosystem", y = "Net Abundance Detection Rate") + theme_classic()+ theme(legend.position = "none") + ggtitle('A')
 
-ggplot(data_model1_reorder, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
-  geom_point(size =3) +
-  geom_errorbar(aes(ymin = capture_rate - var_caprate, ymax = capture_rate + var_caprate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
-  coord_flip() +
-  geom_hline(yintercept = 1, colour="grey", linetype = "longdash", size = 2) + 
-  labs(x = " Detection Rate by Ecosystem", y = "Number of Animals/Number of Cameras/Day") + theme_classic()+ theme(legend.position = "none")
+p4+p3
 
 ```
 
@@ -264,6 +249,17 @@ ggplot(data_e4, aes(days, yi, weight = vi)) +
   geom_point(aes(color = ecosystem)) + 
   stat_smooth(method = "lm", formula = y ~ x + I(x^2), size = 2, color = "black", size = 2, se = FALSE) +
   labs(x = "Number of Days", y = "Number of Species/Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem")
+
+ggplot(data, aes(captures, n_cams)) +
+  geom_point(aes(color = ecosystem)) + 
+  stat_smooth(method = "lm", mapping = aes(weight = days), size = 1, color = "black", se = FALSE) +
+  labs(x = "Animal Abun", y = "Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem") 
+
+ggplot(data, aes(richness, n_cams)) +
+  geom_point(aes(color = ecosystem)) + 
+  stat_smooth(method = "lm", mapping = aes(weight = days), size = 1, color = "black", se = FALSE) +
+  labs(x = "Species Richness", y = "Number of Cameras")+ theme_classic()+ labs(colour = "Ecosystem") 
+
 
 
 ggplot(data, aes(ecosystem)) + geom_bar()#rough frequency per study plot
