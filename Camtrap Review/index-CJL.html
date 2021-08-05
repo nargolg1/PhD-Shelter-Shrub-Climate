@@ -474,7 +474,7 @@ p3 &lt;-ggplot(data_model2_reorder, aes(ecosystem, richness_rate, color = factor
   geom_errorbar(aes(ymin = ifelse(richness_rate - var_richnessrate &lt;0,0, richness_rate-var_richnessrate), ymax = richness_rate + var_richnessrate), size= 0.5, width=0.1, position = position_dodge(width = 0.5)) +
   coord_flip() +
   geom_hline(yintercept = 0, colour=&quot;grey&quot;, linetype = &quot;longdash&quot;, size = 2) + 
-  labs(x = &quot;Ecosystem&quot;, y = &quot;Net Richness Detection Rate&quot;) + theme_classic()+ theme(legend.position = &quot;none&quot;)+ ggtitle(&#39;B&#39;)
+  labs(x = &quot;Ecosystem&quot;, y = &quot;Net Richness Detection Rate&quot;) + theme_classic()+ ggtitle(&#39;B&#39;)+ theme(legend.position = &quot;none&quot;)
 
 p4 &lt;-ggplot(data_model1_reorder, aes(ecosystem, capture_rate, color = factor(ecosystem))) +
   geom_point(size =2) +
