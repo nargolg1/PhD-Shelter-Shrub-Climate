@@ -2,7 +2,10 @@
 title: "Preliminary Eco-shelter stats"
 author: "Nargol Ghazian"
 date: "19/04/2021"
-output: html_document
+output:
+  html_document: default
+  pdf_document: default
+  word_document: default
 ---
 
 ```{r setup, include=FALSE}
@@ -50,8 +53,6 @@ ggplot(OMEGA, aes((fabric), percent.germination.phaclia, fill=fabric)) + geom_bo
 
 #some geom smooth line graphs for the different microclimatic variables
 library (ggpubr)
-ggline(OMEGA, x = "day", y = "temp.omega", color = "fabric",
- add = "mean_sd", shape = "fabric", xlab = "Day", ylab = "Temperature (°C)", legend.title= "Fabric", legend="right")
 
 ggline(HOBO, x = "day", y = "temp.hobo", color = "fabric",
  add = "mean_sd", shape = "fabric", xlab = "Day", ylab = "Temperature (°C)", legend.title= "Fabric", legend="right")
@@ -74,6 +75,34 @@ ggplot(HOBO, aes(temp.hobo, fill = fabric)) +
 ggplot(OMEGA, aes(humidity, fill = fabric)) +
          geom_histogram(binwidth = 5) +
   scale_fill_brewer(palette = "Set1")+   labs(fill = "", x = "Humidity (%)", y = "Frequency")+theme_classic()+ theme(axis.text=element_text(size=12))+labs(fill = "Fabric")
+```
+
+
+```{r}
+lm.1<-glm(temp.hobo~as.factor(fabric), data=HOBO)
+
+library(sjPlot)
+tab_model (lm.1)
+
+library(emmeans)
+emmeans(lm.1, pairwise~fabric)
+
+lm.2<-glm(temp.omega~as.factor(fabric), data=OMEGA)
+tab_model (lm.2)
+
+emmeans(lm.2, pairwise~fabric)
+
+lm.3<-glm(humidity~as.factor(fabric), data=OMEGA)
+tab_model (lm.3)
+
+emmeans(lm.3, pairwise~fabric)
+
+lm.4<-glm(intensity~as.factor(fabric), data=HOBO)
+
+tab_model(lm.4)
+
+emmeans(lm.4, pairwise~fabric)
 
 ```
+
 
