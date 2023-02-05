@@ -50,14 +50,14 @@ knitr::kable(df3)
 ###methods
 
 ##shelters
-#1. Build 8 shelters in total (4 square, 4 triangle)in Carrizo sites 3 and 4 and pair with shrubs. Do the same in Tecopa. Build 4 shelters in soda lake open (2 of each kind) and do the same in Tecopa_open.
-#2. Put hobo and omega loggers underneth all and the shrubs.
+#1. Build 4 shelters in total (2 square, 2 triangle)in Carrizo sites 3 and 4 and pair with 2 shrubs. Do the same in Tecopa. Do the same in soda_lake open and Tecopa_open.
+#2. Put hobo and omega loggers underneath all and the shrubs and shelters.
 #3. Measure handheld climate data twice.
 
-##shrub size experiement
-#1. Put hobo loggers undearneath 5 shrubs and 5 opens in Cuyama 1 and 2
-#2. Measure handheld climate at those 5 shrubs and opens + another 5 at least twice.
-#3. Do point measurements at any sites you are going to once (e.x. Semitropics, cuyama 3, 5, 6, Avenal maaybe)
+##shrub size experiment
+#1. Measure handheld climate at 30 shrubs and opens at Carrizo 3,4, Cuyama 1,2,3,4, Semitropics and Tecopa_shrub. This is called MSAT (Mean Surface Air Temp)
+#3. Do point measurements using a laser pointer at shrub and open.
+#4. Measure shrub x, y, and Z.
 ```
 
 
@@ -66,6 +66,6 @@ knitr::kable(df3)
 
 #1. Have winter data in case refree asks what if shelters only cool when it is super dry and hot.
 
-#2. One more paper for shrub gradient. 
+#2. One more paper for shrub gradient size and microclimate.  
 ```
 
