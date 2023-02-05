@@ -1,0 +1,41 @@
+region,site,microsite,lat ,long,omeg_id,hobo_id,x,y,z,shrub_species
+Carrizo,Carrizo_4,shrub,35.11949,-119.62963,17409,20619216,347,284,122,Ephedra californica
+Carrizo,Carrizo_4,square,35.11949,-119.62963,16035,20881733,,,,
+Carrizo,Carrizo_4,triangle ,35.11949,-119.62963,17911,20619204,,,,
+Carrizo,Carrizo_4,shrub,35.11929,-119.62958,17421,20881726,370,245,140,Ephedra californica
+Carrizo,Carrizo_4,square,35.11929,-119.62958,18231,20619198,,,,
+Carrizo,Carrizo_4,triangle ,35.11929,-119.62958,16013,10641599,,,,
+Carrizo,Carrizo_4,shrub,35.11912,-119.62968,15399,20619200,350,341,153,Ephedra californica
+Carrizo,Carrizo_4,square,35.11912,-119.62968,17997,20881725,,,,
+Carrizo,Carrizo_4,triangle ,35.11912,-119.62968,17420,20619210,,,,
+Carrizo,Carrizo_4,shrub,35.11908,-119.62946,15513,20619208,288,276,104,Ephedra californica
+Carrizo,Carrizo_4,square,35.11908,-119.62946,16241,20619202,,,,
+Carrizo,Carrizo_4,triangle ,35.11908,-119.62946,16051,20597568,,,,
+Carrizo,Carrizo_4,shrub,35.1191,-11962942,17417,20353201,342,315,110,Ephedra californica
+Carrizo,Carrizo_4,square,35.1191,-11962942,18228,20500302,,,,
+Carrizo,Carrizo_4,triangle ,35.1191,-11962942,19987,20597569,,,,
+Carrizo,Carrizo_4,shrub,35.11912,-119.62924,15402,20881739,410,241,143,Ephedra californica
+Carrizo,Carrizo_4,square,35.11912,-119.62924,17414,10641604,,,,
+Carrizo,Carrizo_4,triangle ,35.11912,-119.62924,17990,20500307,,,,
+Carrizo,Carrizo_4,shrub,35.11908,-119.62905,15406,20881753,340,260,132,Ephedra californica
+Carrizo,Carrizo_4,square,35.11908,-119.62905,16033,10641612,,,,
+Carrizo,Carrizo_4,triangle ,35.11908,-119.62905,17393,20619225,,,,
+Carrizo,Carrizo_4,shrub,35.11881,-119.6291,17411,20619201,342,244,154,Ephedra californica
+Carrizo,Carrizo_4,square,35.11881,-119.6291,17398,20597560,,,,
+Carrizo,Carrizo_4,triangle ,35.11881,-119.6291,18022,10641596,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05621,-119.60119,15491,20619297,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05613,-119.60137,15531,20535242,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05614,-119.60146,15526,20597571,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05618,-119.60149,16250,10597567,,,,
+Carrizo,Carrizo_Soda Lake,open,35.0562,-119.60149,15512,20619212,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05634,-119.60142,15489,20597543,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05627,-119.60138,18004,90597559,,,,
+Carrizo,Carrizo_Soda Lake,open,35.05621,-119.60126,18215,20567069,,,,
+Carrizo,Carrizo_Soda Lake,square,35.05621,-119.60119,18002,10535195,,,,
+Carrizo,Carrizo_Soda Lake,triangle ,35.05621,-119.60119,16008,20884543,,,,
+Carrizo,Carrizo_Soda Lake,square,35.05614,-119.60146,17418,20578911,,,,
+Carrizo,Carrizo_Soda Lake,triangle ,35.05614,-119.60146,17430,10715207,,,,
+Carrizo,Carrizo_Soda Lake,square,35.0562,-119.60149,18014,20548641,,,,
+Carrizo,Carrizo_Soda Lake,triangle ,35.0562,-119.60149,17429,20567067,,,,
+Carrizo,Carrizo_Soda Lake,square,35.05627,-119.60138,17434,20564171,,,,
+Carrizo,Carrizo_Soda Lake,triangle ,35.05627,-119.60138,18023,10641600,,,,

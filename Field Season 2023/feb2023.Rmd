@@ -1,0 +1,71 @@
+---
+title: "2023 February Sampling"
+author: "Nargol Ghazian"
+date: '2023-02-02'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+###Questions for Shelter Project
+#1. To what extent does the natural fabric burlap affect microclimatic parameters such as relative humidity (RH), temperature, and light intensity under the shelter canopy in the winter? 
+#2. Is there a significant difference in the above measurements for differently-shaped shelters? 
+#3. Is there a difference in how the shelters affect the above parameters at a southern, dry site versus  milder sites in the north?
+#4. Is the variation significant between climatic measurements taken using data loggers and versus a handheld device?
+#5. How do natural shrubs compare to artificial shetlers in terms of impacting the canopy microclimate?
+  
+###Questions for shrub handheld experiment. 
+#1. How does shrub size influence canopy temperature and humidity?
+#2. How do logger recording compare to handheld recordings?
+#3. How does microclimate of shrubs differ in northern sites versus southern sites?
+
+```
+
+```{r}
+###Sample datasheets
+library(tidyverse)
+
+#location of shelters and shrub
+df1<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Field Season 2023/Shelters and shrubs.csv") 
+knitr::kable(df1)
+
+     
+#microclimate handheld shelters and shrubs
+df2<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Field Season 2023/handheld_climate.csv")
+knitr::kable(df2)
+
+#microclimate at shrub gradient
+df3<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Field Season 2023/shrub xyz and microclimate.csv")
+knitr::kable(df3)
+
+
+
+```
+
+
+```{r}
+###methods
+
+##shelters
+#1. Build 4 shelters in total (2 square, 2 triangle)in Carrizo sites 3 and 4 and pair with 2 shrubs. Do the same in Tecopa. Do the same in soda_lake open and Tecopa_open.
+#2. Put hobo and omega loggers underneath all and the shrubs and shelters.
+#3. Measure handheld climate data twice.
+
+##shrub size experiment
+#1. Measure handheld climate at 30 shrubs and opens at Carrizo 3,4, Cuyama 1,2,3,4, Semitropics and Tecopa_shrub. This is called MSAT (Mean Surface Air Temp)
+#3. Do point measurements using a laser pointer at shrub and open.
+#4. Measure shrub x, y, and Z.
+```
+
+
+```{r}
+###Big picture
+
+#1. Have winter data in case refree asks what if shelters only cool when it is super dry and hot.
+
+#2. One more paper for shrub gradient size and microclimate.  
+```
+
