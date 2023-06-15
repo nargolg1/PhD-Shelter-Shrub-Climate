@@ -1,0 +1,421 @@
+researcher,region,site_code,rep,x,y,z,shrub_species,NSAT,NSRH,SGT,microsite,date,start_time
+ng,Cuyama,Cuyama_1,1,280,229,135,Ephedra californica,14.6,40.15,19.7,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,2,337,330,147,Ephedra californica,16.3,37.69,11.5,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,3,236,188,123,Ephedra californica,17.15,37.32,8.9,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,4,386,296,156,Ephedra californica,17.75,34.43,9.6,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,5,538,457,178,Ephedra californica,17.2,35.12,9.4,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,6,251,240,134,Ephedra californica,17.59,36.78,13.9,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,7,473,471,160,Ephedra californica,19.18,32.2,13.1,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,8,496,475,158,Ephedra californica,20.76,30.55,16.1,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,9,280,277,130,Ephedra californica,19.7,29.83,13.8,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,10,460,353,187,Ephedra californica,20,31.18,17.2,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,11,667,562,138,Ephedra californica,20.82,31.7,22.6,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,12,531,465,167,Ephedra californica,22.19,29.44,22.2,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,13,254,214,137,Ephedra californica,23.78,27.2,29.6,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,14,385,345,161,Ephedra californica,21.4,30.01,31.2,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,15,297,287,197,Ephedra californica,20.74,29.76,20.9,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,16,530,488,182,Ephedra californica,20.17,31.46,11.5,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,17,257,234,134,Ephedra californica,18.75,35,25.11,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,18,338,394,144,Ephedra californica,21.96,28.63,26.5,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,19,458,437,156,Ephedra californica,22.55,28.07,15,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,20,324,240,136,Ephedra californica,22.18,29.09,21.1,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,21,332,275,172,Ephedra californica,21.13,31.08,10.2,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,22,315,287,160,Ephedra californica,20.41,31.8,13.9,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,23,400,334,200,Ephedra californica,20.6,30.37,17.1,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,24,328,272,148,Ephedra californica,19.63,31.71,13.3,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,25,228,187,147,Ephedra californica,19.7,31.02,17.8,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,26,320,235,160,Ephedra californica,18.82,31.01,13.1,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,27,254,248,138,Ephedra californica,20.34,30.5,11.2,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,28,258,228,168,Ephedra californica,20.38,29.17,13.4,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,29,215,172,142,Ephedra californica,20.65,30.65,12.1,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,30,305,300,176,Ephedra californica,19.78,30.85,13.2,shrub,13-02-2023,9:40
+ng,Cuyama,Cuyama_2,1,241,195,159,Ephedra californica,20.67,25.94,16.8,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,2,285,280,172,Ephedra californica,24.03,26.11,15.6,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,3,252,244,143,Ephedra californica,22.53,24.16,16.2,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,4,321,309,197,Ephedra californica,21.18,23.74,13.3,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,5,242,224,146,Ephedra californica,21.3,26.36,14,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,6,543,493,210,Ephedra californica,21.46,25.1,13.6,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,7,497,338,178,Ephedra californica,21.52,25.83,13.7,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,8,520,463,205,Ephedra californica,21.7,27.18,14.5,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,9,400,387,155,Ephedra californica,21.67,26.66,17.2,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,10,270,220,141,Ephedra californica,21.73,28.84,14.2,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,11,230,203,150,Ephedra californica,21.22,26.85,14.2,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,12,308,298,152,Ephedra californica,20.97,28.52,15.3,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,13,212,200,148,Ephedra californica,20.77,28.66,16,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,14,296,262,157,Ephedra californica,20.35,27.2,15.2,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,15,434,432,172,Ephedra californica,21.82,27.43,15.3,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,16,186,196,141,Ephedra californica,21.28,26.11,17.9,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,17,271,231,183,Ephedra californica,21.03,26.49,16.3,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,18,525,350,158,Ephedra californica,20.46,27.51,16,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,19,466,346,210,Ephedra californica,20.28,28.67,14.9,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,20,224,200,166,Ephedra californica,19.87,28.08,16.5,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,21,390,321,182,Ephedra californica,19.66,31.8,15,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,22,276,148,102,Ephedra californica,19.37,31.73,15.5,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,23,282,292,143,Ephedra californica,19.64,29.23,16.3,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,24,320,289,145,Ephedra californica,19.84,29.46,17.6,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,25,453,393,148,Ephedra californica,20.15,29.46,16.6,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,26,520,498,185,Ephedra californica,20.36,29.6,14.5,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,27,326,222,145,Ephedra californica,28.3,30.48,16.6,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,28,348,293,153,Ephedra californica,20.1,31.57,15.6,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,29,310,261,169,Ephedra californica,19.68,33.08,14.2,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,30,331,230,156,Ephedra californica,19.51,33.17,15.1,shrub,13-02-2023,13:02
+ng,Cuyama,Cuyama_3,1,363,342,164,Ephedra californica,6.32,67.43,7.6,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,2,492,453,250,Ephedra californica,6.52,65.23,6.1,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,3,456,312,157,Ephedra californica,6.49,63.6,4.9,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,4,610,547,230,Ephedra californica,6.58,64.15,4.4,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,5,310,240,168,Ephedra californica,7.29,59.1,8.4,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,6,198,197,138,Ephedra californica,6.54,63.29,4.9,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,7,348,368,210,Ephedra californica,6.39,64.4,4.5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,8,218,205,153,Ephedra californica,6.4,60.95,4.2,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,9,443,427,197,Ephedra californica,6.17,60.67,4.2,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,10,368,352,147,Ephedra californica,6.42,60.14,6.5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,11,229,187,182,Ephedra californica,8.56,46.96,6,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,12,497,362,165,Ephedra californica,8.24,48.76,8,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,13,489,305,146,Ephedra californica,8.06,48.52,4.5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,14,290,265,291,Ephedra californica,7.67,51.05,4.7,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,15,221,187,142,Ephedra californica,7.7,50.81,4.4,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,16,440,460,215,Ephedra californica,8.45,50.21,5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,17,174,161,110,Ephedra californica,8.48,50.71,6.5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,18,415,400,215,Ephedra californica,8.69,48.82,5.7,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,19,196,176,122,Ephedra californica,8.9,48.25,14.9,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,20,146,140,105,Ephedra californica,8.48,48.56,7.9,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,21,290,285,170,Ephedra californica,11.25,40.24,5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,22,425,290,162,Ephedra californica,11.36,39.62,7,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,23,197,195,138,Ephedra californica,10.81,38.98,5.5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,24,296,288,220,Ephedra californica,11.04,43.26,11.2,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,25,350,320,260,Ephedra californica,11.31,43.21,6.09,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,26,274,260,153,Ephedra californica,10.98,41.18,7.4,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,27,411,310,168,Ephedra californica,10.69,40.66,9.5,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,28,297,291,230,Ephedra californica,8.78,43.35,6.9,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,29,298,293,178,Ephedra californica,9.3,44,7.3,shrub,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,30,210,130,156,Ephedra californica,9.6,44.12,8.2,shrub,14-02-2023,9:37
+ng,Carrizo,Carrizo_soda_shrub,1,310,308,147,Ephedra californica,20.57,21.44,11.1,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,2,330,295,155,Ephedra californica,20.49,20.49,12,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,3,314,255,142,Ephedra californica,19.28,19.28,11.4,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,4,144,193,105,Ephedra californica,19.5,19.5,11.5,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,5,227,213,166,Ephedra californica,19.4,19.4,10.4,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,6,340,216,145,Ephedra californica,17.86,17.86,16.9,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,7,393,338,154,Ephedra californica,18.72,18.72,13.8,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,8,244,222,145,Ephedra californica,18.83,18.83,10,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,9,492,388,158,Ephedra californica,18.52,18.52,8.6,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,10,271,271,151,Ephedra californica,18.18,18.18,9.9,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,11,460,410,155,Ephedra californica,17.56,17.56,1.7,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,12,254,180,137,Ephedra californica,16.87,16.87,4.1,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,13,226,178,122,Ephedra californica,15.27,15.27,13.9,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,14,283,245,153,Ephedra californica,16.34,16.34,14.06,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,15,323,312,165,Ephedra californica,16.09,20.06,7.3,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,16,223,251,148,Ephedra californica,15.73,18.47,9.4,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,17,237,228,112,Ephedra californica,15.48,19.15,13.1,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,18,350,220,187,Ephedra californica,15.04,22.25,7.2,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,19,391,310,154,Ephedra californica,15.43,21.25,6.7,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,20,236,225,111,Ephedra californica,10.49,27.64,12.4,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,21,232,196,120,Ephedra californica,9.83,30.74,12.8,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,22,222,188,98,Ephedra californica,9.56,28.06,16.1,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,23,247,231,116,Ephedra californica,9.74,28.65,16.2,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,24,162,155,93,Ephedra californica,9.69,27.88,6,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,25,222,137,137,Ephedra californica,10.25,27.2,1.6,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,26,370,313,139,Ephedra californica,10.68,26.46,3.9,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,27,305,296,157,Ephedra californica,10.77,26.14,3.7,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,28,310,283,136,Ephedra californica,11.11,26.36,4.4,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,29,215,213,118,Ephedra californica,13.68,28.58,6.4,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,30,237,199,120,Ephedra californica,12.75,25.83,14.6,shrub,15-02-2023,12:45
+ng,Carrizo,Carrizo_4,1,310,298,170,Ephedra californica,17.25,22.07,18.9,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,2,405,353,186,Ephedra californica,16.75,21.11,15.3,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,3,314,297,147,Ephedra californica,16.95,19.75,18.5,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,4,300,225,152,Ephedra californica,12.18,20.15,12.5,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,5,305,292,100,Ephedra californica,17.17,19.56,18.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,6,303,235,133,Ephedra californica,17.43,29.4,19.7,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,7,297,242,126,Ephedra californica,17.5,20.65,21.1,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,8,305,292,129,Ephedra californica,17.56,19.28,17,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,9,314,285,148,Ephedra californica,17.54,19.35,16.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,10,474,305,145,Ephedra californica,16.67,18.73,13.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,11,384,310,144,Ephedra californica,17.6,17.84,18.7,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,12,405,385,146,Ephedra californica,17.09,20.2,19.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,13,210,197,134,Ephedra californica,16.7,18.37,16.9,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,14,361,354,171,Ephedra californica,16.8,19.01,16,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,15,420,370,192,Ephedra californica,16.74,16.17,16.9,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,16,334,310,115,Ephedra californica,17.1,18.38,16.7,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,17,297,260,135,Ephedra californica,17.37,18.7,20.3,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,18,496,420,171,Ephedra californica,17.7,17.76,20.5,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,19,308,289,155,Ephedra californica,18,17.09,13.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,20,315,305,156,Ephedra californica,18.27,17.56,18.1,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,21,310,303,153,Ephedra californica,18.24,17,21,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,22,216,216,97,Ephedra californica,18.33,17.24,18.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,23,297,297,167,Ephedra californica,18.41,16.67,14.6,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,24,290,272,153,Ephedra californica,17.46,16.91,13.1,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,25,396,335,150,Ephedra californica,17.65,17.54,18.5,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,26,240,298,153,Ephedra californica,18.16,17.15,18.5,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,27,260,395,160,Ephedra californica,17.68,17.04,14.3,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,28,302,290,178,Ephedra californica,17.58,15.31,22.8,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,29,273,220,125,Ephedra californica,17.73,15.39,18.8,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,30,300,288,103,Ephedra californica,18.14,16.65,18.5,shrub,16-02-2023,10:04
+ng,Carrizo,Carrizo_3,1,386,330,123,Ephedra californica,20.66,12.07,15.6,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,2,327,309,163,Ephedra californica,19.58,12.45,20.8,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,3,256,247,151,Ephedra californica,19.1,14,21.8,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,4,364,298,142,Ephedra californica,18.91,15.1,19.7,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,5,329,315,145,Ephedra californica,18.72,13.01,21.7,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,6,371,337,163,Ephedra californica,18.27,12.72,12.7,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,7,323,200,144,Ephedra californica,18.21,14.41,13.6,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,8,403,390,172,Ephedra californica,19.23,16.23,15.5,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,9,440,365,160,Ephedra californica,19.44,14.47,16.5,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,10,298,297,144,Ephedra californica,19.35,14.8,16.9,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,11,320,268,138,Ephedra californica,18.52,13.72,14.8,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,12,423,397,165,Ephedra californica,18,17.52,11.6,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,13,261,247,145,Ephedra californica,18.57,14.72,15,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,14,307,294,150,Ephedra californica,17.89,14.62,12.9,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,15,245,245,105,Ephedra californica,16.64,17.09,15.1,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,16,310,286,122,Ephedra californica,16.91,18.47,14,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,17,255,237,115,Ephedra californica,15.86,18.22,13.2,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,18,377,288,150,Ephedra californica,16.01,19.67,14.3,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,19,370,327,148,Ephedra californica,16.1,18.44,17.8,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,20,315,296,198,Ephedra californica,16,17.8,16.7,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,21,283,260,138,Ephedra californica,17.95,16.45,12.4,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,22,407,320,161,Ephedra californica,17.79,15.76,15.7,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,23,297,293,118,Ephedra californica,17.15,16.09,12.2,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,24,274,244,142,Ephedra californica,16.54,17.8,13.3,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,25,418,282,193,Ephedra californica,16.77,14.51,16.6,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,26,308,307,136,Ephedra californica,15.27,17.26,12.1,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,27,395,330,161,Ephedra californica,16.09,17.42,19.02,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,28,382,378,143,Ephedra californica,16.05,16.87,14,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,29,465,315,150,Ephedra californica,16.4,17.32,12.4,shrub,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,30,352,340,165,Ephedra californica,16.49,14.86,16.3,shrub,16-02-2023,13:19
+ng,Tecopa,Tecopa,1,290,261,192,Larrea tridentata ,29.78,12.52,36.3,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,2,167,143,120,Larrea tridentata ,39.59,12.66,26.1,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,3,245,156,144,Larrea tridentata ,28.91,12.99,23.7,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,4,258,190,103,Larrea tridentata ,27.95,12.61,31.8,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,5,242,220,160,Larrea tridentata ,28.03,12.59,34.07,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,6,193,176,142,Larrea tridentata ,28.42,12.7,32.2,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,7,211,196,166,Larrea tridentata ,28.05,12.49,32.7,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,8,190,125,123,Larrea tridentata ,28.2,12.06,24.9,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,9,185,162,91,Larrea tridentata ,27.7,12.47,25.7,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,10,235,147,127,Larrea tridentata ,27.61,12.01,25.7,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,11,157,148,97,Larrea tridentata ,26.78,12.41,29.1,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,12,175,147,132,Larrea tridentata ,28.11,13.16,24.9,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,13,114,93,88,Larrea tridentata ,28.36,12.2,27.4,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,14,152,151,82,Larrea tridentata ,28.97,11.88,29.1,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,15,187,184,116,Larrea tridentata ,28.95,12.34,23.1,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,16,137,83,93,Larrea tridentata ,28.68,12,22.3,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,17,191,172,162,Larrea tridentata ,28.04,11.65,24.9,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,18,193,137,90,Larrea tridentata ,27.64,12.6,29.9,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,19,83,65,57,Larrea tridentata ,27.94,13.06,28.4,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,20,103,98,56,Larrea tridentata ,26,13.5,30.8,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,21,119,82,60,Larrea tridentata ,26.2,13.73,33.3,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,22,170,162,80,Larrea tridentata ,25.2,13.45,24,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,23,160,160,111,Larrea tridentata ,26.2,13.64,31,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,24,175,143,81,Larrea tridentata ,25.5,13.46,20.9,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,25,152,102,118,Larrea tridentata ,26.02,13.32,33.5,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,26,142,108,81,Larrea tridentata ,25.66,13.62,31.1,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,27,142,107,76,Larrea tridentata ,26.48,13.22,32.2,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,28,135,87,104,Larrea tridentata ,25.33,13.78,30.6,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,29,102,95,67,Larrea tridentata ,26.42,13.38,30.8,shrub,20-02-2024,13:05
+ng,Tecopa,Tecopa,30,187,97,129,Larrea tridentata ,26.68,13.34,26.1,shrub,20-02-2024,13:05
+ng,Cuyama,Cuyama_1,1,,,,Ephedra californica,15.41,37,15.4,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,2,,,,Ephedra californica,16.88,36.85,15.2,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,3,,,,Ephedra californica,16.98,36.42,15.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,4,,,,Ephedra californica,17.37,35.23,12.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,5,,,,Ephedra californica,17.11,36.88,15.7,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,6,,,,Ephedra californica,17.04,33.59,17.6,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,7,,,,Ephedra californica,20.87,30,17.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,8,,,,Ephedra californica,20.96,28.07,20,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,9,,,,Ephedra californica,19.23,31.38,15,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,10,,,,Ephedra californica,20.35,31.83,17.2,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,11,,,,Ephedra californica,21,30.76,23.6,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,12,,,,Ephedra californica,19.44,29.03,21.2,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,13,,,,Ephedra californica,21.6,29.87,19.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,14,,,,Ephedra californica,20.21,29.73,17.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,15,,,,Ephedra californica,20.34,30.52,24.6,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,16,,,,Ephedra californica,21.4,31.14,22.2,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,17,,,,Ephedra californica,20.62,30.77,24.8,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,18,,,,Ephedra californica,21.58,28.5,22,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,19,,,,Ephedra californica,22.16,28.4,21.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,20,,,,Ephedra californica,21.8,27.73,23.6,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,21,,,,Ephedra californica,19.89,30.79,17.6,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,22,,,,Ephedra californica,20.54,32.54,22.8,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,23,,,,Ephedra californica,20.43,29.16,22.1,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,24,,,,Ephedra californica,19.55,30.77,24.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,25,,,,Ephedra californica,19.58,31.91,25.2,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,26,,,,Ephedra californica,20.25,21.64,25.1,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,27,,,,Ephedra californica,20.16,31.48,21.4,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,28,,,,Ephedra californica,20.45,29.69,25.9,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,29,,,,Ephedra californica,20.59,29.89,24.4,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_1,30,,,,Ephedra californica,30.5,19.3,27.2,open,13-02-2023,9:40
+ng,Cuyama,Cuyama_2,1,,,,Ephedra californica,20.87,27.68,22.8,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,2,,,,Ephedra californica,23.77,24.87,24.2,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,3,,,,Ephedra californica,22,23.24,22.6,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,4,,,,Ephedra californica,21.02,26.38,23.1,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,5,,,,Ephedra californica,25.4,20.93,22.8,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,6,,,,Ephedra californica,21.3,26.5,23.9,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,7,,,,Ephedra californica,21.1,27.16,26.2,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,8,,,,Ephedra californica,21.94,26.36,27.1,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,9,,,,Ephedra californica,20.9,28.09,26.7,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,10,,,,Ephedra californica,22,28.12,25.4,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,11,,,,Ephedra californica,20.74,27,27.2,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,12,,,,Ephedra californica,20.35,28.01,27.5,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,13,,,,Ephedra californica,20.46,29.96,24.6,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,14,,,,Ephedra californica,20.43,27.95,26.2,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,15,,,,Ephedra californica,21.66,27.84,28.5,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,16,,,,Ephedra californica,20.92,26.77,23.8,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,17,,,,Ephedra californica,20.65,28.28,25.1,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,18,,,,Ephedra californica,20.44,28.61,26,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,19,,,,Ephedra californica,20.22,28.41,23.4,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,20,,,,Ephedra californica,19.37,29.52,23.2,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,21,,,,Ephedra californica,19.66,32.21,23.1,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,22,,,,Ephedra californica,19.02,31.26,21.8,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,23,,,,Ephedra californica,19.63,30.1,23.5,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,24,,,,Ephedra californica,19.84,28.87,24.6,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,25,,,,Ephedra californica,20.54,29.96,25.6,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,26,,,,Ephedra californica,19.9,29.4,23.5,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,27,,,,Ephedra californica,20.09,30.36,22.4,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,28,,,,Ephedra californica,19.85,31.55,23.1,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,29,,,,Ephedra californica,19.68,33.08,26.02,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_2,30,,,,Ephedra californica,19.51,33.17,21.7,open,13-02-2023,13:02
+ng,Cuyama,Cuyama_3,1,,,,Ephedra californica,6.14,68.45,6.9,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,2,,,,Ephedra californica,6.32,65.45,8,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,3,,,,Ephedra californica,6.34,64.21,7.3,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,4,,,,Ephedra californica,7,65.15,6.1,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,5,,,,Ephedra californica,6.56,59.07,7.3,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,6,,,,Ephedra californica,6.37,63.83,7.7,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,7,,,,Ephedra californica,6.29,63.28,7.2,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,8,,,,Ephedra californica,6.14,62.09,5.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,9,,,,Ephedra californica,6.27,60.08,6.2,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,10,,,,Ephedra californica,6.4,61.36,8.2,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,11,,,,Ephedra californica,8.09,49.13,9.3,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,12,,,,Ephedra californica,8.03,49.64,10.8,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,13,,,,Ephedra californica,7.81,49.04,7.2,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,14,,,,Ephedra californica,7.82,50.11,7.1,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,15,,,,Ephedra californica,7.43,50.65,7.1,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,16,,,,Ephedra californica,8.43,50.33,8.3,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,17,,,,Ephedra californica,8.61,50.22,10.6,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,18,,,,Ephedra californica,8.57,48.35,13.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,19,,,,Ephedra californica,8.92,48.95,13.8,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,20,,,,Ephedra californica,8.7,48.79,10.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,21,,,,Ephedra californica,11.68,37.7,14.8,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,22,,,,Ephedra californica,11.52,38.45,13.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,23,,,,Ephedra californica,11.3,37.98,16.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,24,,,,Ephedra californica,10.9,42.97,12.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,25,,,,Ephedra californica,11.32,42.3,18.2,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,26,,,,Ephedra californica,11.25,39.96,18,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,27,,,,Ephedra californica,10.96,39.26,14.4,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,28,,,,Ephedra californica,9.18,41.04,11.3,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,29,,,,Ephedra californica,9.66,45.53,13.5,open,14-02-2023,9:37
+ng,Cuyama,Cuyama_3,30,,,,Ephedra californica,9.91,44.18,13.7,open,14-02-2023,9:37
+ng,Carrizo,Carrizo_soda_shrub,1,,,,none,20.81,22.11,24.1,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,2,,,,none,19.97,19.18,20.8,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,3,,,,none,19.1,22.21,24.5,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,4,,,,none,19.26,19.81,24.6,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,5,,,,none,17.74,20.67,24.3,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,6,,,,none,17.93,21.8,20.8,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,7,,,,none,18.67,22.29,23.5,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,8,,,,none,18.69,21.6,22.9,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,9,,,,none,18.9,20.6,22.6,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,10,,,,none,18.01,21.57,23.4,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,11,,,,none,16.78,21.64,18.4,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,12,,,,none,16.39,20.23,12,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,13,,,,none,16.31,21.63,16.9,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,14,,,,none,15.02,20.72,20.07,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,15,,,,none,16.2,21.37,14.3,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,16,,,,none,15.36,19,14,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,17,,,,none,14.91,18.73,17.6,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,18,,,,none,14.51,23.08,16.9,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,19,,,,none,14.69,21.7,17.1,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,20,,,,none,11.04,27.06,14.9,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,21,,,,none,10.26,27.26,15.6,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,22,,,,none,9.94,28.1,16.4,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,23,,,,none,10.19,27.66,17.5,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,24,,,,none,9.64,28.11,16,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,25,,,,none,10.57,28.92,12.1,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,26,,,,none,10.85,26.34,14.6,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,27,,,,none,11.33,26.35,17.6,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,28,,,,none,11.9,28.94,20.1,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,29,,,,none,13.97,28.52,22.9,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_soda_shrub,30,,,,none,12.74,27.31,21,open,15-02-2023,12:45
+ng,Carrizo,Carrizo_4,1,,,,Ephedra californica,16.12,21.95,17.6,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,2,,,,Ephedra californica,16.51,21.34,17.2,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,3,,,,Ephedra californica,17.01,20.24,17.4,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,4,,,,Ephedra californica,17.22,19.31,18.5,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,5,,,,Ephedra californica,17.13,23.4,16.7,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,6,,,,Ephedra californica,17.44,18.29,18.3,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,7,,,,Ephedra californica,17.4,19.64,19.1,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,8,,,,Ephedra californica,17.41,18.75,17.5,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,9,,,,Ephedra californica,17.39,19.02,18,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,10,,,,Ephedra californica,17.43,18.7,18.3,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,11,,,,Ephedra californica,17.45,17.58,18.9,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,12,,,,Ephedra californica,16.65,18.23,19.9,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,13,,,,Ephedra californica,16.65,17.01,17.8,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,14,,,,Ephedra californica,16.87,18.38,16.5,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,15,,,,Ephedra californica,16.49,17.14,18.3,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,16,,,,Ephedra californica,17.15,18.82,19.1,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,17,,,,Ephedra californica,17.28,18.21,18.9,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,18,,,,Ephedra californica,17.65,18.43,19.7,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,19,,,,Ephedra californica,17.9,17.34,18.2,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,20,,,,Ephedra californica,18.14,17.75,18.6,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,21,,,,Ephedra californica,18.21,17.15,18,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,22,,,,Ephedra californica,18.4,17.95,18.1,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,23,,,,Ephedra californica,17,15.7,19.3,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,24,,,,Ephedra californica,17.01,16.6,18,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,25,,,,Ephedra californica,17.75,16.97,21,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,26,,,,Ephedra californica,17.5,16.34,21,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,27,,,,Ephedra californica,17.48,15.56,19.3,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,28,,,,Ephedra californica,17.49,15.58,18.6,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,29,,,,Ephedra californica,17.83,15.4,18.5,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_4,30,,,,Ephedra californica,18.15,16.75,18.8,open,16-02-2023,10:04
+ng,Carrizo,Carrizo_3,1,,,,Ephedra californica,20.1,13.35,20,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,2,,,,Ephedra californica,19.2,12.63,19.4,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,3,,,,Ephedra californica,,12.24,23.2,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,4,,,,Ephedra californica,18.65,14.46,22.9,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,5,,,,Ephedra californica,18.26,13.52,22,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,6,,,,Ephedra californica,17.66,13.16,21.6,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,7,,,,Ephedra californica,17.63,13.63,22.1,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,8,,,,Ephedra californica,18.64,15.3,16.6,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,9,,,,Ephedra californica,18.49,14.55,18.4,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,10,,,,Ephedra californica,19.14,15.61,17.2,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,11,,,,Ephedra californica,18.3,14,17,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,12,,,,Ephedra californica,18,15.96,16.7,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,13,,,,Ephedra californica,17.09,14.44,15.4,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,14,,,,Ephedra californica,17.17,16.2,15.9,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,15,,,,Ephedra californica,16.66,16.44,15.6,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,16,,,,Ephedra californica,15.53,18.38,15.2,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,17,,,,Ephedra californica,15.84,18.01,14.2,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,18,,,,Ephedra californica,15.6,19.3,15.9,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,19,,,,Ephedra californica,15.8,18.9,16.8,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,20,,,,Ephedra californica,16.12,17.46,16.5,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,21,,,,Ephedra californica,16.84,17.53,17.4,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,22,,,,Ephedra californica,16.78,17.81,17.4,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,23,,,,Ephedra californica,17,16.67,13.5,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,24,,,,Ephedra californica,16.55,17.1,19,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,25,,,,Ephedra californica,16.16,15.2,16.8,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,26,,,,Ephedra californica,15.55,17.68,17.6,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,27,,,,Ephedra californica,16.81,17.4,18.9,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,28,,,,Ephedra californica,16.77,17.63,20.6,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,29,,,,Ephedra californica,16.8,16.57,19.9,open,16-02-2023,13:19
+ng,Carrizo,Carrizo_3,30,,,,Ephedra californica,16.7,13.92,17.4,open,16-02-2023,13:19
+ng,Tecopa,Tecopa_open,1,,,,none,29.27,12.3,32.4,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,2,,,,none,28.36,11.93,31,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,3,,,,none,28.44,12.38,38,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,4,,,,none,27.96,13.03,36.5,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,5,,,,none,27.9,12.49,35,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,6,,,,none,28.34,12.84,32.7,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,7,,,,none,28.4,12.55,33.9,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,8,,,,none,27.47,12.43,33.5,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,9,,,,none,27.59,12.58,32.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,10,,,,none,27.71,12.63,29.6,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,11,,,,none,27.86,12.7,31.3,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,12,,,,none,27.85,12.49,33.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,13,,,,none,28.26,12.91,34.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,14,,,,none,28.18,12.58,32.1,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,15,,,,none,28.66,13.1,31.7,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,16,,,,none,28.16,11.95,32.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,17,,,,none,27.58,12.2,34.8,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,18,,,,none,27.47,12.56,30.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,19,,,,none,27.68,12.85,29.5,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,20,,,,none,25.7,13.1,31.3,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,21,,,,none,26.3,13.25,36.3,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,22,,,,none,25.3,13.43,32.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,23,,,,none,26.1,13.18,30.3,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,24,,,,none,25.19,13.83,36.2,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,25,,,,none,25.61,13.1,32,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,26,,,,none,26.18,13.34,32.6,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,27,,,,none,26.25,13.12,31,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,28,,,,none,25.55,13.7,31.1,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,29,,,,none,26.44,13.07,31.3,open,20-02-2024,13:05
+ng,Tecopa,Tecopa_open,30,,,,none,26.86,13.99,31.6,open,20-02-2024,13:05

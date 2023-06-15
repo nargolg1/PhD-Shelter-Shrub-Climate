@@ -1,0 +1,1071 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{lmodern}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={Shrub Gradient},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Shrub Gradient}
+\author{}
+\date{\vspace{-2.5em}}
+
+\begin{document}
+\maketitle
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#read data}
+\NormalTok{data}\OtherTok{\textless{}{-}}\FunctionTok{read.csv}\NormalTok{(}\StringTok{"C:/Users/Nargol Ghazian/Desktop/PhD{-}Shelter{-}Shrub{-}Climate/shrub gradient/data.csv"}\NormalTok{)}
+\FunctionTok{is.na}\NormalTok{(data)}\CommentTok{\#check for NAs}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        researcher region site_code   rep     x     y     z shrub_species
+##   [1,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [2,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [3,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [4,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [5,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [6,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [7,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [8,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##   [9,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [10,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [11,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [12,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [13,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [14,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [15,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [16,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [17,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [18,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [19,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [20,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [21,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [22,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [23,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [24,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [25,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [26,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [27,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [28,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [29,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [30,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [31,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [32,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [33,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [34,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [35,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [36,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [37,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [38,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [39,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [40,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [41,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [42,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [43,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [44,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [45,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [46,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [47,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [48,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [49,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [50,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [51,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [52,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [53,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [54,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [55,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [56,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [57,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [58,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [59,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [60,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [61,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [62,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [63,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [64,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [65,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [66,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [67,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [68,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [69,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [70,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [71,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [72,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [73,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [74,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [75,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [76,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [77,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [78,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [79,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [80,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [81,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [82,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [83,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [84,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [85,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [86,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [87,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [88,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [89,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [90,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [91,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [92,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [93,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [94,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [95,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [96,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [97,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [98,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+##  [99,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [100,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [101,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [102,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [103,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [104,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [105,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [106,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [107,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [108,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [109,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [110,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [111,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [112,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [113,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [114,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [115,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [116,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [117,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [118,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [119,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [120,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [121,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [122,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [123,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [124,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [125,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [126,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [127,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [128,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [129,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [130,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [131,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [132,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [133,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [134,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [135,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [136,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [137,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [138,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [139,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [140,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [141,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [142,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [143,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [144,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [145,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [146,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [147,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [148,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [149,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [150,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [151,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [152,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [153,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [154,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [155,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [156,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [157,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [158,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [159,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [160,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [161,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [162,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [163,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [164,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [165,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [166,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [167,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [168,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [169,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [170,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [171,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [172,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [173,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [174,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [175,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [176,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [177,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [178,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [179,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [180,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [181,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [182,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [183,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [184,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [185,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [186,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [187,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [188,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [189,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [190,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [191,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [192,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [193,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [194,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [195,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [196,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [197,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [198,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [199,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [200,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [201,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [202,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [203,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [204,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [205,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [206,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [207,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [208,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [209,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [210,]      FALSE  FALSE     FALSE FALSE FALSE FALSE FALSE         FALSE
+## [211,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [212,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [213,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [214,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [215,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [216,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [217,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [218,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [219,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [220,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [221,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [222,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [223,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [224,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [225,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [226,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [227,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [228,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [229,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [230,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [231,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [232,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [233,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [234,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [235,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [236,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [237,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [238,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [239,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [240,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [241,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [242,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [243,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [244,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [245,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [246,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [247,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [248,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [249,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [250,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [251,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [252,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [253,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [254,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [255,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [256,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [257,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [258,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [259,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [260,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [261,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [262,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [263,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [264,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [265,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [266,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [267,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [268,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [269,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [270,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [271,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [272,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [273,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [274,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [275,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [276,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [277,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [278,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [279,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [280,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [281,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [282,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [283,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [284,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [285,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [286,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [287,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [288,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [289,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [290,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [291,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [292,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [293,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [294,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [295,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [296,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [297,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [298,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [299,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [300,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [301,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [302,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [303,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [304,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [305,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [306,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [307,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [308,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [309,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [310,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [311,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [312,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [313,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [314,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [315,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [316,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [317,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [318,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [319,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [320,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [321,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [322,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [323,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [324,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [325,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [326,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [327,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [328,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [329,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [330,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [331,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [332,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [333,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [334,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [335,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [336,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [337,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [338,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [339,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [340,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [341,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [342,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [343,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [344,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [345,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [346,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [347,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [348,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [349,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [350,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [351,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [352,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [353,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [354,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [355,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [356,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [357,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [358,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [359,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [360,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [361,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [362,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [363,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [364,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [365,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [366,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [367,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [368,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [369,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [370,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [371,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [372,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [373,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [374,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [375,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [376,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [377,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [378,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [379,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [380,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [381,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [382,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [383,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [384,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [385,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [386,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [387,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [388,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [389,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [390,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [391,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [392,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [393,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [394,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [395,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [396,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [397,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [398,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [399,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [400,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [401,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [402,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [403,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [404,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [405,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [406,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [407,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [408,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [409,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [410,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [411,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [412,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [413,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [414,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [415,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [416,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [417,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [418,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [419,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+## [420,]      FALSE  FALSE     FALSE FALSE  TRUE  TRUE  TRUE         FALSE
+##         NSAT  NSRH   SGT microsite  date start_time
+##   [1,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [2,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [3,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [4,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [5,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [6,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [7,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [8,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##   [9,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [10,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [11,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [12,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [13,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [14,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [15,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [16,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [17,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [18,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [19,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [20,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [21,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [22,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [23,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [24,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [25,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [26,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [27,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [28,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [29,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [30,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [31,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [32,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [33,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [34,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [35,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [36,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [37,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [38,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [39,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [40,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [41,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [42,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [43,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [44,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [45,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [46,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [47,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [48,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [49,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [50,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [51,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [52,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [53,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [54,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [55,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [56,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [57,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [58,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [59,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [60,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [61,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [62,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [63,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [64,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [65,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [66,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [67,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [68,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [69,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [70,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [71,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [72,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [73,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [74,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [75,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [76,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [77,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [78,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [79,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [80,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [81,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [82,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [83,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [84,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [85,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [86,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [87,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [88,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [89,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [90,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [91,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [92,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [93,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [94,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [95,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [96,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [97,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [98,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+##  [99,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [100,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [101,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [102,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [103,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [104,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [105,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [106,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [107,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [108,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [109,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [110,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [111,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [112,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [113,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [114,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [115,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [116,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [117,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [118,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [119,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [120,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [121,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [122,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [123,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [124,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [125,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [126,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [127,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [128,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [129,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [130,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [131,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [132,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [133,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [134,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [135,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [136,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [137,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [138,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [139,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [140,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [141,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [142,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [143,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [144,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [145,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [146,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [147,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [148,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [149,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [150,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [151,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [152,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [153,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [154,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [155,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [156,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [157,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [158,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [159,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [160,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [161,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [162,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [163,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [164,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [165,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [166,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [167,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [168,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [169,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [170,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [171,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [172,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [173,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [174,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [175,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [176,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [177,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [178,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [179,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [180,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [181,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [182,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [183,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [184,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [185,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [186,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [187,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [188,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [189,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [190,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [191,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [192,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [193,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [194,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [195,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [196,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [197,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [198,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [199,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [200,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [201,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [202,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [203,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [204,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [205,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [206,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [207,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [208,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [209,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [210,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [211,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [212,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [213,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [214,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [215,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [216,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [217,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [218,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [219,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [220,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [221,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [222,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [223,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [224,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [225,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [226,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [227,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [228,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [229,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [230,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [231,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [232,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [233,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [234,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [235,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [236,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [237,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [238,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [239,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [240,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [241,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [242,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [243,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [244,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [245,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [246,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [247,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [248,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [249,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [250,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [251,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [252,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [253,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [254,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [255,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [256,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [257,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [258,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [259,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [260,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [261,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [262,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [263,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [264,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [265,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [266,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [267,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [268,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [269,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [270,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [271,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [272,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [273,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [274,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [275,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [276,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [277,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [278,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [279,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [280,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [281,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [282,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [283,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [284,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [285,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [286,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [287,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [288,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [289,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [290,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [291,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [292,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [293,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [294,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [295,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [296,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [297,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [298,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [299,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [300,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [301,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [302,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [303,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [304,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [305,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [306,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [307,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [308,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [309,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [310,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [311,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [312,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [313,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [314,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [315,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [316,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [317,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [318,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [319,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [320,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [321,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [322,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [323,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [324,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [325,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [326,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [327,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [328,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [329,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [330,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [331,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [332,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [333,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [334,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [335,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [336,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [337,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [338,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [339,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [340,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [341,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [342,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [343,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [344,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [345,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [346,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [347,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [348,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [349,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [350,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [351,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [352,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [353,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [354,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [355,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [356,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [357,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [358,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [359,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [360,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [361,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [362,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [363,]  TRUE FALSE FALSE     FALSE FALSE      FALSE
+## [364,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [365,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [366,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [367,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [368,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [369,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [370,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [371,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [372,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [373,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [374,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [375,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [376,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [377,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [378,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [379,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [380,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [381,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [382,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [383,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [384,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [385,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [386,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [387,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [388,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [389,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [390,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [391,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [392,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [393,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [394,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [395,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [396,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [397,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [398,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [399,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [400,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [401,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [402,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [403,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [404,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [405,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [406,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [407,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [408,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [409,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [410,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [411,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [412,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [413,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [414,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [415,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [416,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [417,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [418,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [419,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+## [420,] FALSE FALSE FALSE     FALSE FALSE      FALSE
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{ (dplyr)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'dplyr' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'dplyr'
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:stats':
+## 
+##     filter, lag
+\end{verbatim}
+
+\begin{verbatim}
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#creating new column with volume of the shrub as a hemisphere}
+\NormalTok{data\_new }\OtherTok{\textless{}{-}}\NormalTok{data }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{(}\AttributeTok{shrub\_volume =}\NormalTok{ (}\FloatTok{0.75}\SpecialCharTok{*}\FloatTok{3.14}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{*}\NormalTok{y}\SpecialCharTok{*}\NormalTok{z)}\SpecialCharTok{/}\DecValTok{1000000}\NormalTok{)}\CommentTok{\#shrub volume as m\^{}3}
+
+\CommentTok{\#add another column for shrub area}
+\NormalTok{data\_final}\OtherTok{\textless{}{-}}\NormalTok{ data\_new }\SpecialCharTok{\%\textgreater{}\%} \FunctionTok{mutate}\NormalTok{ (}\AttributeTok{shrub\_area =}\NormalTok{ (}\FloatTok{3.14}\SpecialCharTok{*}\NormalTok{x}\SpecialCharTok{\^{}}\DecValTok{2}\NormalTok{)}\SpecialCharTok{/}\DecValTok{10000}\NormalTok{)}\CommentTok{\#shrub area as m\^{}2}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\CommentTok{\#Explore visuals }
+\FunctionTok{library}\NormalTok{(ggplot2)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: package 'ggplot2' was built under R version 3.6.3
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_final, }\FunctionTok{aes}\NormalTok{((site\_code), shrub\_volume, }\AttributeTok{fill=}\NormalTok{site\_code)) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{"Site"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{ (}\StringTok{"Shrub Volume (m³)"}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.title.x=}\FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.text.x=}\FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.ticks.x=}\FunctionTok{element\_blank}\NormalTok{())}\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{fill =} \StringTok{"Site"}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun.y=}\NormalTok{mean, }\AttributeTok{colour=}\StringTok{"black"}\NormalTok{, }\AttributeTok{geom=}\StringTok{"point"}\NormalTok{, }\AttributeTok{shape=}\DecValTok{18}\NormalTok{, }\AttributeTok{size=}\DecValTok{3}\NormalTok{,}\AttributeTok{show\_guide =} \ConstantTok{FALSE}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.border =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{,}
+                                    \AttributeTok{fill =} \ConstantTok{NA}\NormalTok{,}
+                                    \AttributeTok{size =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `fun.y` is deprecated. Use `fun` instead.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: `show_guide` has been deprecated. Please use `show.legend`
+## instead.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 210 rows containing non-finite values (stat_boxplot).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 210 rows containing non-finite values (stat_summary).
+\end{verbatim}
+
+\includegraphics{stats_files/figure-latex/unnamed-chunk-2-1.pdf}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data\_final, }\FunctionTok{aes}\NormalTok{((site\_code), shrub\_area, }\AttributeTok{fill=}\NormalTok{site\_code)) }\SpecialCharTok{+} \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+} \FunctionTok{xlab}\NormalTok{(}\StringTok{"Site"}\NormalTok{) }\SpecialCharTok{+} \FunctionTok{ylab}\NormalTok{ (}\StringTok{"Shrub Area (m²)"}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{theme\_classic}\NormalTok{()}\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text=}\FunctionTok{element\_text}\NormalTok{(}\AttributeTok{size=}\DecValTok{12}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.text.x =} \FunctionTok{element\_text}\NormalTok{(}\AttributeTok{angle =} \DecValTok{90}\NormalTok{))}\SpecialCharTok{+}\FunctionTok{theme}\NormalTok{(}\AttributeTok{axis.title.x=}\FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.text.x=}\FunctionTok{element\_blank}\NormalTok{(),}
+        \AttributeTok{axis.ticks.x=}\FunctionTok{element\_blank}\NormalTok{())}\SpecialCharTok{+} \FunctionTok{labs}\NormalTok{(}\AttributeTok{fill =} \StringTok{"Site"}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{stat\_summary}\NormalTok{(}\AttributeTok{fun.y=}\NormalTok{mean, }\AttributeTok{colour=}\StringTok{"black"}\NormalTok{, }\AttributeTok{geom=}\StringTok{"point"}\NormalTok{, }\AttributeTok{shape=}\DecValTok{18}\NormalTok{, }\AttributeTok{size=}\DecValTok{3}\NormalTok{,}\AttributeTok{show\_guide =} \ConstantTok{FALSE}\NormalTok{)}\SpecialCharTok{+} \FunctionTok{theme}\NormalTok{(}\AttributeTok{panel.border =} \FunctionTok{element\_rect}\NormalTok{(}\AttributeTok{color =} \StringTok{"black"}\NormalTok{,}
+                                    \AttributeTok{fill =} \ConstantTok{NA}\NormalTok{,}
+                                    \AttributeTok{size =} \DecValTok{1}\NormalTok{))}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: `fun.y` is deprecated. Use `fun` instead.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: `show_guide` has been deprecated. Please use `show.legend`
+## instead.
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 210 rows containing non-finite values (stat_boxplot).
+\end{verbatim}
+
+\begin{verbatim}
+## Warning: Removed 210 rows containing non-finite values (stat_summary).
+\end{verbatim}
+
+\includegraphics{stats_files/figure-latex/unnamed-chunk-2-2.pdf}
+
+\end{document}
