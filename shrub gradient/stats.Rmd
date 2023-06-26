@@ -55,7 +55,7 @@ ggplot(data_final, aes((shrub_volume), measurement, color=response)) + xlab("Shr
 
 
 ggplot(data= data_final, aes(x=site_code, y=shrub_volume, fill=shrub_species)) +
-  geom_bar(stat="identity")+ ylab("Shrub Area (m³)") + xlab ("Site")+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+  geom_bar(stat="identity")+ ylab("Shrub Volume (m³)") + xlab ("Site")+ theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
                                     size = 1))+ labs(fill = "Shrub Species")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
 
