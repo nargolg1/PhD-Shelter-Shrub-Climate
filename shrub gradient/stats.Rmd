@@ -16,16 +16,19 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, message = FALSE)
 #READ DATA
 data<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shrub gradient/data.csv")
 library (dplyr)
+library(tidyr)
 
 #creating new column with volume of the shrub as a hemisphere
 data_new <-data %>% mutate(shrub_volume = (0.75*3.14*x*y*z)/1000000)#shrub volume as m^3
 
 #add another column for shrub area
 data_finalwide<- data_new %>% mutate (shrub_area = (3.14*x^2)/10000)#shrub area as m^2
-na.omit(data_finalwide)
+data_finalwide<-data_finalwide %>% drop_na()
 
-library(tidyr)
-data_final<- gather(data_finalwide, response, measurement, NSAT:NSRH:SGT, factor_key=TRUE)
+
+data_final1<- gather(data_finalwide, response, measurement, NSAT:NSRH:SGT, factor_key=TRUE)
+
+data_final<-data_final1 %>% drop_na()
 ```
 
 
@@ -33,7 +36,7 @@ data_final<- gather(data_finalwide, response, measurement, NSAT:NSRH:SGT, factor
 #EPLORE VISUALS 
 library(ggplot2)
 
-ggplot(data_final, aes((response), shrub_volume, fill= response)) + geom_boxplot() + xlab("Response") + ylab ("Shrub Volume (m³)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)+ theme(panel.border = element_rect(color = "black",
+ggplot(data_final, aes((shrub_volume),measurement, fill= response)) + geom_boxplot() + xlab("Response") + ylab ("Shrub Volume (m³)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
                                     size = 1))+ theme(axis.title.x=element_blank(),
         axis.text.x=element_blank(),
@@ -46,10 +49,12 @@ ggplot(data_final, aes((response), shrub_volume, fill= response)) + geom_boxplot
         axis.ticks.x=element_blank())+ labs(fill = "Measure")+ facet_wrap(~site_code, scales="free")
 
 
-ggplot(data_final, aes((shrub_volume), measurement, color=response)) + xlab("Shrub Volume (m³)") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2, aes(shape = shrub_species))+ labs(color="Measure", shape= "Shrub Species")+ theme(panel.border = element_rect(color = "black",
+
+ggplot(data_final, aes((shrub_volume), measurement, color=response)) + xlab("Shrub Volume (m³)") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Measure")+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
                                     size = 1))
-ggplot(data_final, aes((shrub_volume), measurement, color=response)) + xlab("Shrub Volume (m³)") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2, aes(shape = shrub_species))+ labs(color="Measure", shape= "Shrub Species")+ theme(panel.border = element_rect(color = "black",
+
+ggplot(data_final, aes((shrub_volume), measurement, color=response)) + xlab("Shrub Volume (m³)") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Measure")+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
                                     size = 1)) + facet_wrap(~site_code, scales = "free")
 
@@ -57,12 +62,42 @@ ggplot(data_final, aes((shrub_volume), measurement, color=response)) + xlab("Shr
 ggplot(data= data_final, aes(x=site_code, y=shrub_volume, fill=shrub_species)) +
   geom_bar(stat="identity")+ ylab("Shrub Volume (m³)") + xlab ("Site")+ theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1))+ labs(fill = "Shrub Species")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    size = 1))+ labs(fill = "Shrub Species")+theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + theme(legend.position = "none")
 
 ggplot(data_final, aes((site_code), shrub_volume, fill= shrub_species)) + geom_boxplot() + xlab("Site") + ylab ("Shrub Volume (m³)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1))+ labs(fill = "Shrub Species")+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    size = 1))+ theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + theme(legend.position = "none")
 
+#ARIDITY vISUALS
+
+write.csv(data_final, "C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shrub gradient/data_final.csv", row.names=FALSE)
+
+data_aridity <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shrub gradient/data_aridity.csv")
+
+D <-ggplot(data_aridity, aes((aridity), measurement, color=response)) + xlab("Aridity") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun=mean, geom="point", size=2)+ labs(color="Measure")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))  + ggtitle('D') 
+#ABUNDANCE AND RICHNEES VISUALS
+
+data_plant <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shrub gradient/data_abundance_richness.csv")
+
+data_plant<-data_plant %>% drop_na()
+
+B<-ggplot(data_plant, aes((abundance_site_m2), measurement, color=response)) + xlab("Abundance per m²") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun=mean, geom="point", size=2)+ labs(color="Measure")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + ggtitle('B') +   theme(legend.position="none")
+
+A<-ggplot(data_plant, aes((richness_site), measurement, color=response)) + xlab("Total Number of Species") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun=mean, geom="point", size=2)+ labs(color="Measure")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + ggtitle('A') + theme(legend.position="none")
+
+C<-ggplot(data_plant, aes((ndvi), measurement, color=response)) + xlab("NDVI") + ylab ("Measure")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun=mean, geom="point", size=2)+ labs(color="Measure")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + ggtitle('C') + theme(legend.position="none")
+
+library (patchwork)
+
+(A +B)/ (C + D)
 ```
 
 
@@ -70,52 +105,59 @@ ggplot(data_final, aes((site_code), shrub_volume, fill= shrub_species)) + geom_b
 
 ```{r}
 #STATISTICAL ANALYSES
-#compare shrub volume by species 
-t.test(shrub_volume ~ shrub_species, data = data_final)
-#compare shrub area by species 
-t.test(shrub_area ~ shrub_species, data= data_final)
 
 #models to compare temperature and relative humidity
 library(emmeans)
 
-#all the models for shrub volume and microclimate by site
-#filter by ephedra only 
-data_ephedra <-filter(data_finalwide, shrub_species == "Ephedra californica")
+#compare microclimate in open vs. shrub
 
-lm1<-glm(NSAT~shrub_volume+ as.factor(site_code), data =data_ephedra)
-summary(lm1)
-emmeans (lm1, pairwise~site_code)
+lm1.1<-glm(NSAT~microsite, data = data)
+summary(lm1.1)
+anova(lm1.1, test = "Chisq")
+emmeans(lm1.1, pairwise ~ microsite)
 
-lm2<-glm(NSRH~shrub_volume+as.factor(site_code), data= data_ephedra)
-summary(lm2)
-emmeans(lm2, pairwise ~site_code)
+lm1.2<-glm(NSRH~microsite, data = data)
+summary(lm1.2)
+anova(lm1.2, test = "Chisq")
+emmeans(lm1.2, pairwise ~ microsite)
 
-lm3<-glm(SGT~shrub_volume+as.factor(site_code), data=data_ephedra)
-summary(lm3)
-emmeans(lm3, pairwise ~ site_code)
-
-
-lm4<-glm(shrub_volume ~ as.factor(site_code), data = data_ephedra)
-summary (lm4)
-emmeans(lm4, pairwise ~site_code)
-
-lm5<-glm(shrub_area ~ as.factor(site_code), data = data_ephedra)
-summary (lm5)
-emmeans(lm5, pairwise ~site_code)
+lm1.3<-glm(SGT~microsite, data = data)
+summary(lm1.3)
+anova(lm1.3, test = "Chisq")
+emmeans(lm1.3, pairwise ~ microsite)
 
 
 #all the models for microclimate and microsite differences
-lm6 <- glm(NSAT~shrub_volume + as.factor(shrub_species), data= data_finalwide)
-summary(lm6)
-emmeans(lm6, pairwise ~shrub_species)
+lm1 <- glm(NSAT~shrub_volume+ as.factor(site_code), data= data_finalwide)
+summary(lm1)
+anova(lm1, test = "Chisq")
+emmeans(lm1, pairwise ~site_code)
 
-lm7 <- glm(NSRH~shrub_volume +as.factor(shrub_species), data= data_finalwide)
-summary(lm7)
-emmeans(lm7, pairwise ~shrub_species)
+lm2 <- glm(NSRH~shrub_volume +as.factor(site_code), data= data_finalwide)
+summary(lm2)
+anova(lm2, test = "Chisq")
+emmeans(lm2, pairwise ~site_code)
 
-lm8<- glm(SGT~shrub_volume +as.factor(shrub_species), data= data_finalwide)
-summary(lm8)
-emmeans(lm8, pairwise ~shrub_species)
+lm3<- glm(SGT~shrub_volume +as.factor(site_code), data= data_finalwide)
+anova(lm3, test = "Chisq")
+summary(lm3)
+emmeans(lm3, pairwise ~site_code)
+
+data_plant_wide<-data_plant %>% pivot_wider(names_from = response, values_from = measurement)
+
+lm4<-glm (NSAT~abundance_site_m2* richness_site* ndvi* aridity+ shrub_volume, data = data_plant_wide)
+summary (lm4)
+anova(lm4, test = "Chisq")
+
+lm5<-glm (NSRH~abundance_site_m2* richness_site* ndvi*aridity + shrub_volume, data = data_plant_wide)
+summary (lm5)
+anova(lm5, test = "Chisq")
+
+
+lm6<-glm (SGT~abundance_site_m2* richness_site* ndvi*aridity + shrub_volume, data = data_plant_wide)
+summary (lm6)
+anova(lm6, test = "Chisq")
+
 
 ```
 
@@ -123,7 +165,11 @@ emmeans(lm8, pairwise ~shrub_species)
 #EXPLORE DATA DISTRIBUTION
 #check normality 
 shapiro.test(data_finalwide$NSAT)
-hist(data_finalwide$NSAT)#right-skewed
+```
+
+
+```{r}
+hist(data_finalwide$NSAT)#left-skewed
 library(ggpubr)
 ggqqplot(data_finalwide$NSAT)
 
@@ -142,34 +188,73 @@ hist(data_final$shrub_volume)#right-skewed
 library(ggpubr)
 ggqqplot(data_finalwide$shrub_volume)
 
+data_ephedra<- data_finalwide %>%
+    filter(microsite=='shrub')
+
 #check correlation between microclimate variables
-cor.test(data_finalwide$NSAT, data_finalwide$NSRH, method = "pearson")#negatively correlated
+cor.test(data_ephedra$NSAT, data_ephedra$NSRH, method = "pearson")#negatively correlated
 
-cor.test(data_finalwide$SGT, data_finalwide$NSRH, method = "pearson")#negatively correlated 
+cor.test(data_ephedra$SGT, data_ephedra$NSRH, method = "pearson")#negatively correlated 
 
-cor.test(data_finalwide$SGT, data_finalwide$NSAT, method = "pearson")#positively correlated
+cor.test(data_ephedra$SGT, data_ephedra$NSAT, method = "pearson")#positively correlated
 
-cor.test(data_finalwide$shrub_volume, data_finalwide$shrub_area, method = "pearson")#positively correlated
+cor.test(data_ephedra$shrub_volume, data_ephedra$shrub_area, method = "pearson")#positively correlated
 ```
 
 
 ```{r}
 #SUPPLEMENTARY PLOTS
-ggplot(data_finalwide, aes(NSAT, NSRH))+ geom_point()+ ylab("Relative Humidity (%)")+ xlab("Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic()
+ggplot(data_ephedra, aes(NSAT, NSRH))+ geom_point()+ ylab("Relative Humidity (%)")+ xlab("Near Surface Air Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
 
-ggplot(data_finalwide, aes(NSAT, NSRH))+ geom_point()+ ylab("Relative Humidity (%)")+ xlab("Near Surface Air Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ facet_wrap(~shrub_species)
+ggplot(data_ephedra, aes(NSAT, NSRH))+ geom_point()+ ylab("Relative Humidity (%)")+ xlab("Near Surface Air Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ facet_wrap(~shrub_species)+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
 
-ggplot(data_finalwide, aes(NSAT, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Near Surface Air Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic()
+ggplot(data_ephedra, aes(NSAT, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Near Surface Air Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic() + theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
 
 ggplot(data_finalwide, aes(NSAT, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Near Surface Air Temperature (°C)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ facet_wrap(~shrub_species)
 
-ggplot(data_finalwide, aes(NSRH, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Relative Humidity (%)")+geom_smooth(method='glm', se=FALSE)+theme_classic()
+ggplot(data_ephedra, aes(NSRH, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Relative Humidity (%)")+geom_smooth(method='glm', se=FALSE)+theme_classic() + theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
 
-ggplot(data_finalwide, aes(NSRH, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Relative Humidity (%)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ facet_wrap(~shrub_species)
+ggplot(data_ephedra, aes(NSRH, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Relative Humidity (%)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ facet_wrap(~shrub_species)+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
 
-ggplot(data_finalwide, aes(NSRH, SGT))+ geom_point()+ ylab("Surface Ground Temperature (°C)")+ xlab("Relative Humidity (%)")+geom_smooth(method='glm', se=FALSE)+theme_classic()
+ggplot(data_ephedra, aes(shrub_volume, shrub_area))+ geom_point()+ ylab("Shrub Area (m²)")+ xlab("Shrub Volume (m³)")+geom_smooth(method='glm', se=FALSE)+theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
 
-ggplot(data_finalwide, aes(shrub_volume, shrub_area))+ geom_point()+ ylab("Shrub Area (m²)")+ xlab("Shrub Volume (m³)")+geom_smooth(method='glm', se=FALSE)+theme_classic()
+sd(data_ephedra$shrub_volume, na.rm = TRUE)
+mean (data_ephedra$shrub_volume, na.rm = TRUE)
+```
+
+
+```{r}
+#get data for De Martonne's aridity index
+#downlaod percipation and avg temp from worldclim
+library(raster)
+library (sp)
+
+r<- getData("worldclim", var ="bio", res = 2.5)
+r <- r[[c(1,12)]]
+names(r) <- c("Temp","Prec")
+
+lats <- c(34.849, 34.854, 34.938, 35.163, 35.116, 35.119)
+lons <- c(-119.483, -119.486, -119.481, -119.675, -119.621, -119.629)
+
+coords <- data.frame(x=lons,y=lats)
+
+points <- SpatialPoints(coords, proj4string = r@crs)
+
+values <- extract(r,points)
+
+climate<- cbind.data.frame(coordinates(points),values)
 
 ```
 
