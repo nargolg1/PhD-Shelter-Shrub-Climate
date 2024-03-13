@@ -1,0 +1,93 @@
+---
+title: "2022 Shelter-Shrub Loggers Analysis"
+author: "Nargol Ghazian"
+date: '2023-04-04'
+output: html_document
+---
+
+```{r}
+
+#open CSV
+carrizo<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Shelter-Microclimate/Carrizo.csv")
+
+mojave<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/Shelter-Microclimate/Mojave.csv")
+
+library(ggplot2)
+library(ggpubr)
+library(tidyr)
+```
+
+
+```{r}
+#boxplots for temperature 
+ggplot(carrizo, aes((microsite), temp, fill=microsite)) + geom_boxplot() + xlab("Microsite") + ylab ("Temperature (°C)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Microsite")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+ggplot(mojave, aes((microsite), temp, fill=microsite)) + geom_boxplot() + xlab("Microsite") + ylab ("Temperature (°C)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Microsite")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+#boxplots for humidity 
+ggplot(carrizo, aes((microsite), humidity, fill=microsite)) + geom_boxplot() + xlab("Microsite") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Microsite")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)#barely got any humidity data from shelters
+
+ggplot(mojave, aes((microsite), humidity, fill=microsite)) + geom_boxplot() + xlab("Microsite") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Microsite")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)# no data
+
+
+#boxplots for solar radiation 
+ggplot(carrizo, aes((microsite), intensity, fill=microsite)) + geom_boxplot() + xlab("Microsite") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Microsite")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+ggplot(mojave, aes((microsite), intensity, fill=microsite)) + geom_boxplot() + xlab("Microsite") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+theme(axis.text.x = element_text(angle = 90))+theme(axis.title.x=element_blank(),
+        axis.text.x=element_blank(),
+        axis.ticks.x=element_blank())+ labs(fill = "Microsite")+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+#line plots
+ggline(carrizo, x = "date", y = "temp", color = "microsite",
+ add = "mean_sd", shape = "microsite", xlab = "Day", ylab = "Temperature (°C)", legend.title= "Microsite", legend="right")+rotate_x_text(90)
+
+ggline(mojave, x = "date", y = "temp", color = "microsite",
+ add = "mean_sd", shape = "microsite", xlab = "Day", ylab = "Temperature (°C)", legend.title= "Microsite", legend="right")+rotate_x_text(90)
+
+ggline(carrizo, x = "date", y = "intensity", color = "microsite",
+ add = "mean_sd", xlab = "Day", ylab = "Radiation (lum/ft²)", legend.title= "microsite", legend="right")+rotate_x_text(90)
+
+ggline(mojave, x = "date", y = "intensity", color = "microsite",
+ add = "mean_sd", xlab = "Day", ylab = "Radiation (lum/ft²)", legend.title= "microsite", legend="right")+rotate_x_text(90)
+
+ggplot(carrizo, aes(temp, fill = microsite)) +
+         geom_histogram(binwidth = 5) +
+  scale_fill_brewer(palette = "Set1")+   labs(fill = "", x = "Temperature (°C)", y = "Frequency")+theme_classic()+ theme(axis.text=element_text(size=12))+labs(fill = "Microsite")
+
+ggplot(mojave, aes(temp, fill = microsite)) +
+         geom_histogram(binwidth = 5) +scale_fill_brewer(palette = "Set1")+   labs(fill = "", x = "Temperature (°C)", y = "Frequency")+theme_classic()+ theme(axis.text=element_text(size=12))+labs(fill = "Microsite")
+```
+
+
+```{r}
+#models for temp
+library (sjPlot)
+lm.1.1<-glm(temp~as.factor(microsite), data=carrizo)
+tab_model(lm.1.1)
+library(emmeans)
+emmeans(lm.1.1, pairwise~microsite)
+
+lm.1.2<-glm(temp~as.factor(microsite), data=mojave)
+tab_model(lm.1.2)
+emmeans(lm.1.2, pairwise~microsite)
+
+lm.2.1<-glm(intensity~as.factor(microsite), data=carrizo)
+tab_model(lm.2.1)
+emmeans(lm.2.1, pairwise~microsite)
+
+lm.2.2<-glm(intensity~as.factor(microsite), data=mojave)
+tab_model(lm.2.2)
+emmeans(lm.2.2, pairwise~microsite)
+
+```
+
