@@ -1,0 +1,81 @@
+rep ,region,site,microsite,lat ,long,hobo_id,elitech_id,shrub_species
+1,Carrizo,Carrizo_Soda Lake,open,35.05626,-119.5996,20619204,2301001720,
+2,Carrizo,Carrizo_Soda Lake,open,35.05619,-119.59962,20619208,2301001703,
+3,Carrizo,Carrizo_Soda Lake,open,35.05616,-119.59976,10641569,2301001694,
+4,Carrizo,Carrizo_Soda Lake,open,35.05619,-119.59979,20597546,2301001693,
+5,Carrizo,Carrizo_Soda Lake,open,35.05619,-119.59962,20500307,2301001691,
+6,Carrizo,Carrizo_Soda Lake,open,35.05627,-119.59991,20597572,2301001704,
+7,Carrizo,Carrizo_Soda Lake,open,35.05637,-119.59975,20619221,2301001701,
+8,Carrizo,Carrizo_Soda Lake,open,35.05631,-119.59966,10641607,2301001716,
+1,Carrizo,Carrizo_Soda Lake,triangle ,35.05621,-119.59959,20881725,2301001692,
+1,Carrizo,Carrizo_Soda Lake,square,35.05624,-119.59962,21881753,2301001689,
+2,Carrizo,Carrizo_Soda Lake,triangle ,35.05618,-119.59976,20567068,2301001718,
+2,Carrizo,Carrizo_Soda Lake,square,35.05619,-119.59977,20564172,2301001690,
+3,Carrizo,Carrizo_Soda Lake,triangle ,35.05622,-119.59988,10641600,2301001717,
+3,Carrizo,Carrizo_Soda Lake,square,35.05625,-119.5999,20619218,2301001695,
+4,Carrizo,Carrizo_Soda Lake,triangle ,35.05632,-119.59968,20567069,2301001719,
+4,Carrizo,Carrizo_Soda Lake,square,35.05635,-119.59971,20597567,2301001705,
+1,Carrizo,Carrizo_4,shrub ,35.11943,-119.6298,20597552,2101001680,Ephedra californica
+1,Carrizo,Carrizo_4,triangle ,35.11945,-119.6298,10641570,2101001678,
+1,Carrizo,Carrizo_4,square,35.11947,-119.62978,20500324,2101001684,
+2,Carrizo,Carrizo_4,shrub ,35.11931,-119.6299,20561061,2101001687,Ephedra californica
+2,Carrizo,Carrizo_4,triangle ,35.11927,-119.62986,20535195,2101001641,
+2,Carrizo,Carrizo_4,square,35.11931,-119.62997,20597570,2101001674,
+3,Carrizo,Carrizo_4,shrub ,35.1193,-119.62995,20578911,2101001681,Ephedra californica
+3,Carrizo,Carrizo_4,triangle ,35.11931,-119.62996,20881726,2101001677,
+3,Carrizo,Carrizo_4,square,35.11929,-119.62988,20597568,2101001699,
+4,Carrizo,Carrizo_4,shrub ,35.11946,-119.62982,20597562,2101001685,Ephedra californica
+4,Carrizo,Carrizo_4,triangle ,35.11952,-119.62986,20548641,2101001679,
+4,Carrizo,Carrizo_4,square,35.11986,-119.62964,20567066,2101001673,
+5,Carrizo,Carrizo_4,shrub ,35.1195,-119.62959,20597547,2101001671,Ephedra californica
+5,Carrizo,Carrizo_4,triangle ,35.11949,-119.62959,20597564,2101001696,
+5,Carrizo,Carrizo_4,square,35.11947,-119.62939,20619198,2101001686,
+6,Carrizo,Carrizo_4,shrub ,35.11938,-119.62939,20619216,2101001682,Ephedra californica
+6,Carrizo,Carrizo_4,triangle ,35.11933,-119.62939,10715207,2101001665,
+6,Carrizo,Carrizo_4,square,35.11935,-119.62938,10641599,2101001683,
+7,Carrizo,Carrizo_4,shrub ,35.11936,-119.62948,1174236,2101001675,Ephedra californica
+7,Carrizo,Carrizo_4,triangle ,35.11935,-119.62951,20535200,2101001672,
+7,Carrizo,Carrizo_4,square,35.11937,-119.6295,20597563,2101001697,
+8,Carrizo,Carrizo_4,shrub ,35.11928,-119.62956,20567065,2101001676,Ephedra californica
+8,Carrizo,Carrizo_4,triangle ,35.11927,-119.62954,,2101001698,
+8,Carrizo,Carrizo_4,square,35.11928,-119.62952,,2101001,
+1,Mojave,Tecopa_open,open,35.85522,-116.17963,20619200,2101001646,
+2,Mojave,Tecopa_open,open,35.8552,-116.17909,20597560,2101001666,
+3,Mojave,Tecopa_open,open,35.85517,-116.17957,20597571,2101001635,
+4,Mojave,Tecopa_open,open,35.85512,-116.17961,20619217,2101001654,
+5,Mojave,Tecopa_open,open,35.8551,-116.17948,20619201,2101001650,
+6,Mojave,Tecopa_open,open,35.85505,-116.17952,20881739,2101001661,
+7,Mojave,Tecopa_open,open,35.85505,-116.17938,20884543,2101001659,
+8,Mojave,Tecopa_open,open,35.85498,-116.17946,10642567,2101001663,
+1,Mojave,Tecopa_open,square ,35.85521,-116.17964,10641613,2101001660,
+1,Mojave,Tecopa_open,triangle ,35.8552,-116.17966,20535201,2101001658,
+2,Mojave,Tecopa_open,square ,35.85519,-116.17958,20619202,2101001647,
+2,Mojave,Tecopa_open,triangle ,35.85513,-116.17961,20597556,2101001628,
+3,Mojave,Tecopa_open,square ,35.855,-116.179,,2101001,
+3,Mojave,Tecopa_open,triangle ,35.855,-116.179,,2101001,
+4,Mojave,Tecopa_open,square ,35.855,-116.179,,2101001,
+4,Mojave,Tecopa_open,triangle ,35.855,-116.179,,2101001,
+1,Mojave,Tecopa_shrub,shrub,35.85315,-116.18367,20564174,2101001655,Larrea tridentata
+1,Mojave,Tecopa_shrub,square,35.85317,-116.18368,20597565,2101001639,
+1,Mojave,Tecopa_shrub,triangle ,35.85316,-116.1837,20519202,2101001656,
+2,Mojave,Tecopa_shrub,shrub,35.85309,-116.18381,10641606,2101001648,Larrea tridentata
+2,Mojave,Tecopa_shrub,square,35.85309,-116.18375,20881733,2101001659,
+2,Mojave,Tecopa_shrub,triangle ,35.85306,-116.18376,10641568,2101001646,
+3,Mojave,Tecopa_shrub,shrub,35.85302,-116.18387,20500302,2101001633,Larrea tridentata
+3,Mojave,Tecopa_shrub,triangle ,35.85301,-116.18385,20564171,2101001653,
+3,Mojave,Tecopa_shrub,square,35.85302,-116.18385,20597551,2101001634,
+4,Mojave,Tecopa_shrub,shrub,35.853,-116.18391,20564176,2101001654,Larrea tridentata
+4,Mojave,Tecopa_shrub,triangle ,35.85298,-116.18393,10641605,2101001657,
+4,Mojave,Tecopa_shrub,square,35.85296,-116.18396,,2101001,
+5,Mojave,Tecopa_shrub,shrub,35.85299,-116.18402,20597554,2101001652,Larrea tridentata
+5,Mojave,Tecopa_shrub,triangle ,35.85296,-116.18401,20597558,2101001667,
+5,Mojave,Tecopa_shrub,square,35.85298,-116.18398,10641594,2101001631,
+6,Mojave,Tecopa_shrub,shrub,35.85306,-116.18394,20597551,210100170,Larrea tridentata
+6,Mojave,Tecopa_shrub,triangle ,35.85308,-116.18394,20535242,2101001644,
+6,Mojave,Tecopa_shrub,square,35.8507,-116.18392,20535241,2101001643,
+7,Mojave,Tecopa_shrub,shrub,35.85314,-116.18385,20597561,2101001629,Larrea tridentata
+7,Mojave,Tecopa_shrub,triangle ,35.85314,-116.18389,20619206,2101001662,
+7,Mojave,Tecopa_shrub,square,35.85315,-116.18389,10641603,2101001636,
+8,Mojave,Tecopa_shrub,shrub,35.85,-116.18,,2101001,Larrea tridentata
+8,Mojave,Tecopa_shrub,triangle ,35.85,-116.18,,2101001,
+8,Mojave,Tecopa_shrub,square,35.85,-116.18,,2101001,

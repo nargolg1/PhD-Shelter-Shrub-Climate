@@ -1,0 +1,512 @@
+project_id,site,microsite,animal_hit,identified_by,wi_taxon_id,class,order,family,genus,species,common_name,uncertainty,timestamp,scientific_name,year
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-03 4:15,Lepus californicus,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-06 2:55,Lepus californicus,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-09 4:32,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-03 1:37,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-02 18:24,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-02 23:35,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-05 20:31,Vulpes macrotis,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 4:58,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 5:47,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-31 6:19,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-31 8:10,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 21:30,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 21:31,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 21:35,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 21:38,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 21:47,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 22:07,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 23:15,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 23:29,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 23:40,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 23:42,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 23:59,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:00,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:02,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:43,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:44,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:44,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:49,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:55,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 0:57,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 1:10,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 1:17,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 1:22,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 3:08,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-31 3:54,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-04 18:29,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-04 18:52,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-04 21:19,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-08 19:52,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-08 20:52,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-12 22:18,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-14 20:31,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 20:41,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 20:55,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-23 1:43,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-23 3:25,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-23 21:05,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-03 2:39,Vulpes macrotis,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-03 18:45,Vulpes macrotis,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-04 0:09,Vulpes macrotis,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-06 23:37,Vulpes macrotis,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-08 17:39,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-29 19:00,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 4:32,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 4:40,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 5:48,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 5:50,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 5:50,Lepus californicus,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-31 0:48,Canis latrans,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-31 2:04,Canis latrans,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-24 21:40,Vulpes macrotis,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-27 8:55,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-26 4:16,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-26 4:17,Lepus californicus,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-26 4:30,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-28 17:28,Lepus californicus,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-28 22:37,Canis latrans,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 18:24,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-22 20:21,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-03 18:41,Vulpes macrotis,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-07 4:27,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-07 4:30,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-07 4:30,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 6:48,Lepus californicus,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-22 5:31,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 18:53,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 18:55,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-21 10:56,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,f7fb32b6-1531-44e9-a7e2-a3197edafdb9,Mammalia,Rodentia,Sciuridae,Ammospermophilus,leucurus,White-tailed Antelope Squirrel,,2021-01-27 17:00,Ammospermophilus leucurus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-02 18:39,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 18:28,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 18:30,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 22:33,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-04 0:03,Canis latrans,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-05 20:23,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-05 21:43,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-07 0:40,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-09 23:11,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 2:01,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 3:09,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 20:10,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 22:34,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 22:36,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-07 19:27,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 22:04,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 22:05,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 22:06,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-24 21:20,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-09 7:54,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-21 14:59,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-19 21:44,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-19 23:08,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-19 23:09,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-19 23:09,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-19 23:15,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-19 23:16,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 23:14,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-14 0:16,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-14 1:19,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-20 21:46,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 1:17,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 4:05,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 20:33,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 0:23,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 2:02,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-29 19:25,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-20 0:04,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-05 0:20,Vulpes macrotis,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-30 4:31,Lepus californicus,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-21 5:06,Lepus californicus,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 1:05,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 21:55,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 19:54,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 19:55,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 20:29,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 20:40,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 22:15,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 4:56,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 5:27,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-20 23:14,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-06 6:00,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-02 18:59,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-04 6:35,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-06 6:50,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-09 7:28,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-11 17:24,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-14 9:04,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-18 6:15,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-19 15:23,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-20 6:19,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-20 8:05,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-21 8:49,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 14:29,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 14:58,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 15:32,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 15:44,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 15:51,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 15:55,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-23 16:07,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 6:23,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 6:28,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 6:29,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 6:44,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 6:48,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 7:16,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 7:51,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-25 7:59,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-25 9:29,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,00804e75-09ef-44e5-8984-85e365377d47,Mammalia,Cetartiodactyla,Antilocapridae,Antilocapra,americana,Pronghorn,,2021-01-28 21:19,Antilocapra americana,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,00804e75-09ef-44e5-8984-85e365377d47,Mammalia,Cetartiodactyla,Antilocapridae,Antilocapra,americana,Pronghorn,,2021-01-28 21:22,Antilocapra americana,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,00804e75-09ef-44e5-8984-85e365377d47,Mammalia,Cetartiodactyla,Antilocapridae,Antilocapra,americana,Pronghorn,,2021-01-28 21:24,Antilocapra americana,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,00804e75-09ef-44e5-8984-85e365377d47,Mammalia,Cetartiodactyla,Antilocapridae,Antilocapra,americana,Pronghorn,,2021-01-28 21:25,Antilocapra americana,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,00804e75-09ef-44e5-8984-85e365377d47,Mammalia,Cetartiodactyla,Antilocapridae,Antilocapra,americana,Pronghorn,,2021-01-28 21:26,Antilocapra americana,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 2:20,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 2:44,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 6:28,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 20:05,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 20:36,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 21:05,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 21:26,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 21:28,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 2:23,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 2:40,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 1:09,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 2:14,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 2:26,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 3:38,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 3:43,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 4:44,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 4:58,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-31 1:44,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-31 5:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 20:08,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 20:32,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-24 1:10,Canis latrans,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 20:49,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 22:07,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 22:12,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 2:05,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 2:13,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 2:45,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 23:57,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-28 21:58,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-28 23:25,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-29 0:19,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 1:05,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 2:21,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 2:43,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 3:25,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 4:39,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 18:25,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-12 5:11,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-02 19:48,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 18:33,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 19:55,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 19:58,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 20:33,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 20:55,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 20:56,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 21:00,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 22:31,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-23 6:46,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-23 4:14,Lepus californicus,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-24 1:55,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-24 1:49,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-24 0:28,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-09 4:20,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-02 23:43,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 4:40,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-03 6:01,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-03 6:04,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-03 6:15,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-03 21:26,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-04 1:32,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-04 2:00,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-04 2:11,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-04 2:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,87fdd451-ca1e-47b1-af43-aa4517cd13bf,Aves,Passeriformes,Corvidae,Corvus,brachyrhynchos,American Crow,,2021-01-04 15:32,Corvus brachyrhynchos,2023
+2006384,Carrizo_4,square,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-03 18:43,Vulpes macrotis,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-03 22:19,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-05 18:57,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-05 19:43,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-06 22:59,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-06 23:06,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-06 23:24,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-08 1:51,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-08 21:58,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-09 0:06,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-09 19:39,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-10 22:06,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 18:57,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 19:40,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 20:12,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 20:28,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 22:10,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-11 22:51,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 22:54,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 23:55,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 23:57,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-12 0:32,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-12 0:59,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-12 1:31,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-12 5:20,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-11 20:15,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-12 23:17,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-13 0:04,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 0:06,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 2:23,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-13 2:28,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-13 3:29,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-13 7:56,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-14 18:31,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-14 20:33,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-14 21:10,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-15 3:54,Vulpes macrotis,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-15 21:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 1:00,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 1:44,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-16 3:06,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-16 18:20,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-16 18:51,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-29 1:36,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-28 2:58,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 23:46,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 22:29,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-29 1:59,Canis latrans,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-29 2:12,Canis latrans,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 19:22,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 20:24,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 23:06,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-13 23:49,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 21:10,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 23:12,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 0:51,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 1:58,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 2:16,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 2:23,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 19:58,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 20:19,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 20:58,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 21:06,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 21:22,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 21:24,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 21:38,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-18 22:12,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-19 20:35,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-19 21:00,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 23:34,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 23:48,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 23:48,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 0:47,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 1:01,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 23:14,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 19:49,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:12,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:15,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:16,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:34,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:38,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:39,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:40,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:41,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:42,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 21:54,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 22:04,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 22:08,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 22:11,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 22:35,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 22:52,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-16 23:18,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 0:15,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 18:36,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 20:35,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 21:01,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 21:06,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 21:45,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 22:09,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 22:24,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 22:29,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 23:24,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 23:30,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 0:14,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 0:39,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 1:09,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 1:26,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 2:43,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 19:05,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 20:35,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 21:25,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 21:35,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 23:18,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-18 23:26,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 1:15,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:38,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:42,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:44,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:56,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:57,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 20:19,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 21:01,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 21:12,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 21:23,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 22:17,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 22:41,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 23:16,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 23:30,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 23:43,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 23:54,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 23:58,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 0:11,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 0:28,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 1:25,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 3:19,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 4:20,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 19:24,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 19:36,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 21:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 21:53,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 22:12,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 22:18,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 22:32,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 22:51,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 23:05,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 21:59,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 22:28,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 22:36,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 22:42,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 22:53,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 22:59,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-21 23:14,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 0:45,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 2:39,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 3:22,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 3:28,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 3:30,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 3:44,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 18:59,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 20:44,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 20:51,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 21:17,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 21:33,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 22:08,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 23:13,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-25 20:40,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 0:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 1:02,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 1:43,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 2:28,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 2:45,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 3:00,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 3:06,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 3:13,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 20:07,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-17 18:57,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-17 21:15,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:12,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 19:49,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 20:42,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 20:44,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 21:20,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 23:56,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 0:15,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 1:25,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-20 1:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-19 20:58,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-20 0:49,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-21 15:41,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-19 21:13,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 22:04,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 22:42,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-22 10:03,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-22 10:32,Ammospermophilus nelsoni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-22 10:36,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-22 19:08,Canis latrans,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-22 22:58,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-22 23:29,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-23 0:15,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-23 4:44,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 19:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-30 21:39,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-31 5:32,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-14 1:33,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-23 4:47,Lepus californicus,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-23 22:00,Vulpes macrotis,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-23 23:14,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-24 1:57,Canis latrans,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-24 5:37,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 0:04,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 1:37,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 5:57,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 19:34,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 19:46,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 20:26,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 22:12,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 22:37,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 22:54,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-25 22:55,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 0:13,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 1:00,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 2:54,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-26 23:03,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 0:33,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 1:43,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 2:24,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-29 20:59,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-29 23:19,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 0:20,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-30 0:26,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 22:49,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 23:27,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 23:32,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 1:19,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 1:23,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 2:00,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 2:45,Dipodomys heermanni,2023
+2006384,Carrizo_soda_open,open,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 4:40,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 21:18,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 21:27,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 21:42,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 21:48,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 21:57,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 22:34,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 0:18,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 0:20,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 0:52,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 1:50,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 22:20,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 23:22,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 20:32,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 21:37,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-26 20:31,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 0:22,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 1:22,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-27 3:07,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 0:26,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 22:35,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-29 1:10,Dipodomys heermanni,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-28 22:36,Dipodomys heermanni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-27 0:06,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-25 1:09,Dipodomys heermanni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-29 20:34,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-28 2:49,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 20:09,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-27 22:32,Dipodomys ingens,2023
+2006384,Carrizo_4,Ephedra californica,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-03 6:24,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-03 6:03,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-03 6:05,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-05 6:10,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-21 21:50,Dipodomys ingens,2023
+2006384,Carrizo_4,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-28 1:37,Dipodomys ingens,2023
+2006384,Carrizo_soda_open,square,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-28 1:58,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-28 1:59,Dipodomys ingens,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-28 5:53,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,e8f340d7-e6f9-4c66-bf54-65621e1e83db,Aves,Passeriformes,Alaudidae,Eremophila,alpestris,Horned Lark,,2021-01-29 8:27,Eremophila alpestris,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-25 19:10,Lepus californicus,2023
+2006384,Carrizo_4,triangle,1,Minahil Malik,87fdd451-ca1e-47b1-af43-aa4517cd13bf,Aves,Passeriformes,Corvidae,Corvus,brachyrhynchos,American Crow,,2021-01-30 16:07,Corvus brachyrhynchos,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-14 6:12,Ammospermophilus nelsoni,2023
+2006384,Carrizo_4,square,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-19 23:37,Vulpes macrotis,2023
+2006384,Carrizo_soda_open,triangle,1,Minahil Malik,4457a0c6-cb68-44c0-9c27-ad08abe57755,Mammalia,Carnivora,Canidae,Vulpes,macrotis,Kit Fox,,2021-01-20 0:14,Vulpes macrotis,2023
+2006384,Carrizo_4,square,1,Minahil Malik,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 6:28,Lepus californicus,2023
+2006384,Carrizo_4,square,1,Minahil Malik,3809c79c-03bd-42a9-9620-2747d63193da,Mammalia,Rodentia,Sciuridae,Ammospermophilus,nelsoni,Nelson's Antelope Squirrel,,2021-01-22 7:21,Ammospermophilus nelsoni,2023

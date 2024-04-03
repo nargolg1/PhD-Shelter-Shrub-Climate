@@ -1,0 +1,8 @@
+element,metadata
+project_id,unique project ID from Wildlife Insight
+site,"Carrizo_4, Carrizo_soda_open, Tecopa, Tecopa_open"
+microsite,"open, Ephedra californica, Larrea triedentata, square, triangle"
+animal_hit,"1, 0"
+identified,"researcher who identified, Nargol Ghazian, Shirley Chen, Minahil Malik"
+scientific_name,species unique binomial name
+year,2022

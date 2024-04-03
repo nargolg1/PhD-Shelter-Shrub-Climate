@@ -1,0 +1,35 @@
+project_id,site,microsite,animal_hit,identified_by,wi_taxon_id,class,order,family,genus,species,common_name,uncertainty,timestamp,number_of_objects,scientific_name,,year
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-03 5:57,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-03 9:06,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa_open,open,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-05 0:17,1,Canis latrans,,2022
+2006191,Tecopa_open,open,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-05 0:40,1,Canis latrans,,2022
+2006191,Tecopa_open,open,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-07 0:04,1,Canis latrans,,2022
+2006191,Tecopa_open,open,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-07 0:27,1,Canis latrans,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-13 10:45,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-14 3:35,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,square,1,Shirley Chen,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-15 21:12,1,Dipodomys heermanni,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 18:46,1,Lepus californicus,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 22:34,1,Lepus californicus,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 22:43,1,Lepus californicus,,2022
+2006191,Tecopa,square,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-18 22:46,1,Lepus californicus,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-19 21:32,1,Canis latrans,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-19 22:54,1,Canis latrans,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-20 2:22,1,Canis latrans,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 21:23,1,Lepus californicus,,2022
+2006191,Tecopa,square,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 20:53,1,Lepus californicus,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 21:00,1,Lepus californicus,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 21:21,1,Lepus californicus,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,9c7ff463-d1cb-47a6-9afa-30a7b7760fc0,Mammalia,Lagomorpha,Leporidae,Lepus,californicus,Black-tailed Jackrabbit,,2021-01-20 20:59,1,Lepus californicus,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,bb2be16f-b283-455b-9068-aedea2a3d22d,Mammalia,Rodentia,Heteromyidae,Dipodomys,heermanni,Heermann's Kangaroo Rat,,2021-01-19 0:10,1,Dipodomys heermanni,,2022
+2006191,Tecopa_open,open,1,Shirley Chen,aaf3b049-36e6-46dd-9a07-8a580e9618b7,Mammalia,Carnivora,Canidae,Canis,latrans,Coyote,,2021-01-05 1:05,1,Canis latrans,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,404bce49-ba9d-41b0-a6e2-bac7849da257,Mammalia,Rodentia,Heteromyidae,Dipodomys,ingens,Giant Kangaroo Rat,,2021-01-19 21:46,1,Dipodomys ingens,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-20 3:30,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-20 7:50,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-20 8:14,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-20 12:35,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-20 14:03,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-21 4:34,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,triangle,1,Shirley Chen,ee3acfbe-6fdd-4495-a9c3-375b082c88fa,Mammalia,Rodentia,Sciuridae,Xerospermophilus,mohavensis,Mohave Ground Squirrel,,2021-01-22 2:33,1,Xerospermophilus mohavensis,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,3c3f9fa5-d0c7-4bea-b108-40cd1ab66d0c,Reptilia,Squamata,Iguanidae,Dipsosaurus,dorsalis,Iguana species,,2021-01-06 6:40,1,Dipsosaurus dorsalis,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,3c3f9fa5-d0c7-4bea-b108-40cd1ab66d0c,Reptilia,Squamata,Iguanidae,Dipsosaurus,dorsalis,Iguana species,,2021-01-10 7:38,1,Dipsosaurus dorsalis,,2022
+2006191,Tecopa,Larrea tridentata,1,Shirley Chen,3c3f9fa5-d0c7-4bea-b108-40cd1ab66d0c,Reptilia,Squamata,Iguanidae,Dipsosaurus,dorsalis,Iguana species,,2021-01-20 7:09,1,Dipsosaurus dorsalis,,2022

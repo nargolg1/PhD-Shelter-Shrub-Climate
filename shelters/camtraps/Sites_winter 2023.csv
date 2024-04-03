@@ -1,0 +1,25 @@
+rep ,region,site,microsite,lat ,long,hobo_id,omega_id,shrub_species,
+1,Carrizo,Carrizo_soda_open,open,35.05611,-119.59885,20619206,18238,,yes
+1,Carrizo,Carrizo_soda_open,square,35.0561,-119.2989,20597587,18512,,
+1,Carrizo,Carrizo_soda_open,triangle,35.05609,-119.59888,20619220,15513,,
+2,Carrizo,Carrizo_soda_open,open,35.05613,-119.59889,20619205,15489,,yes
+2,Carrizo,Carrizo_soda_open,triangle,35.05615,-119.59892,20597555,,,yes
+2,Carrizo,Carrizo_soda_open,square,35.05618,-119.59895,20567065,,,yes
+1,Carrizo,Carrizo_4,shrub ,35.1199,-119.62808,20619202,,Ephedra californica,yes
+1,Carrizo,Carrizo_4,square,35.11947,-119.62962,10641599,,,
+1,Carrizo,Carrizo_4,triangle,35.11945,-119.62965,20597552,,,
+2,Carrizo,Carrizo_4,shrub ,35.11943,-119.62984,20619208,15531,Ephedra californica,yes
+2,Carrizo,Carrizo_4,square,35.11944,-119.62986,20569172,15402,,
+2,Carrizo,Carrizo_4,triangle,25.11943,-119.62987,20881739,,,
+1,Mojave,Tecopa_shrub,shrub,35.85161,-116.875,10641598,15491,Larrea tridentata,yes
+1,Mojave,Tecopa_shrub,triangle,35.85163,-116.18745,20619225,15526,,
+1,Mojave,Tecopa_shrub,square,35.8516,-116.18748,20619221,,,
+2,Mojave,Tecopa_shrub,shrub ,35.85156,-116.1873,20597569,,Larrea tridentata,yes
+2,Mojave,Tecopa_shrub,triangle,35.85156,-116.18734,20619200,,,yes
+2,Mojave,Tecopa_shrub,square,35.85161,-116.18734,20564077,,,yes
+1,Mojave,Tecopa_Open,open,35.85546,-116.17922,20881725,15399,,yes
+1,Mojave,Tecopa_Open,triangle,35.85545,-116.17926,10715207,,,
+1,Mojave,Tecopa_Open,square,35.85547,-116.17924,20597543,15406,,
+2,Mojave,Tecopa_Open,open ,35.85541,-116.17922,20564170,,,yes
+2,Mojave,Tecopa_Open,triangle,35.85541,-116.17926,20597547,,,
+2,Mojave,Tecopa_Open,square,35.8554,-116.17925,20564174,,,yes

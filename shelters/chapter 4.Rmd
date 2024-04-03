@@ -1,0 +1,930 @@
+---
+title: "Shelter-shrub Project"
+author: "Nargol Ghazian"
+date: '2024-02-27'
+output: html_document
+---
+
+```{r setup, include=FALSE}
+
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library (ggplot2)
+library (tidyverse)
+library (dplyr)
+library(patchwork)
+```
+
+
+```{r}
+###load photo data for each region and year
+
+mojave_2022 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/camtraps/Mojave cams 2022.csv")
+carrizo_2022 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/camtraps/Carrizo cams 2022.csv")
+mojave_2023 <- read.csv ("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/camtraps/Mojave cams 2023.csv")
+carrizo_2023 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/camtraps/Carrizo cams 2023.csv")
+mojave_winter2023 <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/camtraps/Mojave cams winter 2023.csv")
+carrizo_winter2023 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/camtraps/Carrizo cams winter 2023.csv")
+
+
+###calculate capture rate for each site and year from Wildlifeinsight 
+### 0.0966% capture rate for Mojave 2022
+### 0.0538% capture rate for Mojave 2023 winter
+### 1.6% capture rate for Carrizo 2022
+### 0.923% capture rate for Carrizo 2023 winter
+### 0.19% capture rate for Mojave 2023
+### 0.46% capture rate for Carrizo 2023
+```
+
+
+```{r}
+### Total Observations is species list to make percent proportion plots
+### 2022 spring-summer Carrizo
+total_observations_carrizo2022 <- carrizo_2022 %>% group_by(scientific_name) %>% summarise(total = sum(animal_hit)) %>% filter(scientific_name != "No CV Result No CV Result")
+
+animals_by_microsite_carrizo2022 <- carrizo_2022 %>% group_by(microsite, scientific_name) %>% summarise(captures = sum(animal_hit))
+
+microsite_obvs_carrizo2022 <- merge(animals_by_microsite_carrizo2022, total_observations_carrizo2022, all = TRUE)
+
+percent_proportion_carrizo2022<-microsite_obvs_carrizo2022 %>% mutate(percent_proportion = (captures/total)) 
+
+A<-ggplot(percent_proportion_carrizo2022, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Relative Proportion") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo Spring 2022')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) 
+
+### 2022 spring-summer Mojave
+total_observations_mojave2022<- mojave_2022 %>% group_by(scientific_name) %>% summarise(total = sum(animal_hit)) %>% filter(scientific_name != "No CV Result No CV Result")
+
+animals_by_microsite_mojave2022 <- mojave_2022 %>% group_by(microsite, scientific_name) %>% summarise(captures = sum(animal_hit))
+
+microsite_obvs_mojave2022 <- merge(animals_by_microsite_mojave2022, total_observations_mojave2022, all = TRUE)
+
+percent_proportion_mojave2022<-microsite_obvs_mojave2022 %>% mutate(percent_proportion = (captures/total)) 
+
+
+B<-ggplot(percent_proportion_mojave2022, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Relative Proportion") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave Spring 2022')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
+### 2023 spring-summer Carrizo
+total_observations_carrizo2023 <- carrizo_2023 %>% group_by(scientific_name) %>% summarise(total = sum(animal_hit)) %>% filter(scientific_name != "No CV Result No CV Result")
+
+animals_by_microsite_carrizo2023 <- carrizo_2023 %>% group_by(microsite, scientific_name) %>% summarise(captures = sum(animal_hit))
+
+microsite_obvs_carrizo2023 <- merge(animals_by_microsite_carrizo2023, total_observations_carrizo2023, all = TRUE)
+
+percent_proportion_carrizo2023<-microsite_obvs_carrizo2023 %>% mutate(percent_proportion = (captures/total)) 
+
+C<-ggplot(percent_proportion_carrizo2023, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Relative Proportion") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo Spring 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
+
+### 2023 spring-summer Mojave
+total_observations_mojave2023<- mojave_2023 %>% group_by(scientific_name) %>% summarise(total = sum(animal_hit)) %>% filter(scientific_name != "No CV Result No CV Result")
+
+animals_by_microsite_mojave2023 <- mojave_2023 %>% group_by(microsite, scientific_name) %>% summarise(captures = sum(animal_hit))
+
+microsite_obvs_mojave2023 <- merge(animals_by_microsite_mojave2023, total_observations_mojave2023, all = TRUE)
+
+percent_proportion_mojave2023<-microsite_obvs_mojave2023 %>% mutate(percent_proportion = (captures/total)) 
+
+D<-ggplot(percent_proportion_mojave2023, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Relative Proportion") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave Spring 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
+### 2023 winter Carrizo
+total_observations_carrizo2023_winter <- carrizo_winter2023 %>% group_by(scientific_name) %>% summarise(total = sum(animal_hit)) %>% filter(scientific_name != "No CV Result No CV Result")
+
+animals_by_microsite_carrizo2023_winter <- carrizo_winter2023 %>% group_by(microsite, scientific_name) %>% summarise(captures = sum(animal_hit))
+
+microsite_obvs_carrizo2023_winter <- merge(animals_by_microsite_carrizo2023_winter, total_observations_carrizo2023_winter, all = TRUE)
+
+percent_proportion_carrizo2023_winter<-microsite_obvs_carrizo2023_winter %>% mutate(percent_proportion = (captures/total)) 
+
+E<-ggplot(percent_proportion_carrizo2023_winter, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Relative Proportion") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo Winter 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
+
+### 2023 winter Mojave
+total_observations_mojave2023_winter <- mojave_winter2023 %>% group_by(scientific_name) %>% summarise(total = sum(animal_hit)) %>% filter(scientific_name != "No CV Result No CV Result")
+
+animals_by_microsite_mojave2023_winter <- mojave_winter2023 %>% group_by(microsite, scientific_name) %>% summarise(captures = sum(animal_hit))
+
+microsite_obvs_mojave2023_winter <- merge(animals_by_microsite_mojave2023_winter, total_observations_mojave2023_winter, all = TRUE)
+
+percent_proportion_mojave2023_winter<-microsite_obvs_mojave2023_winter %>% mutate(percent_proportion = (captures/total)) 
+
+F<-ggplot(percent_proportion_mojave2023_winter, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Relative Proportion") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave Winter 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))
+
+
+A/B
+
+C/D
+
+E/F
+```
+
+```{r}
+### PCOA
+library(permute)
+library(vegan)
+library(tidyverse)
+library(tidyr)
+library(ape)
+
+### PCOA Carrizo 2022
+pca_data_final_carrizo2022 <-  microsite_obvs_carrizo2022%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite) 
+
+adonis(pca_data_final_carrizo2022 ~ microsite, data = microsite_obvs_carrizo2022)
+
+dist_final_carrizo2022<-vegdist(pca_data_final_carrizo2022, species = "bray")
+res_final_carrizo2022<-pcoa(dist_final_carrizo2022)
+
+p01_carrizo2022 <- as.data.frame(res_final_carrizo2022$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>% bind_cols(microsite_obvs_carrizo2022)
+
+
+ggplot() + 
+  geom_point(data = p01_carrizo2022, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite") + ggtitle('Carrizo 2022')
+
+model1<-betadisper(dist_final_carrizo2022, microsite_obvs_carrizo2022$microsite)
+
+anova(model1)
+TukeyHSD(model1)
+permutest(model1, pairwise = TRUE)
+
+boxplot(model1, xlab = "Microsite")
+
+
+### PCOA Carrizo 2023
+pca_data_final_carrizo2023 <-  microsite_obvs_carrizo2023%>%
+  spread(scientific_name, captures) %>% dplyr::select(-microsite) %>%
+  replace(is.na(.),0) %>% ungroup
+
+dist_final_carrizo2023<-vegdist(pca_data_final_carrizo2023, species = "bray")
+res_final_carrizo2023<-pcoa(dist_final_carrizo2023)
+
+###make the rows equal manually
+microsite_obvs_carrizo2023_new <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/microsite_obvs_carrizo2023_new.csv")
+
+p01_carrizo2023 <- as.data.frame(res_final_carrizo2023$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>% bind_cols(microsite_obvs_carrizo2023_new)
+
+
+ggplot() + 
+  geom_point(data = p01_carrizo2023, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite")+ ggtitle('Carrizo 2023')
+
+
+model2<-betadisper(dist_final_carrizo2023, microsite_obvs_carrizo2023_new$microsite)
+
+anova(model2)
+TukeyHSD(model2)
+permutest(model2, pairwise = TRUE)
+
+boxplot(model2, xlab = "Microsite")
+
+
+### PCOA Carrizo Winter 2023
+
+pca_data_final_carrizo2023_winter <-  microsite_obvs_carrizo2023_winter%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite) 
+
+dist_final_carrizo2023_winter<-vegdist(pca_data_final_carrizo2023_winter, species = "bray")
+res_final_carrizo2023_winter<-pcoa(dist_final_carrizo2023_winter)
+
+###make the rows equal manually
+
+microsite_obvs_carrizo2023_winter_new <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/microsite_obvs_carrizo2023_winter_new.csv")
+
+p01_carrizo2023_winter <- as.data.frame(res_final_carrizo2023_winter$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>% bind_cols(microsite_obvs_carrizo2023_winter_new)
+
+
+ggplot() + 
+  geom_point(data = p01_carrizo2023_winter, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite") + ggtitle('Carrizo Winter 2023')
+
+model3<-betadisper(dist_final_carrizo2023_winter, microsite_obvs_carrizo2023_winter_new$microsite)
+
+anova(model3)
+TukeyHSD(model3)
+permutest(model3, pairwise = TRUE)
+
+boxplot(model3, xlab = "Microsite")
+
+```
+
+
+```{r}
+### PCOA mojave 2022
+pca_data_final_mojave2022 <-  microsite_obvs_mojave2022%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite) 
+
+adonis(pca_data_final_mojave2022 ~ microsite, data = microsite_obvs_mojave2022)
+
+dist_final_mojave2022<-vegdist(pca_data_final_mojave2022, species = "bray")
+res_final_mojave2022<-pcoa(dist_final_mojave2022)
+
+p02_mojave2022 <- as.data.frame(res_final_mojave2022$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>% bind_cols(microsite_obvs_mojave2022)
+
+ggplot() + 
+  geom_point(data = p02_mojave2022, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite")+ ggtitle('Mojave 2022')
+
+model4<-betadisper(dist_final_mojave2022, microsite_obvs_mojave2022$microsite)
+
+anova(model4)
+TukeyHSD(model4)
+permutest(model4, pairwise = TRUE)
+
+boxplot(model4, xlab = "Microsite")
+
+
+### PCOA mojave 2023
+pca_data_final_mojave2023 <-  microsite_obvs_mojave2023%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite) 
+
+dist_final_mojave2023<-vegdist(pca_data_final_mojave2023, species = "bray")
+res_final_mojave2023<-pcoa(dist_final_mojave2023)
+
+
+###make the rows equal manually
+
+microsite_obvs_mojave2023_new <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/microsite_obvs_mojave2023_new.csv")
+
+p02_mojave2023 <- as.data.frame(res_final_mojave2023$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>% bind_cols(microsite_obvs_mojave2023_new)
+
+ggplot() + 
+  geom_point(data = p02_mojave2023, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite")+ ggtitle('Mojave 2023')
+
+model5<-betadisper(dist_final_mojave2023, microsite_obvs_mojave2023_new$microsite)
+
+anova(model5)
+TukeyHSD(model5)
+permutest(model5, pairwise = TRUE)
+
+boxplot(model5, xlab = "Microsite")
+
+
+### PCOA mojave winter 2023
+
+pca_data_final_mojave2023_winter <-  microsite_obvs_mojave2023_winter%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite) 
+
+dist_final_mojave2023_winter<-vegdist(pca_data_final_mojave2023_winter, species = "bray")
+res_final_mojave2023_winter<-pcoa(dist_final_mojave2023_winter)
+
+p02_mojave2023_winter <- as.data.frame(res_final_mojave2023_winter$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>% bind_cols(microsite_obvs_mojave2023_winter)
+
+ggplot() + 
+  geom_point(data = p02_mojave2023_winter, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite")+ ggtitle('Mojave Winter 2023')
+
+model6<-betadisper(dist_final_mojave2023_winter, microsite_obvs_mojave2023_winter$microsite)
+
+anova(model6)
+TukeyHSD(model6)
+permutest(model6, pairwise = TRUE)
+
+boxplot(model5, xlab = "Microsite")
+```
+
+
+```{r}
+### Calculate abundance and richness for each site and year
+library(stringr)
+richness_carrizo_2022<-microsite_obvs_carrizo2022 %>% group_by(microsite)%>% summarise(animals = sum(captures), richness = n())
+
+richness_carrizo_2023<-microsite_obvs_carrizo2023 %>% group_by(microsite)%>% summarise(animals = sum(captures), richness = n())
+
+richness_mojave2022<-microsite_obvs_mojave2022 %>% group_by(microsite)%>% summarise(animals = sum(captures), richness = n())
+
+richness_mojave2023<-microsite_obvs_mojave2023 %>% group_by(microsite)%>% summarise(animals = sum(captures), richness = n()) 
+
+richness_carrizo2023_winter<-microsite_obvs_carrizo2023_winter%>%  group_by(microsite)%>%summarise(animals = sum(captures), richness = n())
+
+richness_mojave2023_winter<-microsite_obvs_mojave2023_winter%>% group_by(microsite)%>%summarise(animals = sum(captures), richness = n())
+
+### Calculate abundance and richness for each site and year
+evenness_carrizo2022 <- microsite_obvs_carrizo2022 %>%
+  group_by(microsite) %>%
+  summarize(evenness = diversity(captures, index = "shannon"))
+
+evenness_carrizo2023 <- microsite_obvs_carrizo2023 %>%
+  group_by(microsite) %>%
+  summarize(evenness = diversity(captures, index = "shannon"))
+
+evenness_mojave2022 <- microsite_obvs_mojave2022 %>%
+  group_by(microsite) %>%
+  summarize(evenness = diversity(captures, index = "shannon"))
+
+evenness_mojave2023 <- microsite_obvs_mojave2023 %>%
+  group_by(microsite) %>%
+  summarize(evenness = diversity(captures, index = "shannon"))
+
+evenness_carrizo2023_winter <- microsite_obvs_carrizo2023_winter %>%
+  group_by(microsite) %>%
+  summarize(evenness = diversity(captures, index = "shannon"))
+
+evenness_mojave2023_winter <- microsite_obvs_mojave2023_winter%>%
+  group_by(microsite) %>%
+  summarize(evenness = diversity(captures, index = "shannon"))
+
+data <-merge(evenness_mojave2023_winter, microsite_obvs_mojave2023_winter, by = "microsite")
+
+data_1<-merge(data, richness_mojave2023_winter, by = "microsite")
+```
+
+
+```{r}
+###join richness, abundance, and evenness data to temperature data
+
+library(emmeans)
+temp_mojave2023_winter <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/Mojave_winter.csv")
+
+temp_mojave2023_winter_final <- inner_join(temp_mojave2023_winter, richness_mojave2023_winter, by = "microsite")
+
+temp_mojave2023_winter_final <- inner_join(temp_mojave2023_winter_final, evenness_mojave2023_winter, by = "microsite")
+
+A1<-ggplot(temp_mojave2023_winter_final, aes(x=richness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave Winter 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_1.1<-glm(formula = richness ~ temp*as.factor(microsite), data = temp_mojave2023_winter_final)
+anova(glm_1.1, test = "Chisq")
+emmeans(glm_1.1, pairwise ~ as.factor(microsite))
+
+
+
+B1<-ggplot(temp_mojave2023_winter_final, aes(x=animals, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+xlab("Abundance") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_1.2<-glm(formula = animals ~ temp*as.factor(microsite), data = temp_mojave2023_winter_final)
+anova(glm_1.2, test = "Chisq")
+emmeans(glm_1.2, pairwise ~ as.factor(microsite)) 
+
+C1<-ggplot(temp_mojave2023_winter_final, aes(x=evenness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_1.3<-glm(formula = evenness ~ temp*as.factor(microsite), data = temp_mojave2023_winter_final)
+anova(glm_1.3, test = "Chisq")
+emmeans(glm_1.3, pairwise ~ as.factor(microsite))
+
+
+A1/B1/C1
+
+temp_carrizo2023_winter <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/Carrizo_winter.csv")
+
+temp_carrizo2023_winter_final <- inner_join(temp_carrizo2023_winter, richness_carrizo2023_winter, by = "microsite")
+
+temp_carrizo2023_winter_final <- inner_join(temp_carrizo2023_winter_final, evenness_carrizo2023_winter, by = "microsite")
+
+A2<-ggplot(temp_carrizo2023_winter_final, aes(x=richness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+ xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo Winter 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA, size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_2.1<-glm(formula = richness ~ temp*as.factor(microsite), data = temp_carrizo2023_winter_final)
+anova(glm_2.1, test = "Chisq")
+emmeans(glm_2.1, pairwise ~ as.factor(microsite))
+
+B2<-ggplot(temp_carrizo2023_winter_final, aes(x=animals, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+ xlab("Abundance") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_2.2<-glm(formula = animals ~ temp*as.factor(microsite), data = temp_carrizo2023_winter_final)
+anova(glm_2.2, test = "Chisq")
+emmeans(glm_2.2, pairwise ~ as.factor(microsite))
+
+C2<-ggplot(temp_carrizo2023_winter_final, aes(x=evenness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+ xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_2.3<-glm(formula = evenness ~ temp*as.factor(microsite), data = temp_carrizo2023_winter_final)
+anova(glm_2.3, test = "Chisq")
+emmeans(glm_2.3, pairwise ~ as.factor(microsite))
+
+A2/B2/C2
+
+temp_carrizo2023 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/Carrizo_2023.csv")
+
+temp_carrizo2023_final <- inner_join(temp_carrizo2023, richness_carrizo_2023, by = "microsite")
+
+temp_carrizo2023_final <- inner_join(temp_carrizo2023_final, evenness_carrizo2023, by = "microsite")
+
+
+A3<-ggplot(temp_carrizo2023_final, aes(x=richness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_3.1<-glm(formula = richness ~ temp*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_3.1, test = "Chisq")
+emmeans(glm_3.1, pairwise ~ as.factor(microsite))
+
+B3<-ggplot(temp_carrizo2023_final, aes(x=animals, y=temp, fill = microsite)) + 
+  geom_boxplot()+ xlab("Abundance") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_3.2<-glm(formula = animals ~ temp*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_3.2, test = "Chisq")
+emmeans(glm_3.2, pairwise ~ as.factor(microsite))
+
+C3<-ggplot(temp_carrizo2023_final, aes(x=evenness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_3.3<-glm(formula = evenness ~ temp*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_3.3, test = "Chisq")
+emmeans(glm_3.3, pairwise ~ as.factor(microsite))
+
+A3/B3/C3
+
+temp_carrizo2022 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/Carrizo_2022.csv")
+
+temp_carrizo2022_final <- inner_join(temp_carrizo2022, richness_carrizo_2022, by = "microsite")
+
+
+temp_carrizo2022_final <- inner_join(temp_carrizo2022_final, evenness_carrizo2022, by = "microsite")
+
+A4<-ggplot(temp_carrizo2022_final, aes(x=richness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+  xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo 2022')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_4.1<-glm(formula = richness ~ temp*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_4.1, test = "Chisq")
+emmeans(glm_4.1,pairwise ~ as.factor(microsite))
+
+B4<-ggplot(temp_carrizo2022_final, aes(x=animals, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+  xlab("Abundance") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_4.2<-glm(formula = animals ~ temp*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_4.2, test = "Chisq")
+emmeans(glm_4.2,pairwise ~ as.factor(microsite))
+
+C4<-ggplot(temp_carrizo2022_final, aes(x=evenness, y=temp, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+  xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))  + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_4.3<-glm(formula = evenness ~ temp*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_4.3, test = "Chisq")
+emmeans(glm_4.3,pairwise ~ as.factor(microsite))
+
+A4/B4/C4
+
+
+temp_mojave2023 <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/Mojave_2023.csv")
+
+temp_mojave2023_final <- inner_join(temp_mojave2023, richness_mojave2023, by = "microsite")
+
+temp_mojave2023_final <- inner_join(temp_mojave2023_final, evenness_mojave2023, by = "microsite")
+
+A5<-ggplot(temp_mojave2023_final, aes(x=richness, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+
+glm_5.1<-glm(formula = richness ~ temp*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_5.1, test = "Chisq")
+emmeans(glm_5.1, pairwise ~ as.factor(microsite))
+
+
+B5<-ggplot(temp_mojave2023_final, aes(x=animals, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Abundance") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_5.2<-glm(formula = animals ~ temp*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_5.2, test = "Chisq")
+emmeans(glm_5.2, pairwise ~ as.factor(microsite))
+
+C5<-ggplot(temp_mojave2023_final, aes(evenness, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") +stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_5.3<-glm(formula = evenness ~ temp*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_5.3, test = "Chisq")
+emmeans(glm_5.3, pairwise ~ as.factor(microsite))
+
+A5/B5/C5
+
+temp_mojave2022<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/Mojave_2022.csv")
+
+temp_mojave2022_final <- inner_join(temp_mojave2022, richness_mojave2022, by = "microsite")
+
+temp_mojave2022_final <- inner_join(temp_mojave2022_final, evenness_mojave2022, by = "microsite")
+
+A6<-ggplot(temp_mojave2023_final, aes(x=richness, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave 2022')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+
+glm_6.1<-glm(formula = richness ~ temp*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_6.1, test = "Chisq")
+emmeans(glm_6.1, pairwise ~ as.factor(microsite))
+
+
+B6<-ggplot(temp_mojave2023_final, aes(x=animals, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Abundance") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_6.2<-glm(formula = animals ~ temp*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_6.2, test = "Chisq")
+emmeans(glm_6.2, pairwise ~ as.factor(microsite))
+
+C6<-ggplot(temp_mojave2023_final, aes(evenness, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_6.3<-glm(formula = evenness ~ temp*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_6.3, test = "Chisq")
+emmeans(glm_6.3, pairwise ~ as.factor(microsite))
+
+
+A6/B6/C6
+```
+
+
+```{r}
+###now compare humidity to abundance, richness, and evenness data
+###no humidity data for Mojave and Carrizo Winter 2023
+
+###Carrizo 2023
+D1<-ggplot(temp_carrizo2023_final, aes(x=richness, y=humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Richness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_7.1<-glm(formula = richness ~ humidity*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_7.1, test = "Chisq")
+emmeans(glm_7.1, pairwise ~ as.factor(microsite))
+
+D2<-ggplot(temp_carrizo2023_final, aes(x=animals, y=humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Abundance") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_7.2<-glm(formula = animals ~ humidity*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_7.1, test = "Chisq")
+emmeans(glm_7.2, pairwise ~ as.factor(microsite))
+
+D3<-ggplot(temp_carrizo2023_final, aes(x=evenness, y=humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Evenness") +
+  ylab("Humidity(%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_7.3<-glm(formula = evenness ~ humidity*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_7.3, test = "Chisq")
+emmeans(glm_7.3, pairwise ~ as.factor(microsite))
+
+D1/D2/D3
+
+E1<-ggplot(temp_carrizo2022_final, aes(x=richness, y=humidity, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+  xlab("Richness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Carrizo 2022')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) +stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_8.1<-glm(formula = richness ~ humidity*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_8.1, test = "Chisq")
+emmeans(glm_8.1,pairwise ~ as.factor(microsite))
+
+E2<-ggplot(temp_carrizo2022_final, aes(x=animals, y=humidity, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+  xlab("Abundance") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_8.2<-glm(formula = animals ~ humidity*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_8.2, test = "Chisq")
+emmeans(glm_8.2,pairwise ~ as.factor(microsite))
+
+E3<-ggplot(temp_carrizo2022_final, aes(x=evenness, y=humidity, fill = microsite)) + 
+  geom_boxplot()+ theme_classic()+  xlab("Evenness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))  + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_8.3<-glm(formula = evenness ~ humidity*as.factor(microsite), data = temp_carrizo2023_final)
+anova(glm_8.3, test = "Chisq")
+emmeans(glm_8.3,pairwise ~ as.factor(microsite))
+
+E1/E2/E3
+
+F1<-ggplot(temp_mojave2023_final, aes(x=richness, y=humidity, fill = microsite)) + geom_boxplot()+ xlab("Richness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ ggtitle('Mojave 2023')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+
+glm_9.1<-glm(formula = richness ~ humidity*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_9.1, test = "Chisq")
+emmeans(glm_9.1, pairwise ~ as.factor(microsite))
+
+
+F2<-ggplot(temp_mojave2023_final, aes(x=animals, y=humidity, fill = microsite)) + geom_boxplot()+ xlab("Abundance") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_9.2<-glm(formula = animals ~ humidity*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_9.2, test = "Chisq")
+emmeans(glm_9.2, pairwise ~ as.factor(microsite))
+
+F3<-ggplot(temp_mojave2023_final, aes(evenness, y=temp, fill = microsite)) + geom_boxplot()+ xlab("Evenness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE)
+
+glm_9.3<-glm(formula = evenness ~ humidity*as.factor(microsite), data = temp_mojave2023_final)
+anova(glm_9.3, test = "Chisq")
+emmeans(glm_9.3, pairwise ~ as.factor(microsite))
+
+F1/F2/F3
+
+
+###No logger humidity data for Mojave 2022 because loggers did not record.
+```
+
+
+```{r}
+###explore the relationship between light and temperature to use temperature as a proxy for animal observations models
+
+cor.test(temp_mojave2022_final$temp,temp_mojave2022_final$intensity, method = "kendall")#positively correlated
+
+cor.test(temp_mojave2023_final$temp,temp_mojave2023_final$intensity, method = "kendall")#positively correlated 
+
+cor.test(temp_carrizo2022_final$temp,temp_carrizo2022_final$intensity, method = "kendall")#positively correlated
+
+cor.test(temp_carrizo2023_final$temp,temp_carrizo2023_final$intensity, method = "kendall")#positively correlated
+
+cor.test(temp_mojave2023_winter_final$temp,temp_mojave2023_winter_final$intensity, method = "kendall")#positively correlated 
+
+cor.test(temp_carrizo2023_winter_final$temp,temp_carrizo2023_winter_final$intensity, method = "kendall")#positively correlated 
+
+###Thus, we will use temperature as a proxy for light intensity in models.
+###SUPPLEMENTARY PLOT
+###Temperature
+library(ggpubr)
+ggqqplot(temp_carrizo2022_final$humidity)
+hist(temp_carrizo2022_final$humidity)#right-skewed
+
+ggqqplot(temp_carrizo2023_final$humidity)
+hist(temp_carrizo2023_final$humidity)#right-skewed
+
+ggqqplot(temp_carrizo2023_winter_final$temp)
+hist(temp_carrizo2023_winter_final$temp)#right-skewed
+
+
+ggqqplot(temp_mojave2022_final$temp)
+hist(temp_mojave2022_final$temp)#right-skewed
+
+ggqqplot(temp_mojave2023_final$temp)
+hist(temp_mojave2023_final$temp)#right-skewed
+
+ggqqplot(temp_mojave2023_winter_final$temp)
+hist(temp_mojave2023_winter_final$temp)#right-skewed
+
+###Humidity
+ggqqplot(temp_carrizo2022_final$temp)
+hist(temp_carrizo2022_final$temp)#right-skewed
+
+ggqqplot(temp_carrizo2023_final$temp)
+hist(temp_carrizo2023_final$temp)#bimodal distribution 
+
+ggqqplot(temp_mojave2023_final$humidity)
+hist(temp_mojave2023_final$humidity)#right-skewed
+
+
+###light intensity
+ggqqplot(temp_carrizo2022_final$intensity)
+hist(temp_carrizo2022_final$intensity)#right-skewed
+
+ggqqplot(temp_carrizo2023_final$intensity)
+hist(temp_carrizo2023_final$intensity)#right-skewed
+
+ggqqplot(temp_carrizo2023_winter_final$intensity)
+hist(temp_carrizo2023_winter_final$intensity)#right-skewed
+
+ggqqplot(temp_mojave2022_final$intensity)
+hist(temp_mojave2022_final$intensity)#right-skewed
+
+ggqqplot(temp_mojave2023_final$intensity)
+hist(temp_mojave2023_final$intensity)#right-skewed
+
+ggqqplot(temp_mojave2023_winter_final$intensity)
+hist(temp_mojave2023_winter_final$intensity)#right-skewed
+```
+
+
+```{r}
+### RII Carrizo 2022
+###temp
+
+temp_carrizo2022_final_wide <- reshape (temp_carrizo2022_final, timevar = "microsite", v.names = "temp", direction = "wide", idvar="date")
+
+write.csv(temp_carrizo2022_final_wide, "C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/temp_carrizo2022_wide.csv", row.names=FALSE)
+
+temp_carrizo2022_final_wide<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/temp_carrizo2022_wide.csv")
+
+
+rii.temp.shrub.carrizo2022<- temp_carrizo2022_final_wide %>%
+  mutate(rii_calc_shrub = (temp.Ephedra.californica-temp.open)/(temp.Ephedra.californica + temp.open))
+
+rii.temp.triangle.carrizo2022<- temp_carrizo2022_final_wide %>%
+  mutate(rii_calc_triangle = (temp.triangle-temp.open)/(temp.triangle + temp.open)) 
+
+rii.temp.square.carrizo2022<- temp_carrizo2022_final_wide %>%
+  mutate(rii_calc_square = (temp.square-temp.open)/(temp.square+ temp.open)) 
+
+
+x <- select(rii.temp.shrub, rii_calc_shrub)
+y <- select(rii.temp.triangle, rii_calc_triangle)
+z <- select(rii.temp.square, rii_calc_square)
+rii.final.temp.carrizo2022<-cbind(x, y, z)
+
+rii_carrizo2022_manual <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/rii_carrizo2022_manual.csv")
+
+ggplot(rii_carrizo2022_manual, aes(microsite, rii, fill = microsite)) +
+  geom_boxplot()+ ylab("Relative Interaction Index (RII)")+ geom_hline(yintercept=0, linetype="dashed", color = "red")+ theme_classic() + xlab("Microsite")+  theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('Carrizo 2022')+   labs(fill = "Microsite") 
+
+library(ggpubr)
+
+ggline(rii_carrizo2022_manual, x="microsite", y= "rii", add = "mean_se", ylab = "Relative Interaction Index (RII)", xlab = "Microsite", title = "Carrizo 2022")
+
+lm_rii_carrizo2022<- glm(rii~as.factor(microsite), data = rii_carrizo2022_manual, family="gaussian")
+
+emmeans(lm_rii_carrizo2022, pairwise~microsite)
+###only shrub was cooler than the open in Carrizo in 2022
+
+
+### RII Carrizo 2023
+###temp
+
+temp_carrizo2023_final_wide <- reshape (temp_carrizo2023_final, timevar = "microsite", v.names = "temp", direction = "wide", idvar="hourdate_HOBO")
+
+write.csv(temp_carrizo2023_final_wide, "C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/temp_carrizo2023_wide.csv", row.names=FALSE)
+
+temp_carrizo2023_final_wide<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/temp_carrizo2023_wide.csv")
+
+
+rii_carrizo2023_manual <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/rii_carrizo2023_manual.csv")
+
+ggplot(rii_carrizo2023_manual, aes(microsite, rii, fill = microsite)) +
+  geom_boxplot()+ ylab("Relative Interaction Index (RII)")+ geom_hline(yintercept=0, linetype="dashed", color = "red")+ theme_classic() + xlab("Microsite")+  theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('Carrizo 2023')  + ylim(-1,1) +   labs(fill = "Microsite") 
+
+ggline(rii_carrizo2023_manual, x="microsite", y= "rii", add = "mean_se", ylab = "Relative Interaction Index (RII)", xlab = "Microsite", title = "Carrizo 2023")
+
+
+lm_rii_carrizo2023<- glm(rii~as.factor(microsite), data = rii_carrizo2023_manual, family="gaussian")
+
+emmeans(lm_rii_carrizo2023, pairwise~microsite)###only shrub was cooler than the open in Carrizo in 2023
+
+### RII Carrizo Winter 2023
+###temp
+
+temp_carrizo2023_winter_final_wide <- reshape (temp_carrizo2023_winter_final, timevar = "microsite", v.names = "temp", direction = "wide", idvar="date")
+
+
+temp_carrizo2023_winter_final_wide<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/temp_carrizo2023_winter_wide.csv")
+
+
+rii_carrizo2023_winter_manual <- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/rii_carrizo2023_winter_manual.csv")
+
+ggplot(rii_carrizo2023_winter_manual, aes(microsite, rii, fill = microsite)) +
+  geom_boxplot()+ ylab("Relative Interaction Index (RII)")+ geom_hline(yintercept=0, linetype="dashed", color = "red")+ theme_classic() + xlab("Microsite")+  theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('Carrizo Winter 2023') +   labs(fill = "Microsite") + ylim (-1,1)
+
+ggline(rii_carrizo2023_winter_manual, x="microsite", y= "rii", add = "mean_se", ylab = "Relative Interaction Index (RII)", xlab = "Microsite", title = "Carrizo Winter 2023")
+
+ggline(rii_carrizo2022_manual, x="microsite", y= "rii", add = "mean_se", ylab = "Relative Interaction Index (RII)", xlab = "Microsite", title = "Carrizo 2022")
+
+lm_rii_carrizo2023_winter<- glm(rii~as.factor(microsite), data = rii_carrizo2023_winter_manual, family="gaussian")
+
+emmeans(lm_rii_carrizo2023_winter, pairwise~microsite)###only shrub was cooler than the open in Carrizo in 2023
+```
+
+
+```{r}
+```
+
+
+`
+
