@@ -1,0 +1,31 @@
+rep_continous,site_code,microsite,region,year,season,evenness,abundance,richness
+1,Carrizo_4,Ephedra californica,San Joaquin,2022,spring,1.325953075,333,8
+2,Carrizo_4,square,San Joaquin,2022,spring,1.408041346,370,9
+3,Carrizo_4,triangle,San Joaquin,2022,spring,1.259984037,500,8
+4,Carrizo_soda_open,open,San Joaquin,2022,spring,1.298082798,183,9
+5,Carrizo_soda_open,square,San Joaquin,2022,spring,1.715228988,66,7
+6,Carrizo_soda_open,triangle,San Joaquin,2022,spring,1.041225792,202,6
+7,Carrizo_4,Ephedra californica,San Joaquin,2023,spring,1.354885053,36,4
+8,Carrizo_4,square,San Joaquin,2023,spring,1.200995637,210,6
+9,Carrizo_4,triangle,San Joaquin,2023,spring,1.449507828,187,9
+10,Carrizo_soda_open,open,San Joaquin,2023,spring,1.336212651,35,6
+11,Carrizo_soda_open,square,San Joaquin,2023,spring,1.459359412,18,6
+12,Carrizo_soda_open,triangle,San Joaquin,2023,spring,1.408293074,25,7
+13,Carrizo_4,Ephedra californica,San Joaquin,2023,winter,1.156826075,85,5
+14,Carrizo_4,square,San Joaquin,2023,winter,1.073542846,8,4
+15,Carrizo_4,triangle,San Joaquin,2023,winter,1.213007566,8,4
+16,Carrizo_soda_open,open,San Joaquin,2023,winter,1.503460787,18,6
+17,Carrizo_soda_open,square,San Joaquin,2023,winter,0,5,1
+18,Carrizo_soda_open,triangle,San Joaquin,2023,winter,1.190076307,16,5
+19,Tecopa_open,open,Mojave,2022,spring,0,5,1
+20,Tecopa_shrub,Larrea tridentata,Mojave,2022,spring,1.377819508,13,4
+21,Tecopa_shrub,square,Mojave,2022,spring,0.636514168,3,2
+22,Tecopa_shrub,triangle,Mojave,2022,spring,1.031767111,13,4
+23,Tecopa_open,open,Mojave,2023,spring,1.47030101,32,5
+24,Tecopa_open,square,Mojave,2023,spring,0.600166073,11,3
+25,Tecopa_open,triangle,Mojave,2023,spring,0.53596105,13,3
+26,Tecopa_shrub,Larrea tridentata,Mojave,2023,spring,0.740761934,53,6
+27,Tecopa_shrub,square,Mojave,2023,spring,0.527635616,65,4
+28,Tecopa_shrub,triangle,Mojave,2023,spring,1.020062901,83,6
+29,Tecopa_shrub,Larrea tridentata,Mojave,2023,winter,0,3,1
+30,Tecopa_shrub,square,Mojave,2023,winter,0.636514168,3,2

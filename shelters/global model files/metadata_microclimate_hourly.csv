@@ -1,0 +1,21 @@
+column,description
+rep_continous,continous rep for each file from R
+researcher,person who collected data
+date,unique date for temperature and light intensity
+day,the particular day of recording for temperature and intensity
+hourdate_humidity,date and hourly time combined for humidity
+hourdate_temp,date and hourly time combined for temperature and intensity
+day_humidity,the particular day of recording for humidity 
+temp,temperature (°C) recorded hourly
+intensity ,solar radiation (lum/ft2) recorded hourly
+pendant_id,unique pendant code
+humidity,relative humidity (%) recorded hourly
+lat,latitude
+long,longitude
+region,"San Joaquin, Mojave"
+site_code,"Carrizo_4, Carrizo_soda_open, Tecopa_shrub, Tecopa_open"
+sensor_pendant,brand of the logger 
+microsite,"open, triangle, square, Larrea tridentata, Ephedra californica"
+rep,microsite rep
+year,"2022, 2023"
+season,"spring, winter"

@@ -1,0 +1,17 @@
+site_code,lat,long,data_asset,year,source,MAP,MAT,aridity
+Carrizo_3,35.16245,-119.67445,https://raws.dri.edu/cgi-bin/rawMAIN.pl?caCCAR,2022,local weather station,143.256,17.93519,5.12815556
+Carrizo_3,35.16245,-119.67445,https://raws.dri.edu/cgi-bin/rawMAIN.pl?caCCAR,2023,local weather station,350.012,16.23148,13.3432044
+Carrizo_4,35.11566,-119.62069,https://raws.dri.edu/cgi-bin/rawMAIN.pl?caCCAR,2022,local weather station,143.256,17.93519,5.12815556
+Carrizo_4,35.11566,-119.62069,https://raws.dri.edu/cgi-bin/rawMAIN.pl?caCCAR,2023,local weather station,350.012,16.23148,13.3432044
+Cuyama_1,34.848726,-119.48312,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2022,local weather station,113.03,15.9815,4.35040317
+Cuyama_1,34.848726,-119.48312,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2023,local weather station,119.126,15.358,4.58503166
+Cuyama_2,34.853622,-119.48596,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2022,local weather station,113.03,15.9815,4.35040317
+Cuyama_2,34.853622,-119.48596,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2023,local weather station,119.126,15.358,4.58503166
+Tecopa_open,35.85474,-116.17866,https://wrcc.dri.edu/cgi-bin/rawMAIN.pl?caucgr,2022,local weather station,85.598,17.4537,3.11790396
+Tecopa_open,35.85474,-116.17866,https://wrcc.dri.edu/cgi-bin/rawMAIN.pl?caucgr,2023,local weather station,300.99,16.38426,11.4079379
+Tecopa_shrub,35.851515,-116.18671,https://wrcc.dri.edu/cgi-bin/rawMAIN.pl?caucgr,2022,local weather station,85.598,17.4537,3.11790396
+Tecopa_shrub,35.851515,-116.18671,https://wrcc.dri.edu/cgi-bin/rawMAIN.pl?caucgr,2023,local weather station,300.99,16.38426,11.4079379
+Carrizo_soda_open,35.0906062,-119.5772678,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2022,local weather station,159.004,17.46,5.790386
+Carrizo_soda_open,35.0906062,-119.5772678,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2023,local weather station,391.668,16.96,14.52882
+Carrizo_soda_shrub,35.11921364,-119.6297363,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2022,local weather station,159.004,17.46,5.790386
+Carrizo_soda_shrub,35.11921364,-119.6297363,https://cimis.water.ca.gov/WSNReportCriteria.aspx,2023,local weather station,391.668,16.96,14.52882

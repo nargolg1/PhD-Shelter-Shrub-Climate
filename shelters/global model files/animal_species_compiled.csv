@@ -1,0 +1,152 @@
+rep_continous,scientific_name,microsite,site_code,region,year,season,captures,total,percent_proportion
+1,Ammospermophilus nelsoni,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,90,243,0.37037037
+2,Ammospermophilus nelsoni,square,Carrizo_soda_open,San Joaquin,2022,spring,6,243,0.024691358
+3,Ammospermophilus nelsoni,triangle,Carrizo_4,San Joaquin,2022,spring,59,243,0.242798354
+4,Ammospermophilus nelsoni,square,Carrizo_4,San Joaquin,2022,spring,59,243,0.242798354
+5,Ammospermophilus nelsoni,triangle,Carrizo_soda_open,San Joaquin,2022,spring,8,243,0.032921811
+6,Ammospermophilus nelsoni,open,Carrizo_soda_open,San Joaquin,2022,spring,21,243,0.086419753
+7,Canis latrans,square,Carrizo_4,San Joaquin,2022,spring,4,49,0.081632653
+8,Canis latrans,triangle,Carrizo_soda_open,San Joaquin,2022,spring,7,49,0.142857143
+9,Canis latrans,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,6,49,0.12244898
+10,Canis latrans,triangle,Carrizo_4,San Joaquin,2022,spring,20,49,0.408163265
+11,Canis latrans,square,Carrizo_soda_open,San Joaquin,2022,spring,7,49,0.142857143
+12,Canis latrans,open,Carrizo_soda_open,San Joaquin,2022,spring,5,49,0.102040816
+13,Dipodomys heermanni,triangle,Carrizo_4,San Joaquin,2022,spring,290,882,0.328798186
+14,Dipodomys heermanni,open,Carrizo_soda_open,San Joaquin,2022,spring,114,882,0.129251701
+15,Dipodomys heermanni,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,160,882,0.181405896
+16,Dipodomys heermanni,square,Carrizo_soda_open,San Joaquin,2022,spring,23,882,0.026077098
+17,Dipodomys heermanni,triangle,Carrizo_soda_open,San Joaquin,2022,spring,131,882,0.148526077
+18,Dipodomys heermanni,square,Carrizo_4,San Joaquin,2022,spring,164,882,0.185941043
+19,Dipodomys ingens,triangle,Carrizo_4,San Joaquin,2022,spring,96,338,0.284023669
+20,Dipodomys ingens,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,54,338,0.159763314
+21,Dipodomys ingens,open,Carrizo_soda_open,San Joaquin,2022,spring,21,338,0.062130178
+22,Dipodomys ingens,square,Carrizo_soda_open,San Joaquin,2022,spring,16,338,0.047337278
+23,Dipodomys ingens,triangle,Carrizo_soda_open,San Joaquin,2022,spring,46,338,0.136094675
+24,Dipodomys ingens,square,Carrizo_4,San Joaquin,2022,spring,105,338,0.310650888
+25,Dipodomys nelsoni,triangle,Carrizo_4,San Joaquin,2022,spring,1,1,1
+26,Eremophila alpestris,open,Carrizo_soda_open,San Joaquin,2022,spring,1,1,1
+27,Lepus californicus,square,Carrizo_soda_open,San Joaquin,2022,spring,4,71,0.056338028
+28,Lepus californicus,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,10,71,0.14084507
+29,Lepus californicus,open,Carrizo_soda_open,San Joaquin,2022,spring,7,71,0.098591549
+30,Lepus californicus,triangle,Carrizo_4,San Joaquin,2022,spring,22,71,0.309859155
+31,Lepus californicus,square,Carrizo_4,San Joaquin,2022,spring,21,71,0.295774648
+32,Lepus californicus,triangle,Carrizo_soda_open,San Joaquin,2022,spring,7,71,0.098591549
+33,Sylvilagus audubonii,square,Carrizo_soda_open,San Joaquin,2022,spring,3,11,0.272727273
+34,Sylvilagus audubonii,open,Carrizo_soda_open,San Joaquin,2022,spring,3,11,0.272727273
+35,Sylvilagus audubonii,square,Carrizo_4,San Joaquin,2022,spring,4,11,0.363636364
+36,Sylvilagus audubonii,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,1,11,0.090909091
+37,Taxidea taxus,open,Carrizo_soda_open,San Joaquin,2022,spring,1,3,0.333333333
+38,Taxidea taxus,triangle,Carrizo_4,San Joaquin,2022,spring,1,3,0.333333333
+39,Taxidea taxus,square,Carrizo_4,San Joaquin,2022,spring,1,3,0.333333333
+40,Vulpes macrotis,open,Carrizo_soda_open,San Joaquin,2022,spring,10,53,0.188679245
+41,Vulpes macrotis,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,11,53,0.20754717
+42,Vulpes macrotis,triangle,Carrizo_4,San Joaquin,2022,spring,11,53,0.20754717
+43,Vulpes macrotis,triangle,Carrizo_soda_open,San Joaquin,2022,spring,3,53,0.056603774
+44,Vulpes macrotis,square,Carrizo_soda_open,San Joaquin,2022,spring,7,53,0.132075472
+45,Vulpes macrotis,square,Carrizo_4,San Joaquin,2022,spring,11,53,0.20754717
+46,Xerospermophilus tereticaudus,Ephedra californica,Carrizo_4,San Joaquin,2022,spring,1,2,0.5
+47,Xerospermophilus tereticaudus,square,Carrizo_4,San Joaquin,2022,spring,1,2,0.5
+48,Ammospermophilus leucurus,triangle,Carrizo_4,San Joaquin,2023,spring,1,1,1
+49,Ammospermophilus nelsoni,Ephedra californica,Carrizo_4,San Joaquin,2023,spring,6,51,0.117647059
+50,Ammospermophilus nelsoni,square,Carrizo_4,San Joaquin,2023,spring,21,51,0.411764706
+51,Ammospermophilus nelsoni,square,Carrizo_soda_open,San Joaquin,2023,spring,1,51,0.019607843
+52,Ammospermophilus nelsoni,open,Carrizo_soda_open,San Joaquin,2023,spring,4,51,0.078431373
+53,Ammospermophilus nelsoni,triangle,Carrizo_4,San Joaquin,2023,spring,15,51,0.294117647
+54,Ammospermophilus nelsoni,triangle,Carrizo_soda_open,San Joaquin,2023,spring,4,51,0.078431373
+55,Antilocapra americana,square,Carrizo_soda_open,San Joaquin,2023,spring,1,5,0.2
+56,Antilocapra americana,triangle,Carrizo_soda_open,San Joaquin,2023,spring,2,5,0.4
+57,Antilocapra americana,open,Carrizo_soda_open,San Joaquin,2023,spring,2,5,0.4
+58,Canis latrans,square,Carrizo_soda_open,San Joaquin,2023,spring,2,9,0.222222222
+59,Canis latrans,open,Carrizo_soda_open,San Joaquin,2023,spring,1,9,0.111111111
+60,Canis latrans,triangle,Carrizo_4,San Joaquin,2023,spring,3,9,0.333333333
+61,Canis latrans,square,Carrizo_4,San Joaquin,2023,spring,2,9,0.222222222
+62,Canis latrans,triangle,Carrizo_soda_open,San Joaquin,2023,spring,1,9,0.111111111
+63,Corvus brachyrhynchos,triangle,Carrizo_4,San Joaquin,2023,spring,2,2,1
+64,Dipodomys heermanni,Ephedra californica,Carrizo_4,San Joaquin,2023,spring,10,195,0.051282051
+65,Dipodomys heermanni,triangle,Carrizo_soda_open,San Joaquin,2023,spring,1,195,0.005128205
+66,Dipodomys heermanni,square,Carrizo_4,San Joaquin,2023,spring,113,195,0.579487179
+67,Dipodomys heermanni,square,Carrizo_soda_open,San Joaquin,2023,spring,7,195,0.035897436
+68,Dipodomys heermanni,triangle,Carrizo_4,San Joaquin,2023,spring,48,195,0.246153846
+69,Dipodomys heermanni,open,Carrizo_soda_open,San Joaquin,2023,spring,16,195,0.082051282
+70,Dipodomys ingens,square,Carrizo_soda_open,San Joaquin,2023,spring,6,188,0.031914894
+71,Dipodomys ingens,triangle,Carrizo_soda_open,San Joaquin,2023,spring,14,188,0.074468085
+72,Dipodomys ingens,triangle,Carrizo_4,San Joaquin,2023,spring,89,188,0.473404255
+73,Dipodomys ingens,open,Carrizo_soda_open,San Joaquin,2023,spring,11,188,0.058510638
+74,Dipodomys ingens,square,Carrizo_4,San Joaquin,2023,spring,56,188,0.29787234
+75,Dipodomys ingens,Ephedra californica,Carrizo_4,San Joaquin,2023,spring,12,188,0.063829787
+76,Eremophila alpestris,triangle,Carrizo_4,San Joaquin,2023,spring,1,1,1
+77,Lepus californicus,triangle,Carrizo_soda_open,San Joaquin,2023,spring,2,46,0.043478261
+78,Lepus californicus,triangle,Carrizo_4,San Joaquin,2023,spring,20,46,0.434782609
+79,Lepus californicus,Ephedra californica,Carrizo_4,San Joaquin,2023,spring,8,46,0.173913043
+80,Lepus californicus,square,Carrizo_4,San Joaquin,2023,spring,16,46,0.347826087
+81,Vulpes macrotis,square,Carrizo_4,San Joaquin,2023,spring,2,13,0.153846154
+82,Vulpes macrotis,open,Carrizo_soda_open,San Joaquin,2023,spring,1,13,0.076923077
+83,Vulpes macrotis,triangle,Carrizo_4,San Joaquin,2023,spring,8,13,0.615384615
+84,Vulpes macrotis,triangle,Carrizo_soda_open,San Joaquin,2023,spring,1,13,0.076923077
+85,Vulpes macrotis,square,Carrizo_soda_open,San Joaquin,2023,spring,1,13,0.076923077
+86,Ammospermophilus nelsoni,Ephedra californica,Carrizo_4,San Joaquin,2023,winter,19,21,0.904761905
+87,Ammospermophilus nelsoni,square,Carrizo_4,San Joaquin,2023,winter,1,21,0.047619048
+88,Ammospermophilus nelsoni,triangle,Carrizo_4,San Joaquin,2023,winter,1,21,0.047619048
+89,Buteo jamaicensis,triangle,Carrizo_soda_open,San Joaquin,2023,winter,1,1,1
+90,Canis latrans,Ephedra californica,Carrizo_4,San Joaquin,2023,winter,1,3,0.333333333
+91,Canis latrans,triangle,Carrizo_soda_open,San Joaquin,2023,winter,1,3,0.333333333
+92,Canis latrans,square,Carrizo_4,San Joaquin,2023,winter,1,3,0.333333333
+93,Corvus brachyrhynchos,open,Carrizo_soda_open,San Joaquin,2023,winter,1,1,1
+94,Corvus corax,open,Carrizo_soda_open,San Joaquin,2023,winter,1,1,1
+95,Dipodomys heermanni,square,Carrizo_4,San Joaquin,2023,winter,1,47,0.021276596
+96,Dipodomys heermanni,Ephedra californica,Carrizo_4,San Joaquin,2023,winter,39,47,0.829787234
+97,Dipodomys heermanni,open,Carrizo_soda_open,San Joaquin,2023,winter,5,47,0.106382979
+98,Dipodomys heermanni,triangle,Carrizo_4,San Joaquin,2023,winter,1,47,0.021276596
+99,Dipodomys heermanni,triangle,Carrizo_soda_open,San Joaquin,2023,winter,1,47,0.021276596
+100,Dipodomys ingens,triangle,Carrizo_4,San Joaquin,2023,winter,4,45,0.088888889
+101,Dipodomys ingens,square,Carrizo_4,San Joaquin,2023,winter,5,45,0.111111111
+102,Dipodomys ingens,triangle,Carrizo_soda_open,San Joaquin,2023,winter,4,45,0.088888889
+103,Dipodomys ingens,Ephedra californica,Carrizo_4,San Joaquin,2023,winter,25,45,0.555555556
+104,Dipodomys ingens,open,Carrizo_soda_open,San Joaquin,2023,winter,7,45,0.155555556
+105,Lepus californicus,open,Carrizo_soda_open,San Joaquin,2023,winter,1,1,1
+106,Vulpes macrotis,open,Carrizo_soda_open,San Joaquin,2023,winter,3,20,0.15
+107,Vulpes macrotis,square,Carrizo_soda_open,San Joaquin,2023,winter,5,20,0.25
+108,Vulpes macrotis,Ephedra californica,Carrizo_4,San Joaquin,2023,winter,1,20,0.05
+109,Vulpes macrotis,triangle,Carrizo_4,San Joaquin,2023,winter,2,20,0.1
+110,Vulpes macrotis,triangle,Carrizo_soda_open,San Joaquin,2023,winter,9,20,0.45
+111,Canis latrans,Larrea tridentata,Tecopa_shrub,Mojave,2022,spring,3,8,0.375
+112,Canis latrans,open,Tecopa_open,Mojave,2022,spring,5,8,0.625
+113,Dipodomys heermanni,triangle,Tecopa_shrub,Mojave,2022,spring,1,2,0.5
+114,Dipodomys heermanni,square,Tecopa_shrub,Mojave,2022,spring,1,2,0.5
+115,Dipodomys ingens,triangle,Tecopa_shrub,Mojave,2022,spring,1,1,1
+116,Dipsosaurus dorsalis,Larrea tridentata,Tecopa_shrub,Mojave,2022,spring,3,3,1
+117,Lepus californicus,Larrea tridentata,Tecopa_shrub,Mojave,2022,spring,4,9,0.444444444
+118,Lepus californicus,triangle,Tecopa_shrub,Mojave,2022,spring,3,9,0.333333333
+119,Lepus californicus,square,Tecopa_shrub,Mojave,2022,spring,2,9,0.222222222
+120,Xerospermophilus mohavensis,Larrea tridentata,Tecopa_shrub,Mojave,2022,spring,3,11,0.272727273
+121,Xerospermophilus mohavensis,triangle,Tecopa_shrub,Mojave,2022,spring,8,11,0.727272727
+122,Buteo jamaicensis,open,Tecopa_open,Mojave,2023,spring,7,7,1
+123,Canis latrans,Larrea tridentata,Tecopa_shrub,Mojave,2023,spring,1,9,0.111111111
+124,Canis latrans,triangle,Tecopa_open,Mojave,2023,spring,1,9,0.111111111
+125,Canis latrans,open,Tecopa_open,Mojave,2023,spring,3,9,0.333333333
+126,Canis latrans,square,Tecopa_shrub,Mojave,2023,spring,1,9,0.111111111
+127,Canis latrans,square,Tecopa_open,Mojave,2023,spring,1,9,0.111111111
+128,Canis latrans,triangle,Tecopa_shrub,Mojave,2023,spring,2,9,0.222222222
+129,Corvus brachyrhynchos,open,Tecopa_open,Mojave,2023,spring,4,4,1
+130,Dipodomys heermanni,Larrea tridentata,Tecopa_shrub,Mojave,2023,spring,5,11,0.454545455
+131,Dipodomys heermanni,square,Tecopa_shrub,Mojave,2023,spring,1,11,0.090909091
+132,Dipodomys heermanni,triangle,Tecopa_open,Mojave,2023,spring,1,11,0.090909091
+133,Dipodomys heermanni,triangle,Tecopa_shrub,Mojave,2023,spring,4,11,0.363636364
+134,Dipodomys ingens,Larrea tridentata,Tecopa_shrub,Mojave,2023,spring,1,9,0.111111111
+135,Dipodomys ingens,triangle,Tecopa_shrub,Mojave,2023,spring,8,9,0.888888889
+136,Dipsosaurus dorsalis,Larrea tridentata,Tecopa_shrub,Mojave,2023,spring,1,2,0.5
+137,Dipsosaurus dorsalis,triangle,Tecopa_shrub,Mojave,2023,spring,1,2,0.5
+138,Lepus californicus,Larrea tridentata,Tecopa_shrub,Mojave,2023,spring,43,189,0.227513228
+139,Lepus californicus,open,Tecopa_open,Mojave,2023,spring,13,189,0.068783069
+140,Lepus californicus,square,Tecopa_open,Mojave,2023,spring,9,189,0.047619048
+141,Lepus californicus,triangle,Tecopa_open,Mojave,2023,spring,11,189,0.058201058
+142,Lepus californicus,triangle,Tecopa_shrub,Mojave,2023,spring,58,189,0.306878307
+143,Lepus californicus,square,Tecopa_shrub,Mojave,2023,spring,55,189,0.291005291
+144,Sylvilagus audubonii,open,Tecopa_open,Mojave,2023,spring,5,26,0.192307692
+145,Sylvilagus audubonii,square,Tecopa_open,Mojave,2023,spring,1,26,0.038461538
+146,Sylvilagus audubonii,Larrea tridentata,Tecopa_shrub,Mojave,2023,spring,2,26,0.076923077
+147,Sylvilagus audubonii,triangle,Tecopa_shrub,Mojave,2023,spring,10,26,0.384615385
+148,Sylvilagus audubonii,square,Tecopa_shrub,Mojave,2023,spring,8,26,0.307692308
+149,Canis latrans,square,Tecopa_shrub,Mojave,2023,winter,1,1,1
+150,Dipodomys heermanni,Larrea tridentata,Tecopa_shrub,Mojave,2023,winter,3,5,0.6
+151,Dipodomys heermanni,square,Tecopa_shrub,Mojave,2023,winter,2,5,0.4

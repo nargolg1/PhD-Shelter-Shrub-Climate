@@ -1,0 +1,10 @@
+column,description
+rep_continous,continous rep from R
+site_code,"Carrizo_4, Carrizo_soda_open, Tecopa_shrub, Tecopa_open"
+microsite,"Larrea tridentata, Ephedra californica, square, triangle, open"
+region,"San Joaquin, Mojave"
+year,"2022, 2023"
+abundance,total animal captures
+richness,total number of different species
+evenness,Shannon's index
+season,"spring, winter"
