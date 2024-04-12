@@ -18,6 +18,7 @@ library (dplyr)
 library (emmeans)
 library (sjPlot)
 library(ggpubr)
+library(glmmTMB)
 ```
 
 ```{r}
@@ -26,86 +27,310 @@ library(ggpubr)
 microclimate_hourly<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/microclimate_hourly.csv")
 animals_compiled<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/animals_compiled.csv")
 animal_species_compiled <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/animal_species_compiled.csv")
-
-unique(microclimate_hourly$site_code)
+sites<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/sites.csv")
 
 ```
 
 
 ```{r}
-ggplot(animal_species_compiled, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
-  geom_bar(stat = "identity") +
-  coord_flip() +
-  theme_classic() +
-  xlab("Species") +
-  ylab("Relative Proportion") +
-  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA,
-                                    size = 1))
-###percent proportion are by region by year, so if we want them to display out of 1, it had to be re-calculated for this global dataset
-###I have the seperate plots
+###summarize and join microclimate to animals_compiled
+na.omit(microclimate_hourly)
 
-ggplot(microclimate_hourly, aes(x=microsite, y=temp, fill = microsite)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Microsite") +
+microclimate_summarized<-microclimate_hourly %>%
+  group_by(site_code, microsite, season, year, region) %>% 
+  summarise (mean_temp = mean(temp, na.rm=T), mean_intensity = mean(intensity, na.rm = T), mean_humidity = mean(humidity, na.rm = T))
+
+microclimate_animals_compiled<-merge(microclimate_summarized, animals_compiled, by = c("site_code", "microsite", "region", "year", "season"))
+```
+
+
+```{r}
+###run some GLM to see which variables matter
+
+mod1.1<-glm(abundance~mean_temp + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod1.1, test = "Chisq")
+
+mod1.2<-glm(richness~mean_temp + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod1.2, test = "Chisq")
+
+mod1.3<-glm(evenness~mean_temp + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod1.3, test = "Chisq")
+###temp is not a predictor of abundance, richness or evenness
+
+mod2.1<-glm(abundance~mean_intensity + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod2.1, test = "Chisq")
+
+mod2.2<-glm(richness~mean_intensity + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod2.2, test = "Chisq")
+
+mod2.3<-glm(evenness~mean_intensity + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod2.3, test = "Chisq")
+###radiation is not a predictor of abundance, richness or evenness either
+
+mod3.1<-glm(abundance~mean_humidity + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod3.1, test = "Chisq")
+
+mod3.2<-glm(richness~mean_humidity + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod3.2, test = "Chisq")###humidity is a predictor of richness
+emmeans(mod3.2, pairwise~site_code|microsite)
+
+mod3.3<-glm(evenness~mean_humidity + as.factor(microsite)+ as.factor(site_code)+ as.factor(year), data = microclimate_animals_compiled)
+anova(mod3.3, test = "Chisq")###humidity is a predictor of evenness
+emmeans(mod3.3, pairwise~site_code|microsite)
+
+
+###let's see how humidity differs by microite, site, and year
+mod4.1<-glm(humidity~as.factor(microsite) + as.factor(site_code) + as.factor(year), data = microclimate_hourly)
+anova(mod4.1, test = "Chisq")
+emmeans(mod4.1, pairwise~microsite|year)
+emmeans(mod4.1, pairwise~microsite|site_code)
+emmeans(mod4.1, pairwise~site_code|microsite|year)
+
+mod4.2<- glm(humidity~as.factor(microsite), data = microclimate_hourly)
+anova(mod4.2, test = "Chisq")
+emmeans (mod4.2, pairwise~microsite)
+
+mod4.3<-glm (mean_humidity~as.factor(microsite), data = microclimate_animals_compiled)
+anova(mod4.3, test = "Chisq")
+emmeans(mod4.3, pairwise~microsite)
+###humidity different by microsite only in the hourly data not the averages
+
+
+###test site-level assumption that climate differs to show why you chose sites
+
+mod5.1<-glm(aridity~as.factor(site_code) + as.factor (year), data = sites)
+anova(mod5.1, test = "Chisq")
+emmeans(mod5.1, pairwise~site_code|year)
+
+mod5.2<-glm(MAT~as.factor(site_code) + as.factor(year), data = sites)
+anova(mod5.2, test = "Chisq")
+emmeans(mod5.2, pairwise~site_code|year)
+
+
+```
+
+
+```{r}
+###let's do RII for humidity
+###turn data wide
+library(tidyr)
+
+microclimate_summarized_wide<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/microclimate_summarized_wide.csv")
+
+
+na.omit(microclimate_summarized_wide)
+
+rii_humidity_Ephedra<- microclimate_summarized_wide %>%
+  mutate(rii_calc_Ephedra = (Ephedra.californica-open)/(Ephedra.californica + open))
+
+rii_humidity_Larrea<- microclimate_summarized_wide %>%
+  mutate(rii_calc_Larrea = (Larrea.tridentata-open)/(Larrea.tridentata + open))
+
+rii_humidity_square<- microclimate_summarized_wide %>%
+  mutate(rii_calc_square = (square-open)/(square + open))
+
+rii_humidity_triangle<- microclimate_summarized_wide %>%
+  mutate(rii_calc_shrub = (triangle-open)/(triangle + open))
+
+
+
+animals_compiled_wide<- animals_compiled %>% 
+  pivot_wider(names_from = microsite, values_from = abundance)
+
+###Doesn't work on the average data sets, because there is not both an open and microsite value per row in the wide format.
+```
+
+
+```{r}
+ggplot(microclimate_animals_compiled, aes(x=abundance, y=mean_temp, fill = microsite)) + 
+  geom_boxplot()+ xlab("Abundance") +
   ylab("Temperature (°C)") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
 
-ggplot(microclimate_hourly, aes(x=microsite, y=humidity, fill = microsite)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Microsite") +
+ggplot(microclimate_animals_compiled, aes(x=abundance, y=mean_humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Abundance") +
   ylab("Humidity (%)") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
 
-ggplot(microclimate_hourly, aes(x=microsite, y=intensity, fill = microsite)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Microsite") +
+ggplot(microclimate_animals_compiled, aes(x=abundance, y=mean_intensity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Abundance") +
   ylab("Radiation (lum/ft²)") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
 
 
 
 
-ggplot(animals_compiled, aes(x=microsite, y=abundance, fill = microsite)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Microsite") +
+ggplot(microclimate_animals_compiled, aes(x=richness, y=mean_temp, fill = microsite)) + 
+  geom_boxplot()+ xlab("Richness") +
+  ylab("Temperature (°C)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
+
+ggplot(microclimate_animals_compiled, aes(x=richness, y=mean_humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Richness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
+
+ggplot(microclimate_animals_compiled, aes(x=richness, y=mean_intensity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Richness") +
+  ylab("Radiation (lum/ft²)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
+
+
+
+ggplot(microclimate_animals_compiled, aes(x=evenness, y=mean_humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Evenness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code)
+
+```
+
+
+```{r}
+ggplot(microclimate_animals_compiled, aes((abundance), mean_temp, color=microsite)) + xlab("Abundance") + ylab ("Temperature (°C)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((richness), mean_temp, color=microsite)) + xlab("Richness") + ylab ("Temperature (°C)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free")
+
+
+
+ggplot(microclimate_animals_compiled, aes((abundance), mean_humidity, color=microsite)) + xlab("Abundance") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((richness), mean_humidity, color=microsite)) + xlab("Richness") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free")
+
+
+
+ggplot(microclimate_animals_compiled, aes((abundance), mean_intensity, color=microsite)) + xlab("Abundance") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((richness), mean_intensity, color=microsite)) + xlab("Richness") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free")
+```
+
+
+```{r}
+A<-ggplot(microclimate_animals_compiled, aes(x=microsite, y=abundance, fill = microsite)) + 
+  geom_boxplot()+ xlab("Microsite") +
   ylab("Abundance") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~year) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('A') + theme(legend.position = "none")
 
-ggplot(animals_compiled, aes(x=microsite, y=richness, fill = microsite)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Microsite") +
+
+B<-ggplot(microclimate_animals_compiled, aes(x=microsite, y=richness, fill = microsite)) + 
+  geom_boxplot()+ xlab("Microsite") +
   ylab("Richness") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~year) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B') + theme(legend.position = "none")
 
 
-ggplot(animals_compiled, aes(x=microsite, y=evenness, fill = microsite)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Microsite") +
+C<-ggplot(microclimate_animals_compiled, aes(x=microsite, y=evenness, fill = microsite)) + 
+  geom_boxplot()+ xlab("Microsite") +
   ylab("Evenness") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~year) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1))
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('C') + theme(legend.position = "none")
+library(patchwork)
+
+A/B/C
 
 
 
-ggplot(microclimate_hourly, aes(x=year, y=temp, group=site_code)) +
-  geom_line(aes(color= site_code))+
-  geom_point(aes(color=site_code)) + facet_wrap(~microsite) +theme_classic()
 
-ggplot(microclimate_hourly, aes(x=site_code, y=humidity, fill = site_code)) + 
-  geom_boxplot()+ theme_classic()+ xlab("Site") +
+
+A1<-ggplot(microclimate_animals_compiled, aes(x=abundance, y=mean_humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Abundance") +
   ylab("Humidity (%)") +
-  labs(fill = "Site") + theme_classic()+ theme(panel.border = element_rect(color = "black",
-                                    fill = NA, size = 1)) + theme(legend.position = "none") + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + facet_wrap(~site_code) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~year)
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle ('A')
+
+
+B1<-ggplot(microclimate_animals_compiled, aes(x=richness, y=mean_humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Richness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle ('B') +theme(legend.position = "none")
+
+C1<-ggplot(microclimate_animals_compiled, aes(x=evenness, y=mean_humidity, fill = microsite)) + 
+  geom_boxplot()+ xlab("Evenness") +
+  ylab("Humidity (%)") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + stat_summary(fun.y=mean, colour="black", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle ('C') +  theme(legend.position = "none")
+A1/B1/C1
+
+
+A2<-ggplot(microclimate_animals_compiled, aes((abundance), mean_humidity, color=microsite)) + xlab("Abundance") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) +ggtitle ('A')
+
+B2<-ggplot(microclimate_animals_compiled, aes((richness), mean_humidity, color=microsite)) + xlab("Richness") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + ggtitle ('B') +theme(legend.position = "none")
+
+
+C2<-ggplot(microclimate_animals_compiled, aes((evenness), mean_humidity, color=microsite)) + xlab("Evenness") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+  stat_smooth(method = "lm", formula = y ~ x)+ stat_summary(fun.y=mean, geom="point", size=2)+ labs(color="Microsite")+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + ggtitle('C')+ theme(legend.position = "none")
+
+
+A2/B2/C2
+
+
+
+
 ```
 
 
 ```{r}
 
-###try joining data and see if it works
+ggplot(microclimate_animals_compiled, aes(x = site_code, y = mean_temp, fill = microsite)) +
+  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape = 18, size = 2, position = position_dodge(width = 0.75 )) + labs(
+       x = "Site",
+       y = "Temperature (°C)", fill = "Microsite") + theme_classic() + theme_classic() + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 6)) + theme(aspect.ratio = 1)
 
-chck<-merge(animal_species_compiled, animals_compiled, by = c("site_code", "microsite", "season", "year", "region"))
 
-chck2<-merge(chck, microclimate_hourly, by = c("site_code", "microsite", "season", "year", "region"))
+
+ggplot(microclimate_animals_compiled, aes(x = site_code, y = mean_humidity, fill = microsite)) +
+  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape = 18, size = 2, position = position_dodge(width = 0.75 )) + labs(
+       x = "Site",
+       y = "Humidity (%)", fill = "Microsite") + theme_classic() + theme_classic() + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 6)) + theme(aspect.ratio = 1)
+
+
+
+ggplot(microclimate_animals_compiled, aes(x = site_code, y = mean_intensity, fill = microsite)) +
+  geom_boxplot() + stat_summary(fun = mean, geom = "point", shape = 18, size = 2, position = position_dodge(width = 0.75 )) + labs(
+       x = "Site",
+       y = "Radiation (lum/ft²)", fill = "Microsite") + theme_classic() + theme_classic() + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 6)) + theme(aspect.ratio = 1)
+
+
 ```
+
 
 
