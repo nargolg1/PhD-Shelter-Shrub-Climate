@@ -1,0 +1,548 @@
+---
+title: "Global Models Final"
+author: "Nargol Ghazian"
+date: "2024-05-18"
+output:
+  html_document: default
+  word_document: default
+  pdf_document: default
+editor_options:
+  chunk_output_type: console
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(warning = FALSE, message = FALSE) 
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library (ggplot2)
+library (tidyverse)
+library (dplyr)
+library (emmeans)
+library (sjPlot)
+library(ggpubr)
+library(patchwork)
+library(tidyr)
+library (MASS)
+library(performance)
+```
+
+
+```{r}
+###load the three main data packages
+
+microclimate_hourly<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/microclimate_hourly.csv")
+
+animals_compiled<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/animals_compiled.csv")
+
+
+animal_species_compiled <-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/animal_species_compiled.csv")
+
+```
+
+```{r}
+###summarize and join microclimate to animals_compiled
+
+microclimate_summarized<-microclimate_hourly %>%
+  group_by(site_code, microsite, season, year, region, microsite_rep) %>% 
+  summarise (mean_temp = mean(temp, na.rm=T), mean_intensity = mean(intensity, na.rm = T), mean_humidity = mean(humidity, na.rm = T))
+
+microclimate_animals_compiled<-left_join(microclimate_summarized, animals_compiled, by = c("site_code", "microsite", "region", "year", "season", "microsite_rep"))
+
+microclimate_animals_compiled_winter <-microclimate_animals_compiled%>%filter(season =="winter") 
+
+
+microclimate_animals_compiled<-microclimate_animals_compiled%>%filter(season =="spring")###for PCOA and PCA
+```
+
+```{r}
+###Run a PCOA of the global, spring data to see if community composition differs across microsites.
+###Hypothesis: Community composition is the same across all microsites.
+
+
+library(ape)
+library(vegan)
+library(permute)
+
+microclimate_animals_compiled<-microclimate_animals_compiled%>%filter(season =="spring")###Run a PCOA for spring only 
+
+
+pcoa_data_final <-  animal_species_compiled%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite, -year, - region, -site_code, -season, -total, -percent_proportion, -rep_continous, -microsite_rep)
+dim(pcoa_data_final)
+
+pcoa_mod<-adonis(pcoa_data_final ~ microsite, data = animal_species_compiled)
+pcoa_mod
+
+
+dist_final <- vegdist(pcoa_data_final, species = "bray")
+res_final <- pcoa(dist_final)
+p01 <- as.data.frame(res_final$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>%
+  bind_cols(animal_species_compiled,.)
+
+
+ggplot() + 
+  geom_point(data = p01, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite") 
+
+
+
+model1<-betadisper(dist_final, animal_species_compiled$microsite)
+anova(model1)
+TukeyHSD(model1)###community composition does not differ across microsites. 
+permutest(model1, pairwise = TRUE)
+boxplot(model1, xlab ="Microsite")
+
+```
+
+```{r}
+
+RII<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/RII.csv")
+
+combined_rii_long <- RII %>%
+  gather(key = "variable", value = "value", rii_abundance, rii_richness, rii_evenness)
+
+summary_data <- combined_rii_long %>%
+  group_by(microsite, variable, year, site_code, microsite_rep) %>%
+  summarize(avg_value = mean(value),
+            sd_value = sd(value), n = n(),
+    se = sd_value/ sqrt(n))
+  
+            
+combined_rii_long_winter<-combined_rii_long%>%filter(season =="winter") 
+            
+summary_data <- combined_rii_long %>%
+  group_by(microsite, variable, year) %>%
+  summarize(avg_value = mean(value),
+            sd_value = sd(value), n = n(),
+    se = sd_value/ sqrt(n))
+            
+summary_data_winter <- combined_rii_long_winter%>%
+  group_by(microsite, variable, year) %>%
+  summarize(avg_value = mean(value),
+            sd_value = sd(value), n = n(),
+    se = sd_value/ sqrt(n)) 
+
+mod.rii<-glm(avg_value~microsite*year+ as.factor(variable), data = summary_data)
+anova(mod.rii, test= "Chisq")
+
+mod.rii.winter<-glm(avg_value~microsite+ as.factor(variable), data = summary_data_winter)
+anova(mod.rii.winter, test= "Chisq")
+
+
+ggplot(summary_data, aes(x = variable, y = avg_value, color = microsite)) +
+  geom_point(position = position_dodge(width = 0.8), size = 3) +
+  geom_errorbar(aes(ymin = avg_value - se, ymax = avg_value + se), 
+                position = position_dodge(width = 0.8), width = 0.2) +
+  labs(x = "", y = "RII", fill = "Microsite") +
+  theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
+                              "rii_richness" = "Richness", 
+                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
+
+
+ggplot(summary_data_winter, aes(x = variable, y = avg_value, color = microsite)) +
+  geom_point(position = position_dodge(width = 0.8), size = 3) +
+  geom_errorbar(aes(ymin = avg_value - se, ymax = avg_value + se), 
+                position = position_dodge(width = 0.8), width = 0.2) +
+  labs(x = "", y = "RII", fill = "Microsite") +
+  theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
+                              "rii_richness" = "Richness", 
+                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
+```
+
+```{r}
+###GLMs
+###SPRING
+
+
+mod1.1<-glm(abundance~ microsite %in% site_code*year + mean_temp + mean_humidity + mean_intensity, family = negative.binomial(2), data = microclimate_animals_compiled)
+summary(mod1.1)
+anova(mod1.1, test = "Chisq")
+
+check_collinearity(mod1.1)###only run with temperature for post-hoc
+
+mod1.2<-glm(abundance~microsite %in% site_code*year+ mean_temp, family = negative.binomial(2), data = microclimate_animals_compiled)
+anova(mod1.2, test = "Chisq")
+emm1<-emmeans(mod1.2, pairwise~microsite|site_code|year)
+emm1<-as.data.frame(emm1)
+
+
+mod2.1<-glm(richness~microsite %in% site_code*year + mean_temp + mean_humidity + mean_intensity, data = microclimate_animals_compiled, family = gaussian)
+summary(mod2.1)
+anova(mod2.1, test = "Chisq")
+check_collinearity(mod1.2)
+
+mod2.2<-glm(richness~microsite %in% site_code*year  + mean_temp, family = gaussian, data = microclimate_animals_compiled)
+summary(mod2.2)
+anova(mod2.2, test = "Chisq")
+emmeans(mod2.2, pairwise~microsite|site_code|year)
+emm4<-emmeans(mod2.2, pairwise~microsite|site_code|year)
+emm4<-as.data.frame(emm4)
+
+#check dist
+shapiro.test(microclimate_animals_compiled$evenness)
+#p < 0.05, then sd from normal
+
+mod3.1<-glm(evenness~microsite %in% site_code*year + mean_temp + mean_humidity + mean_intensity, data = microclimate_animals_compiled, family = gaussian)
+summary(mod3.1)
+anova(mod3.1, test = "Chisq")
+check_collinearity(mod3.1)
+
+
+mod3.2<-glm(evenness~microsite %in% site_code*year  + mean_temp, data = microclimate_animals_compiled, family = gaussian)
+anova(mod3.2, test = "Chisq")
+emmeans(mod3.2, pairwise~microsite|site_code|year)
+
+##RANDOM EFFECT
+
+library(lme4)
+glmer_1.1<- glmer(abundance ~ microsite %in% site_code+ (1 | year)  + mean_temp, family = negative.binomial(2), data = microclimate_animals_compiled)
+library(car)
+car::Anova(glmer_1.1)
+library(multcomp)
+library(MASS)
+glht(glmer_1.1, linfct = mcp(microsite = "Tukey"))#terrible package have to use emmeans on the glm instead
+
+
+glmer_1.2<- glm(abundance ~ microsite %in% site_code+ (1 | year)  + mean_temp, family = negative.binomial(2), data = microclimate_animals_compiled)
+emmeans(glmer_1.2, pairwise~microsite|site_code|year)#gives you the same emmeans for both 2022 and 2023
+
+glmer_2.1<- glmer(richness ~ microsite %in% site_code + (1 | year)  + mean_temp, family = gaussian, data = microclimate_animals_compiled)
+car::Anova(glmer_2.1)
+
+glmer_2.2<- glm(richness ~ microsite %in% site_code+ (1 | year)  + mean_temp, family = gaussian, data = microclimate_animals_compiled)
+emmeans(glmer_2.2, pairwise~microsite|site_code|year)#gives you the same emmeans for both 2022 and 2023
+
+glmer_3.1<- glmer(evenness~ microsite %in% site_code + (1 | year)  + mean_temp, family = gaussian, data = microclimate_animals_compiled)
+car::Anova(glmer_3.1)
+
+glmer_3.2<- glm(evenness ~ microsite %in% site_code+ (1 | year) + mean_temp, family = gaussian, data = microclimate_animals_compiled)
+emmeans(glmer_3.2, pairwise~microsite|site_code|year)#gives you the same emmeans for both 2022 and 2023
+
+glmer_3.3<- glm(evenness ~ microsite %in% site_code*year+ (1 | year) + mean_temp, family = gaussian, data = microclimate_animals_compiled)
+emmeans(glmer_3.3, pairwise~microsite|site_code|year)#only way to get different post-hoc for year is to run year as both a fixed and random effect in your model or just as a fixed effect. Otherwise emmeans both hocs are the same.
+
+
+###WINTER
+
+mod4.1<-glm(abundance~microsite %in% site_code + mean_temp + mean_intensity, family = negative.binomial(2), data = microclimate_animals_compiled_winter)###would only run with a poisson not negative binomial
+summary(mod4.1)
+anova(mod4.1, test = "Chisq")
+check_collinearity(mod4.1)###only run with temperature for post-hoc
+
+mod4.2<-glm(abundance~microsite %in% site_code+ mean_temp, family = negative.binomial(2), data = microclimate_animals_compiled_winter)
+anova(mod4.2, test = "Chisq")
+emmeans(mod4.2, pairwise~microsite|site_code)
+emm2<-emmeans(mod4.2, pairwise~microsite|site_code)
+emm2<-as.data.frame(emm2)
+
+write.csv(emm2,"C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/emm2.csv" )
+
+mod5.1<-glm(richness~microsite %in% site_code  + mean_temp + mean_intensity, data = microclimate_animals_compiled_winter, family =poisson)
+summary(mod5.1)
+anova(mod5.1, test = "Chisq")
+check_collinearity(mod5.1)
+
+mod5.2<-glm(richness~microsite %in% site_code + mean_temp, family = poisson, data = microclimate_animals_compiled_winter)
+summary(mod5.2)
+anova(mod5.2, test = "Chisq")
+emmeans(mod5.2, pairwise~microsite|site_code)
+emm3<-emmeans(mod5.2, pairwise~microsite|site_code)
+emm3<-as.data.frame(emm3)
+
+#check dist
+shapiro.test(microclimate_animals_compiled_winter$evenness)
+#p < 0.05, then sd from normal
+
+mod6.1<-glm(evenness~microsite %in% site_code + mean_temp + mean_intensity, data = microclimate_animals_compiled_winter, family = gaussian)
+summary(mod6.1)
+anova(mod6.1, test = "Chisq")
+
+mod6.2<-glm(evenness~microsite %in% site_code + mean_temp, data = microclimate_animals_compiled_winter, family = gaussian)
+
+summary(mod6.2)
+anova(mod6.2, test = "Chisq")
+```
+
+```{r}
+###GLMs for general info about hottest and coolest microsites.
+test_1<-glm(mean_temp~microsite %in% site_code * year, data = microclimate_animals_compiled)
+anova(test_1, test = "Chisq")
+library(emmeans)
+emmeans (test_1, pairwise~microsite|site_code|year)
+
+test_2<-glm(mean_humidity~microsite %in% site_code * year, data = microclimate_animals_compiled)
+anova(test_2, test = "Chisq")
+library(emmeans)
+emmeans (test_2, pairwise~microsite|site_code)
+
+test_3<-glm(mean_intensity~microsite %in% site_code, data = microclimate_animals_compiled)
+anova(test_3, test = "Chisq")
+library(emmeans)
+emmeans (test_3, pairwise~microsite|site_code)
+
+
+test_4<-glm(mean_temp~microsite %in% site_code, data = microclimate_animals_compiled_winter)
+anova(test_4, test = "Chisq")
+library(emmeans)
+emmeans (test_4, pairwise~microsite|site_code)
+
+
+test_5<-glm(mean_intensity~microsite %in% site_code, data = microclimate_animals_compiled_winter)
+anova(test_5, test = "Chisq")
+library(emmeans)
+emmeans (test_5, pairwise~microsite|site_code)
+```
+
+```{r}
+###SPRING FIGURE 2
+
+ggplot(microclimate_animals_compiled, aes((microsite), abundance)) + geom_boxplot() + xlab("Microsite") + ylab ("Abundance")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('A')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((microsite), richness)) + geom_boxplot() + xlab("Microsite") + ylab ("Richness")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((microsite), evenness)) + geom_boxplot() + xlab("Microsite") + ylab ("evenness")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+
+###WINTER FIGURE 2
+
+ggplot(microclimate_animals_compiled_winter, aes((microsite), abundance)) + geom_boxplot() + xlab("Microsite") + ylab ("Abundance")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('A')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled_winter, aes((microsite), richness)) + geom_boxplot() + xlab("Microsite") + ylab ("Richness")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled_winter, aes((microsite), evenness)) + geom_boxplot() + xlab("Microsite") + ylab ("evenness")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+```
+
+```{r}
+###SPRING FIGURE 2 OPTION 2
+ggplot(microclimate_animals_compiled, aes(factor(microsite), abundance, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position=position_dodge()) +
+  theme_classic() +
+  xlab("Microsite") +
+  ylab("Abundnce") +
+  labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('A')
+
+ggplot(microclimate_animals_compiled, aes(factor(microsite), richness, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position=position_dodge()) +
+  theme_classic() +
+  xlab("Microsite") +
+  ylab("Richness") +
+  labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('B')
+
+ggplot(microclimate_animals_compiled, aes(factor(microsite), evenness, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position=position_dodge()) +
+  theme_classic() +
+  xlab("Microsite") +
+  ylab("Evenness") +
+  labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('C')
+
+###WINTER FIGURE 2 OPTION 2
+
+ggplot(microclimate_animals_compiled_winter, aes(factor(microsite), abundance, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position=position_dodge()) +
+  theme_classic() +
+  xlab("Microsite") +
+  ylab("Abundnce") +
+  labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('A')
+
+ggplot(microclimate_animals_compiled_winter, aes(factor(microsite), richness, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position=position_dodge()) +
+  theme_classic() +
+  xlab("Microsite") +
+  ylab("Richness") +
+  labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('B')
+
+ggplot(microclimate_animals_compiled_winter, aes(factor(microsite), evenness, fill = as.factor(year))) +
+  geom_bar(stat = "identity", position=position_dodge()) +
+  theme_classic() +
+  xlab("Microsite") +
+  ylab("Evenness") +
+  labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('C')
+```
+
+```{r}
+###SPRING FIGURE 3
+
+ggplot(microclimate_animals_compiled, aes((microsite), mean_temp)) + geom_boxplot() + xlab("Microsite") + ylab ("Temprature (ºC)")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('A')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((microsite), mean_humidity)) + geom_boxplot() + xlab("Microsite") + ylab ("Humidity (%)")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled, aes((microsite), mean_intensity)) + geom_boxplot() + xlab("Microsite") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('C')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+
+
+
+###WINTER FIGURE 3
+
+ggplot(microclimate_animals_compiled_winter, aes((microsite), mean_temp)) + geom_boxplot() + xlab("Microsite") + ylab ("Temprature (ºC)")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('A')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+
+ggplot(microclimate_animals_compiled_winter, aes((microsite), mean_intensity)) + geom_boxplot() + xlab("Microsite") + ylab ("Radiation (lum/ft²)")+ theme_classic()+ theme(axis.text=element_text(size=12))+ labs(fill = "Fabric")+ stat_summary(fun.y=mean, colour="red", geom="point", shape=18, size=3,show_guide = FALSE) + ggtitle('B')+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ theme(axis.text.x = element_text(size = 10)) + theme(legend.position = "none") + facet_wrap(~site_code, scales = "free")
+```
+
+```{r}
+#percent proportion new
+
+
+animal_species_compiled_winter <-animal_species_compiled%>%filter(season =="winter") 
+
+animal_species_compiled_spring<-animal_species_compiled%>%filter(season == "spring")
+
+animal_species_compiled_spring <-animal_species_compiled_spring%>% filter(total %in% (5:1000))#you have to filter 5 and above if you want it not to show as empty rows in the bar graph
+
+
+#FIGURE 5 WINTER
+
+ggplot(animal_species_compiled_winter, aes(factor(scientific_name), total, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Total") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~year, scales = "free")
+
+
+
+#FIGURE 5 SPRING
+
+ggplot(animal_species_compiled_spring, aes(factor(scientific_name), total, fill = microsite)) +
+  geom_bar(stat = "identity") +
+  coord_flip() +
+  theme_classic() +
+  xlab("Species") +
+  ylab("Total") +
+  labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_grid(~year, scales = "free")
+```
+
+
+
+
+```{r}
+#MAP
+#FIGURE 1
+
+library(ggmap)
+
+register_google(key="AIzaSyBpfKtYrkYVS3LEJSjV1cIHeYrxJPsPX4U")
+
+bounding_box <- c(left = -119.24, bottom = 34.05223, right = -115.7, top = 36)
+
+california <- get_map(location = bounding_box, maptype = "terrain", source = "google", zoom = 7)
+
+lat_long<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/sites_map.csv") 
+
+
+ggmap(california) +
+  geom_jitter(data= lat_long, aes(x=long, y=lat, color = site_code, shape = site_code), alpha = 0.5, size =3, show.legend = TRUE) +
+  labs(title = "California, USA", x = "Longitude", y = "Latitude", shape = "Site", colour = "Site")
+  
+```
+
+
+```{r}
+#RII SPRING
+#RII SPRING
+
+RII<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/RII.csv")
+
+summary_data<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/summary_data.csv")
+
+summary_data_winter<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/summary_data_winter.csv")
+
+
+
+mod.rii.glm<-glm(avg_value~microsite*year + as.factor(variable), data = summary_data)
+anova(mod.rii.glm, test = "Chisq")
+
+
+ggplot(summary_data, aes(x = variable, y = avg_value, color = microsite)) +
+  geom_point(position = position_dodge(width = 0.8), size = 3) +
+  geom_errorbar(aes(ymin = avg_value - sd_value, ymax = avg_value + sd_value), 
+                position = position_dodge(width = 0.8), width = 0.2) +
+  labs(x = "", y = "RII", fill = "Microsite") +
+  theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
+                              "rii_richness" = "Richness", 
+                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
+                              
+#RII WITNER
+
+ggplot(summary_data_winter, aes(x = variable, y = avg_value, color = microsite)) +
+  geom_point(position = position_dodge(width = 0.8), size = 3) +
+  geom_errorbar(aes(ymin = avg_value - sd_value, ymax = avg_value + sd_value), 
+                position = position_dodge(width = 0.8), width = 0.2) +
+  labs(x = "", y = "RII", fill = "Microsite") +
+  theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
+                              "rii_richness" = "Richness", 
+                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
+
+
+```
+
+
+```{r}
+#PCA
+
+library(corrr)
+library(ggcorrplot)
+library(FactoMineR)
+library(factoextra)
+
+numerical_data <- microclimate_summarized[,7:9]
+numerical_data<-numerical_data %>% drop_na()
+
+data_normalized <- scale(numerical_data)
+corr_matrix <- cor(data_normalized)
+ggcorrplot(corr_matrix)
+
+data.pca <- princomp(corr_matrix)
+summary(data.pca)
+data.pca$loadings[, 1:2]
+
+fviz_eig(data.pca, addlabels = TRUE)
+
+fviz_pca_var(data.pca, col.var = "black")
+
+fviz_cos2(data.pca, choice = "var", axes = 1:2)
+
+
+```
