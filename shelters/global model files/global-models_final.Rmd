@@ -422,14 +422,13 @@ ggplot(microclimate_animals_compiled_winter, aes((microsite), mean_intensity)) +
 
 animal_species_compiled_winter <-animal_species_compiled%>%filter(season =="winter") 
 
-animal_species_compiled_spring<-animal_species_compiled%>%filter(season == "spring")
+animal_species_compiled_spring<-animal_species_compiled%>%filter(season == "spring") 
 
-animal_species_compiled_spring <-animal_species_compiled_spring%>% filter(total %in% (5:1000))#you have to filter 5 and above if you want it not to show as empty rows in the bar graph
 
 
 #FIGURE 5 WINTER
 
-ggplot(animal_species_compiled_winter, aes(factor(scientific_name), total, fill = microsite)) +
+ggplot(animal_species_compiled_winter, aes(factor(scientific_name), captures, fill = microsite)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   theme_classic() +
@@ -443,7 +442,7 @@ ggplot(animal_species_compiled_winter, aes(factor(scientific_name), total, fill 
 
 #FIGURE 5 SPRING
 
-ggplot(animal_species_compiled_spring, aes(factor(scientific_name), total, fill = microsite)) +
+ggplot(animal_species_compiled_spring, aes(factor(scientific_name), captures, fill = microsite)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   theme_classic() +
@@ -451,7 +450,7 @@ ggplot(animal_species_compiled_spring, aes(factor(scientific_name), total, fill 
   ylab("Total") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_grid(~year, scales = "free")
+                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~year, scales = "free")
 ```
 
 
@@ -497,7 +496,7 @@ anova(mod.rii.glm, test = "Chisq")
 
 ggplot(summary_data, aes(x = variable, y = avg_value, color = microsite)) +
   geom_point(position = position_dodge(width = 0.8), size = 3) +
-  geom_errorbar(aes(ymin = avg_value - sd_value, ymax = avg_value + sd_value), 
+  geom_errorbar(aes(ymin = avg_value - se, ymax = avg_value + se), 
                 position = position_dodge(width = 0.8), width = 0.2) +
   labs(x = "", y = "RII", fill = "Microsite") +
   theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
@@ -508,7 +507,7 @@ ggplot(summary_data, aes(x = variable, y = avg_value, color = microsite)) +
 
 ggplot(summary_data_winter, aes(x = variable, y = avg_value, color = microsite)) +
   geom_point(position = position_dodge(width = 0.8), size = 3) +
-  geom_errorbar(aes(ymin = avg_value - sd_value, ymax = avg_value + sd_value), 
+  geom_errorbar(aes(ymin = avg_value - se, ymax = avg_value + se), 
                 position = position_dodge(width = 0.8), width = 0.2) +
   labs(x = "", y = "RII", fill = "Microsite") +
   theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
