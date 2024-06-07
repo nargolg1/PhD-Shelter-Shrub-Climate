@@ -65,23 +65,31 @@ library(ape)
 library(vegan)
 library(permute)
 
-microclimate_animals_compiled<-microclimate_animals_compiled%>%filter(season =="spring")###Run a PCOA for spring only 
+animal_species_spring<-animal_species_compiled%>%filter(season =="spring")###Run a PCOA for spring only 
+animal_species_spring_2022<-animal_species_spring%>%filter(year =="2022")
+animal_species_spring_2023<-animal_species_spring%>%filter(year =="2023")
 
 
-pcoa_data_final <-  animal_species_compiled%>%
+animal_species_winter<-animal_species_compiled%>%filter(season =="winter")
+
+
+
+
+###SPRING 2022
+pcoa_data_final_2022 <-  animal_species_spring_2022%>%
   spread(scientific_name, captures) %>%
   replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite, -year, - region, -site_code, -season, -total, -percent_proportion, -rep_continous, -microsite_rep)
-dim(pcoa_data_final)
+dim(pcoa_data_final_2022)
 
-pcoa_mod<-adonis(pcoa_data_final ~ microsite, data = animal_species_compiled)
-pcoa_mod
+pcoa_mod_2022<-adonis(pcoa_data_final_2022 ~ microsite, data = animal_species_spring_2022)
+pcoa_mod_2022
 
 
-dist_final <- vegdist(pcoa_data_final, species = "bray")
-res_final <- pcoa(dist_final)
-p01 <- as.data.frame(res_final$vectors)%>%
+dist_final_2022 <- vegdist(pcoa_data_final_2022, species = "bray")
+res_final_2022 <- pcoa(dist_final_2022)
+p01 <- as.data.frame(res_final_2022$vectors)%>%
   dplyr::select(Axis.1, Axis.2) %>%
-  bind_cols(animal_species_compiled,.)
+  bind_cols(animal_species_spring_2022,.)
 
 
 ggplot() + 
@@ -91,11 +99,78 @@ ggplot() +
 
 
 
-model1<-betadisper(dist_final, animal_species_compiled$microsite)
+model1<-betadisper(dist_final_2022, animal_species_spring_2022$microsite)
 anova(model1)
 TukeyHSD(model1)###community composition does not differ across microsites. 
 permutest(model1, pairwise = TRUE)
 boxplot(model1, xlab ="Microsite")
+
+
+
+###SPRING 2023
+pcoa_data_final_2023 <-  animal_species_spring_2023%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite, -year, - region, -site_code, -season, -total, -percent_proportion, -rep_continous, -microsite_rep)
+dim(pcoa_data_final_2023)
+
+pcoa_mod_2023<-adonis(pcoa_data_final_2023 ~ microsite, data = animal_species_spring_2023)
+pcoa_mod_2023
+
+
+dist_final_2023 <- vegdist(pcoa_data_final_2023, species = "bray")
+res_final_2023<- pcoa(dist_final_2023)
+p02 <- as.data.frame(res_final_2023$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>%
+  bind_cols(animal_species_spring_2023,.)
+
+
+ggplot() + 
+  geom_point(data = p02, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite") 
+
+
+
+model2<-betadisper(dist_final_2023, animal_species_spring_2023$microsite)
+anova(model2)
+TukeyHSD(model2)###community composition does not differ across microsites. 
+permutest(model2, pairwise = TRUE)
+boxplot(model2, xlab ="Microsite")
+
+
+
+###WINTER 
+
+pcoa_data_final_winter <-  animal_species_winter%>%
+  spread(scientific_name, captures) %>%
+  replace(is.na(.),0)%>% ungroup() %>% dplyr::select(-microsite, -year, - region, -site_code, -season, -total, -percent_proportion, -rep_continous, -microsite_rep)
+dim(pcoa_data_final_winter)
+
+pcoa_mod_winter<-adonis(pcoa_data_final_winter ~ microsite, data = animal_species_winter)
+pcoa_mod_winter
+
+
+dist_final_winter <- vegdist(pcoa_data_final_winter, species = "bray")
+res_final_winter<- pcoa(dist_final_winter)
+p03 <- as.data.frame(res_final_winter$vectors)%>%
+  dplyr::select(Axis.1, Axis.2) %>%
+  bind_cols(animal_species_winter,.)
+
+
+ggplot() + 
+  geom_point(data = p03, aes(x = Axis.1, y = Axis.2, color = microsite))+ theme_classic()+ theme(panel.border = element_rect(color = "black",
+                                    fill = NA,
+                                    size = 1))+ labs(color = "Microsite") 
+
+
+
+model3<-betadisper(dist_final_winter, animal_species_winter$microsite)
+anova(model3)
+TukeyHSD(model3)###community composition does not differ across microsites. 
+permutest(model2, pairwise = TRUE)
+boxplot(model3, xlab ="Microsite")
+
+
 
 ```
 
@@ -166,6 +241,7 @@ anova(mod1.1, test = "Chisq")
 check_collinearity(mod1.1)###only run with temperature for post-hoc
 
 mod1.2<-glm(abundance~microsite %in% site_code*year+ mean_temp, family = negative.binomial(2), data = microclimate_animals_compiled)
+summary(mod1.2)
 anova(mod1.2, test = "Chisq")
 emm1<-emmeans(mod1.2, pairwise~microsite|site_code|year)
 emm1<-as.data.frame(emm1)
@@ -472,7 +548,7 @@ lat_long<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/s
 
 
 ggmap(california) +
-  geom_jitter(data= lat_long, aes(x=long, y=lat, color = site_code, shape = site_code), alpha = 0.5, size =3, show.legend = TRUE) +
+  geom_jitter(data= lat_long, aes(x=long, y=lat, color = site_code, shape = site_code), size =6, show.legend = TRUE) +
   labs(title = "California, USA", x = "Longitude", y = "Latitude", shape = "Site", colour = "Site")
   
 ```
