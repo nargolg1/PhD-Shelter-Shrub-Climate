@@ -58,20 +58,19 @@ microclimate_animals_compiled<-microclimate_animals_compiled%>%filter(season =="
 
 ```{r}
 ###Run a PCOA of the global, spring data to see if community composition differs across microsites.
-###Hypothesis: Community composition is the same across all microsites.
 
 
 library(ape)
 library(vegan)
 library(permute)
 
-animal_species_spring<-animal_species_compiled%>%filter(season =="spring")###Run a PCOA for spring only 
+animal_species_spring<-animal_species_compiled%>%filter(season =="spring")
+
 animal_species_spring_2022<-animal_species_spring%>%filter(year =="2022")
 animal_species_spring_2023<-animal_species_spring%>%filter(year =="2023")
 
 
 animal_species_winter<-animal_species_compiled%>%filter(season =="winter")
-
 
 
 
@@ -170,64 +169,8 @@ TukeyHSD(model3)###community composition does not differ across microsites.
 permutest(model2, pairwise = TRUE)
 boxplot(model3, xlab ="Microsite")
 
-
-
 ```
 
-```{r}
-
-RII<-read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/RII.csv")
-
-combined_rii_long <- RII %>%
-  gather(key = "variable", value = "value", rii_abundance, rii_richness, rii_evenness)
-
-summary_data <- combined_rii_long %>%
-  group_by(microsite, variable, year, site_code, microsite_rep) %>%
-  summarize(avg_value = mean(value),
-            sd_value = sd(value), n = n(),
-    se = sd_value/ sqrt(n))
-  
-            
-combined_rii_long_winter<-combined_rii_long%>%filter(season =="winter") 
-            
-summary_data <- combined_rii_long %>%
-  group_by(microsite, variable, year) %>%
-  summarize(avg_value = mean(value),
-            sd_value = sd(value), n = n(),
-    se = sd_value/ sqrt(n))
-            
-summary_data_winter <- combined_rii_long_winter%>%
-  group_by(microsite, variable, year) %>%
-  summarize(avg_value = mean(value),
-            sd_value = sd(value), n = n(),
-    se = sd_value/ sqrt(n)) 
-
-mod.rii<-glm(avg_value~microsite*year+ as.factor(variable), data = summary_data)
-anova(mod.rii, test= "Chisq")
-
-mod.rii.winter<-glm(avg_value~microsite+ as.factor(variable), data = summary_data_winter)
-anova(mod.rii.winter, test= "Chisq")
-
-
-ggplot(summary_data, aes(x = variable, y = avg_value, color = microsite)) +
-  geom_point(position = position_dodge(width = 0.8), size = 3) +
-  geom_errorbar(aes(ymin = avg_value - se, ymax = avg_value + se), 
-                position = position_dodge(width = 0.8), width = 0.2) +
-  labs(x = "", y = "RII", fill = "Microsite") +
-  theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
-                              "rii_richness" = "Richness", 
-                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
-
-
-ggplot(summary_data_winter, aes(x = variable, y = avg_value, color = microsite)) +
-  geom_point(position = position_dodge(width = 0.8), size = 3) +
-  geom_errorbar(aes(ymin = avg_value - se, ymax = avg_value + se), 
-                position = position_dodge(width = 0.8), width = 0.2) +
-  labs(x = "", y = "RII", fill = "Microsite") +
-  theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
-                              "rii_richness" = "Richness", 
-                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
-```
 
 ```{r}
 ###GLMs
@@ -406,6 +349,7 @@ ggplot(microclimate_animals_compiled_winter, aes((microsite), evenness)) + geom_
 
 ```{r}
 ###SPRING FIGURE 2 OPTION 2
+
 ggplot(microclimate_animals_compiled, aes(factor(microsite), abundance, fill = as.factor(year))) +
   geom_bar(stat = "identity", position=position_dodge()) +
   theme_classic() +
@@ -413,7 +357,7 @@ ggplot(microclimate_animals_compiled, aes(factor(microsite), abundance, fill = a
   ylab("Abundnce") +
   labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('A')
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('A') +scale_fill_manual(values=c( "#E69F00", "#56B4E9"))
 
 ggplot(microclimate_animals_compiled, aes(factor(microsite), richness, fill = as.factor(year))) +
   geom_bar(stat = "identity", position=position_dodge()) +
@@ -422,7 +366,7 @@ ggplot(microclimate_animals_compiled, aes(factor(microsite), richness, fill = as
   ylab("Richness") +
   labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('B')
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('B') + scale_fill_manual(values=c( "#E69F00", "#56B4E9"))
 
 ggplot(microclimate_animals_compiled, aes(factor(microsite), evenness, fill = as.factor(year))) +
   geom_bar(stat = "identity", position=position_dodge()) +
@@ -431,37 +375,47 @@ ggplot(microclimate_animals_compiled, aes(factor(microsite), evenness, fill = as
   ylab("Evenness") +
   labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('C')
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('C') + scale_fill_manual(values=c( "#E69F00", "#56B4E9"))
+
 
 ###WINTER FIGURE 2 OPTION 2
 
-ggplot(microclimate_animals_compiled_winter, aes(factor(microsite), abundance, fill = as.factor(year))) +
+microclimate_animals_compiled_winter_abundance<-microclimate_animals_compiled_winter%>%filter(abundance != "0")
+
+ggplot(microclimate_animals_compiled_winter_abundance, aes(factor(microsite), abundance, fill = as.factor(year))) +
   geom_bar(stat = "identity", position=position_dodge()) +
   theme_classic() +
   xlab("Microsite") +
   ylab("Abundnce") +
   labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('A')
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('A')+ scale_fill_manual(values=c( "#56B4E9"))+ theme(legend.position = "none")
 
-ggplot(microclimate_animals_compiled_winter, aes(factor(microsite), richness, fill = as.factor(year))) +
+microclimate_animals_compiled_winter_richness<-microclimate_animals_compiled_winter%>%filter(richness != "0")
+
+ggplot(microclimate_animals_compiled_winter_richness, aes(factor(microsite), richness, fill = as.factor(year))) +
   geom_bar(stat = "identity", position=position_dodge()) +
   theme_classic() +
   xlab("Microsite") +
   ylab("Richness") +
   labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('B')
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('B')+ scale_fill_manual(values=c( "#56B4E9"))+ theme(legend.position = "none")
 
-ggplot(microclimate_animals_compiled_winter, aes(factor(microsite), evenness, fill = as.factor(year))) +
+microclimate_animals_compiled_winter_evenness<-microclimate_animals_compiled_winter%>%filter(evenness != "0")
+
+
+ggplot(microclimate_animals_compiled_winter_evenness, aes(factor(microsite), evenness, fill = as.factor(year))) +
   geom_bar(stat = "identity", position=position_dodge()) +
   theme_classic() +
   xlab("Microsite") +
   ylab("Evenness") +
   labs(fill = "Year") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('C')
+                                    size = 1)) + facet_wrap(~site_code, scales = "free") + ggtitle('C')+ scale_fill_manual(values=c( "#56B4E9"))+theme(legend.position = "none")
+
 ```
+
 
 ```{r}
 ###SPRING FIGURE 3
@@ -497,36 +451,33 @@ ggplot(microclimate_animals_compiled_winter, aes((microsite), mean_intensity)) +
 
 
 animal_species_compiled_winter <-animal_species_compiled%>%filter(season =="winter") 
-
 animal_species_compiled_spring<-animal_species_compiled%>%filter(season == "spring") 
-
 
 
 #FIGURE 5 WINTER
 
-ggplot(animal_species_compiled_winter, aes(factor(scientific_name), captures, fill = microsite)) +
+ggplot(animal_species_winter, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   theme_classic() +
   xlab("Species") +
-  ylab("Total") +
+  ylab("Percent Proportion") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~year, scales = "free")
-
+                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~site_code, scales = "free", ncol = 3)
 
 
 #FIGURE 5 SPRING
 
-ggplot(animal_species_compiled_spring, aes(factor(scientific_name), captures, fill = microsite)) +
+ggplot(animal_species_compiled_spring, aes(factor(scientific_name), percent_proportion, fill = microsite)) +
   geom_bar(stat = "identity") +
   coord_flip() +
   theme_classic() +
   xlab("Species") +
-  ylab("Total") +
+  ylab("Percent Proportion") +
   labs(fill = "Microsite") + theme_classic()+ theme(panel.border = element_rect(color = "black",
                                     fill = NA,
-                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~year, scales = "free")
+                                    size = 1)) + theme(axis.text.x = element_text(angle = 90, vjust = 0.5, hjust=1)) + facet_wrap(~site_code+year, scales = "free", ncol=4)
 ```
 
 
@@ -547,9 +498,8 @@ california <- get_map(location = bounding_box, maptype = "terrain", source = "go
 lat_long<- read.csv("C:/Users/Nargol Ghazian/Desktop/PhD-Shelter-Shrub-Climate/shelters/global model files/sites_map.csv") 
 
 
-ggmap(california) +
-  geom_jitter(data= lat_long, aes(x=long, y=lat, color = site_code, shape = site_code), size =6, show.legend = TRUE) +
-  labs(title = "California, USA", x = "Longitude", y = "Latitude", shape = "Site", colour = "Site")
+ggmap(california)  + 
+  labs(title = "California, USA", x = "Longitude", y = "Latitude", shape = "Site", colour = "Site")#Put in the site points manually
   
 ```
 
@@ -577,7 +527,7 @@ ggplot(summary_data, aes(x = variable, y = avg_value, color = microsite)) +
   labs(x = "", y = "RII", fill = "Microsite") +
   theme_minimal() + theme_classic() + coord_flip() + scale_x_discrete(labels = c("rii_abundance" = "Abundance", 
                               "rii_richness" = "Richness", 
-                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_grid(~year, scales = "free")
+                              "rii_evenness" = "Evenness")) + theme(text = element_text(size = 12), panel.border = element_rect(color = "black", fill = NA, size = 1.5), axis.text = element_text(size = 12)) + theme(aspect.ratio = 1) + geom_hline(yintercept = 0, linetype = "dashed", color = "black") + labs(colour = "Microsite") + facet_wrap(~year, ncol = 1, scales = "free")
                               
 #RII WITNER
 
@@ -621,3 +571,20 @@ fviz_cos2(data.pca, choice = "var", axes = 1:2)
 
 
 ```
+
+```{r}
+animal_species_spring_2022_summarized<-animal_species_spring_2022%>%
+  group_by(site_code) %>% 
+  summarise(captures = sum(captures))
+
+animal_species_spring_2023_summarized<-animal_species_spring_2023%>%
+  group_by(site_code) %>% 
+  summarise(captures = sum(captures))
+
+animal_species_winter_summarized<-animal_species_winter%>%
+  group_by(site_code) %>% 
+  summarise(captures = sum(captures))
+
+
+```
+
